@@ -1,0 +1,2977 @@
+{
+  "meta": {
+    "generated": "2026-06-26",
+    "source": "models_dump.json + packages/studio/src/models.js",
+    "notes": [
+      "status=exact: same underlying model, compatible params",
+      "status=partial: close match but params or features differ (needs adapter logic)",
+      "status=none: no fal equivalent — model will be removed in Phase 4",
+      "inputMap keys=MuAPI param names, values=fal param names",
+      "outputField=fal response path for the result URL"
+    ],
+    "summary": {
+      "exact": 144,
+      "partial": 29,
+      "none": 69,
+      "total": 242
+    },
+    "categorySummary": {
+      "t2i": {
+        "exact": 31,
+        "partial": 7,
+        "none": 15,
+        "total": 53
+      },
+      "t2v": {
+        "exact": 32,
+        "partial": 3,
+        "none": 8,
+        "total": 43
+      },
+      "i2i": {
+        "exact": 29,
+        "partial": 9,
+        "none": 19,
+        "total": 57
+      },
+      "i2v": {
+        "exact": 41,
+        "partial": 9,
+        "none": 14,
+        "total": 64
+      },
+      "v2v": {
+        "exact": 3,
+        "partial": 0,
+        "none": 1,
+        "total": 4
+      },
+      "lipsync": {
+        "exact": 4,
+        "partial": 1,
+        "none": 4,
+        "total": 9
+      },
+      "audio": {
+        "exact": 4,
+        "partial": 0,
+        "none": 8,
+        "total": 12
+      }
+    }
+  },
+  "models": [
+    {
+      "muapiId": "nano-banana",
+      "category": "t2i",
+      "status": "exact",
+      "falSlug": "fal-ai/nano-banana",
+      "statusReason": "Direct match.",
+      "inputMap": {
+        "prompt": "prompt",
+        "aspect_ratio": "aspect_ratio"
+      },
+      "outputField": "images[0].url"
+    },
+    {
+      "muapiId": "flux-dev",
+      "category": "t2i",
+      "status": "exact",
+      "falSlug": "fal-ai/flux/dev",
+      "statusReason": "Direct match.",
+      "inputMap": {
+        "prompt": "prompt",
+        "width": "image_size.width",
+        "height": "image_size.height",
+        "num_images": "num_images"
+      },
+      "outputField": "images[0].url"
+    },
+    {
+      "muapiId": "flux-dev-lora",
+      "category": "t2i",
+      "status": "partial",
+      "falSlug": "fal-ai/flux-lora",
+      "statusReason": "Lora loading via civitai URL differs from fal's loras[] array format; adapter needed.",
+      "inputMap": {
+        "prompt": "prompt",
+        "model_id": "loras[0].path",
+        "width": "image_size.width",
+        "height": "image_size.height"
+      },
+      "outputField": "images[0].url"
+    },
+    {
+      "muapiId": "flux-kontext-dev-t2i",
+      "category": "t2i",
+      "status": "partial",
+      "falSlug": "fal-ai/flux-pro/kontext/text-to-image",
+      "statusReason": "No dev t2i slug on fal; closest is flux-pro/kontext/text-to-image (pro tier).",
+      "inputMap": {
+        "prompt": "prompt",
+        "aspect_ratio": "aspect_ratio"
+      },
+      "outputField": "images[0].url"
+    },
+    {
+      "muapiId": "hidream-i1-fast",
+      "category": "t2i",
+      "status": "exact",
+      "falSlug": "fal-ai/hidream-i1-fast",
+      "statusReason": "Direct match.",
+      "inputMap": {
+        "prompt": "prompt",
+        "width": "image_size.width",
+        "height": "image_size.height",
+        "num_images": "num_images"
+      },
+      "outputField": "images[0].url"
+    },
+    {
+      "muapiId": "hidream-i1-dev",
+      "category": "t2i",
+      "status": "exact",
+      "falSlug": "fal-ai/hidream-i1-dev",
+      "statusReason": "Direct match.",
+      "inputMap": {
+        "prompt": "prompt",
+        "width": "image_size.width",
+        "height": "image_size.height"
+      },
+      "outputField": "images[0].url"
+    },
+    {
+      "muapiId": "hidream-i1-full",
+      "category": "t2i",
+      "status": "exact",
+      "falSlug": "fal-ai/hidream-i1-full",
+      "statusReason": "Direct match.",
+      "inputMap": {
+        "prompt": "prompt",
+        "width": "image_size.width",
+        "height": "image_size.height"
+      },
+      "outputField": "images[0].url"
+    },
+    {
+      "muapiId": "ai-anime-generator",
+      "category": "t2i",
+      "status": "none",
+      "falSlug": "",
+      "statusReason": "MuAPI-proprietary anime filter; no fal equivalent.",
+      "inputMap": {},
+      "outputField": ""
+    },
+    {
+      "muapiId": "wan2.1-text-to-image",
+      "category": "t2i",
+      "status": "none",
+      "falSlug": "",
+      "statusReason": "Wan 2.1 t2i not available on fal; only t2v and i2v wan endpoints exist.",
+      "inputMap": {},
+      "outputField": ""
+    },
+    {
+      "muapiId": "flux-kontext-pro-t2i",
+      "category": "t2i",
+      "status": "exact",
+      "falSlug": "fal-ai/flux-pro/kontext/text-to-image",
+      "statusReason": "Direct match.",
+      "inputMap": {
+        "prompt": "prompt",
+        "aspect_ratio": "aspect_ratio",
+        "num_images": "num_images"
+      },
+      "outputField": "images[0].url"
+    },
+    {
+      "muapiId": "flux-kontext-max-t2i",
+      "category": "t2i",
+      "status": "exact",
+      "falSlug": "fal-ai/flux-pro/kontext/max/text-to-image",
+      "statusReason": "Direct match.",
+      "inputMap": {
+        "prompt": "prompt",
+        "aspect_ratio": "aspect_ratio",
+        "num_images": "num_images"
+      },
+      "outputField": "images[0].url"
+    },
+    {
+      "muapiId": "gpt4o-text-to-image",
+      "category": "t2i",
+      "status": "none",
+      "falSlug": "",
+      "statusReason": "GPT-4o image generation is OpenAI-only; not on fal.",
+      "inputMap": {},
+      "outputField": ""
+    },
+    {
+      "muapiId": "midjourney-v7-text-to-image",
+      "category": "t2i",
+      "status": "none",
+      "falSlug": "",
+      "statusReason": "Midjourney is not available on fal.",
+      "inputMap": {},
+      "outputField": ""
+    },
+    {
+      "muapiId": "flux-schnell",
+      "category": "t2i",
+      "status": "exact",
+      "falSlug": "fal-ai/flux/schnell",
+      "statusReason": "Direct match.",
+      "inputMap": {
+        "prompt": "prompt",
+        "width": "image_size.width",
+        "height": "image_size.height",
+        "num_images": "num_images"
+      },
+      "outputField": "images[0].url"
+    },
+    {
+      "muapiId": "bytedance-seedream-v3",
+      "category": "t2i",
+      "status": "exact",
+      "falSlug": "fal-ai/bytedance/seedream/v3/text-to-image",
+      "statusReason": "Direct match.",
+      "inputMap": {
+        "prompt": "prompt",
+        "aspect_ratio": "aspect_ratio",
+        "num_images": "num_images"
+      },
+      "outputField": "images[0].url"
+    },
+    {
+      "muapiId": "qwen-image",
+      "category": "t2i",
+      "status": "exact",
+      "falSlug": "fal-ai/qwen-image",
+      "statusReason": "Direct match.",
+      "inputMap": {
+        "prompt": "prompt",
+        "width": "width",
+        "height": "height"
+      },
+      "outputField": "images[0].url"
+    },
+    {
+      "muapiId": "flux-pulid",
+      "category": "t2i",
+      "status": "partial",
+      "falSlug": "fal-ai/flux-pulid",
+      "statusReason": "PuLID is primarily i2i on fal (requires reference_image); t2i use requires reference.",
+      "inputMap": {
+        "prompt": "prompt",
+        "reference_image": "reference_image_url"
+      },
+      "outputField": "images[0].url"
+    },
+    {
+      "muapiId": "ideogram-v3-t2i",
+      "category": "t2i",
+      "status": "exact",
+      "falSlug": "fal-ai/ideogram/v3",
+      "statusReason": "Direct match.",
+      "inputMap": {
+        "prompt": "prompt",
+        "aspect_ratio": "aspect_ratio",
+        "style_type": "style_type"
+      },
+      "outputField": "images[0].url"
+    },
+    {
+      "muapiId": "google-imagen4",
+      "category": "t2i",
+      "status": "none",
+      "falSlug": "",
+      "statusReason": "Deprecated on fal; endpoint exists but flagged legacy. [404 on fal — demoted by slug validation 2026-06-26]",
+      "inputMap": {},
+      "outputField": ""
+    },
+    {
+      "muapiId": "google-imagen4-fast",
+      "category": "t2i",
+      "status": "none",
+      "falSlug": "",
+      "statusReason": "Deprecated on fal; endpoint exists but flagged legacy. [404 on fal — demoted by slug validation 2026-06-26]",
+      "inputMap": {},
+      "outputField": ""
+    },
+    {
+      "muapiId": "google-imagen4-ultra",
+      "category": "t2i",
+      "status": "none",
+      "falSlug": "",
+      "statusReason": "Deprecated on fal; endpoint exists but flagged legacy. [404 on fal — demoted by slug validation 2026-06-26]",
+      "inputMap": {},
+      "outputField": ""
+    },
+    {
+      "muapiId": "sdxl-image",
+      "category": "t2i",
+      "status": "partial",
+      "falSlug": "fal-ai/fast-sdxl",
+      "statusReason": "fal uses fast-sdxl; schema is compatible but fal slug differs.",
+      "inputMap": {
+        "prompt": "prompt",
+        "negative_prompt": "negative_prompt",
+        "width": "image_size.width",
+        "height": "image_size.height"
+      },
+      "outputField": "images[0].url"
+    },
+    {
+      "muapiId": "bytedance-seedream-v4",
+      "category": "t2i",
+      "status": "exact",
+      "falSlug": "fal-ai/bytedance/seedream/v4/text-to-image",
+      "statusReason": "Direct match.",
+      "inputMap": {
+        "prompt": "prompt",
+        "aspect_ratio": "aspect_ratio",
+        "num_images": "num_images"
+      },
+      "outputField": "images[0].url"
+    },
+    {
+      "muapiId": "hunyuan-image-2.1",
+      "category": "t2i",
+      "status": "exact",
+      "falSlug": "fal-ai/hunyuan-image/v2.1/text-to-image",
+      "statusReason": "Direct match.",
+      "inputMap": {
+        "prompt": "prompt",
+        "aspect_ratio": "aspect_ratio",
+        "num_images": "num_images"
+      },
+      "outputField": "images[0].url"
+    },
+    {
+      "muapiId": "chroma-image",
+      "category": "t2i",
+      "status": "none",
+      "falSlug": "",
+      "statusReason": "Chroma model not available on fal.",
+      "inputMap": {},
+      "outputField": ""
+    },
+    {
+      "muapiId": "flux-redux",
+      "category": "t2i",
+      "status": "partial",
+      "falSlug": "fal-ai/flux-pro/redux",
+      "statusReason": "Redux requires an input image (image variation), not pure t2i; different params.",
+      "inputMap": {
+        "prompt": "prompt",
+        "image_url": "image_url"
+      },
+      "outputField": "images[0].url"
+    },
+    {
+      "muapiId": "flux-krea-dev",
+      "category": "t2i",
+      "status": "exact",
+      "falSlug": "fal-ai/flux/krea",
+      "statusReason": "Direct match.",
+      "inputMap": {
+        "prompt": "prompt",
+        "aspect_ratio": "aspect_ratio",
+        "num_images": "num_images"
+      },
+      "outputField": "images[0].url"
+    },
+    {
+      "muapiId": "perfect-pony-xl",
+      "category": "t2i",
+      "status": "none",
+      "falSlug": "",
+      "statusReason": "MuAPI-exclusive fine-tune; not on fal.",
+      "inputMap": {},
+      "outputField": ""
+    },
+    {
+      "muapiId": "neta-lumina",
+      "category": "t2i",
+      "status": "none",
+      "falSlug": "",
+      "statusReason": "MuAPI-exclusive fine-tune; not on fal.",
+      "inputMap": {},
+      "outputField": ""
+    },
+    {
+      "muapiId": "wan2.5-text-to-image",
+      "category": "t2i",
+      "status": "exact",
+      "falSlug": "fal-ai/wan-25-preview/text-to-image",
+      "statusReason": "Direct match.",
+      "inputMap": {
+        "prompt": "prompt",
+        "aspect_ratio": "aspect_ratio",
+        "resolution": "resolution"
+      },
+      "outputField": "images[0].url"
+    },
+    {
+      "muapiId": "hunyuan-image-3.0",
+      "category": "t2i",
+      "status": "exact",
+      "falSlug": "fal-ai/hunyuan-image/v3/text-to-image",
+      "statusReason": "Direct match.",
+      "inputMap": {
+        "prompt": "prompt",
+        "aspect_ratio": "aspect_ratio"
+      },
+      "outputField": "images[0].url"
+    },
+    {
+      "muapiId": "leonardoai-phoenix-1.0",
+      "category": "t2i",
+      "status": "none",
+      "falSlug": "",
+      "statusReason": "Leonardo AI not available on fal.",
+      "inputMap": {},
+      "outputField": ""
+    },
+    {
+      "muapiId": "leonardoai-lucid-origin",
+      "category": "t2i",
+      "status": "none",
+      "falSlug": "",
+      "statusReason": "Leonardo AI not available on fal.",
+      "inputMap": {},
+      "outputField": ""
+    },
+    {
+      "muapiId": "reve-text-to-image",
+      "category": "t2i",
+      "status": "none",
+      "falSlug": "",
+      "statusReason": "Direct match. [404 on fal — demoted by slug validation 2026-06-26]",
+      "inputMap": {},
+      "outputField": ""
+    },
+    {
+      "muapiId": "grok-imagine-text-to-image",
+      "category": "t2i",
+      "status": "exact",
+      "falSlug": "xai/grok-imagine-image",
+      "statusReason": "Direct match under xai/ namespace.",
+      "inputMap": {
+        "prompt": "prompt",
+        "aspect_ratio": "aspect_ratio"
+      },
+      "outputField": "images[0].url"
+    },
+    {
+      "muapiId": "nano-banana-pro",
+      "category": "t2i",
+      "status": "exact",
+      "falSlug": "fal-ai/nano-banana-pro",
+      "statusReason": "Direct match.",
+      "inputMap": {
+        "prompt": "prompt",
+        "aspect_ratio": "aspect_ratio"
+      },
+      "outputField": "images[0].url"
+    },
+    {
+      "muapiId": "kling-o1-text-to-image",
+      "category": "t2i",
+      "status": "partial",
+      "falSlug": "fal-ai/kling-image/o1",
+      "statusReason": "On fal, Kling O1 is exclusively image-to-image; t2i requires dummy reference workaround.",
+      "inputMap": {
+        "prompt": "prompt",
+        "image_url": "image_url"
+      },
+      "outputField": "images[0].url"
+    },
+    {
+      "muapiId": "z-image-turbo",
+      "category": "t2i",
+      "status": "exact",
+      "falSlug": "fal-ai/z-image/turbo",
+      "statusReason": "Direct match.",
+      "inputMap": {
+        "prompt": "prompt",
+        "aspect_ratio": "aspect_ratio",
+        "num_images": "num_images"
+      },
+      "outputField": "images[0].url"
+    },
+    {
+      "muapiId": "flux-2-dev",
+      "category": "t2i",
+      "status": "exact",
+      "falSlug": "fal-ai/flux-2",
+      "statusReason": "Direct match.",
+      "inputMap": {
+        "prompt": "prompt",
+        "aspect_ratio": "aspect_ratio",
+        "num_images": "num_images"
+      },
+      "outputField": "images[0].url"
+    },
+    {
+      "muapiId": "flux-2-flex",
+      "category": "t2i",
+      "status": "exact",
+      "falSlug": "fal-ai/flux-2-flex",
+      "statusReason": "Direct match.",
+      "inputMap": {
+        "prompt": "prompt",
+        "aspect_ratio": "aspect_ratio",
+        "num_images": "num_images"
+      },
+      "outputField": "images[0].url"
+    },
+    {
+      "muapiId": "flux-2-pro",
+      "category": "t2i",
+      "status": "exact",
+      "falSlug": "fal-ai/flux-2-pro",
+      "statusReason": "Direct match.",
+      "inputMap": {
+        "prompt": "prompt",
+        "aspect_ratio": "aspect_ratio",
+        "num_images": "num_images"
+      },
+      "outputField": "images[0].url"
+    },
+    {
+      "muapiId": "vidu-q2-text-to-image",
+      "category": "t2i",
+      "status": "exact",
+      "falSlug": "fal-ai/vidu/q2/text-to-image",
+      "statusReason": "Direct match.",
+      "inputMap": {
+        "prompt": "prompt",
+        "aspect_ratio": "aspect_ratio",
+        "duration": "duration"
+      },
+      "outputField": "images[0].url"
+    },
+    {
+      "muapiId": "bytedance-seedream-v4.5",
+      "category": "t2i",
+      "status": "exact",
+      "falSlug": "fal-ai/bytedance/seedream/v4.5/text-to-image",
+      "statusReason": "Direct match.",
+      "inputMap": {
+        "prompt": "prompt",
+        "aspect_ratio": "aspect_ratio",
+        "num_images": "num_images"
+      },
+      "outputField": "images[0].url"
+    },
+    {
+      "muapiId": "gpt-image-1.5",
+      "category": "t2i",
+      "status": "none",
+      "falSlug": "",
+      "statusReason": "GPT-Image-1.5 is OpenAI-only; not on fal.",
+      "inputMap": {},
+      "outputField": ""
+    },
+    {
+      "muapiId": "gpt-image-2",
+      "category": "t2i",
+      "status": "exact",
+      "falSlug": "openai/gpt-image-2",
+      "statusReason": "Direct match under openai/ namespace.",
+      "inputMap": {
+        "prompt": "prompt",
+        "aspect_ratio": "aspect_ratio",
+        "num_images": "num_images"
+      },
+      "outputField": "images[0].url"
+    },
+    {
+      "muapiId": "wan2.6-text-to-image",
+      "category": "t2i",
+      "status": "exact",
+      "falSlug": "wan/v2.6/text-to-image",
+      "statusReason": "Direct match (no fal-ai/ prefix).",
+      "inputMap": {
+        "prompt": "prompt",
+        "aspect_ratio": "aspect_ratio"
+      },
+      "outputField": "images[0].url"
+    },
+    {
+      "muapiId": "qwen-text-to-image-2512",
+      "category": "t2i",
+      "status": "exact",
+      "falSlug": "fal-ai/qwen-image-2/text-to-image",
+      "statusReason": "Direct match.",
+      "inputMap": {
+        "prompt": "prompt",
+        "width": "width",
+        "height": "height"
+      },
+      "outputField": "images[0].url"
+    },
+    {
+      "muapiId": "flux-2-klein-4b",
+      "category": "t2i",
+      "status": "exact",
+      "falSlug": "fal-ai/flux-2/klein/4b",
+      "statusReason": "Direct match.",
+      "inputMap": {
+        "prompt": "prompt",
+        "aspect_ratio": "aspect_ratio",
+        "num_images": "num_images"
+      },
+      "outputField": "images[0].url"
+    },
+    {
+      "muapiId": "flux-2-klein-9b",
+      "category": "t2i",
+      "status": "exact",
+      "falSlug": "fal-ai/flux-2/klein/9b",
+      "statusReason": "Direct match.",
+      "inputMap": {
+        "prompt": "prompt",
+        "aspect_ratio": "aspect_ratio",
+        "num_images": "num_images"
+      },
+      "outputField": "images[0].url"
+    },
+    {
+      "muapiId": "z-image-base",
+      "category": "t2i",
+      "status": "none",
+      "falSlug": "",
+      "statusReason": "No z-image base variant on fal (only turbo).",
+      "inputMap": {},
+      "outputField": ""
+    },
+    {
+      "muapiId": "nano-banana-2",
+      "category": "t2i",
+      "status": "exact",
+      "falSlug": "fal-ai/nano-banana-2",
+      "statusReason": "Direct match.",
+      "inputMap": {
+        "prompt": "prompt",
+        "aspect_ratio": "aspect_ratio"
+      },
+      "outputField": "images[0].url"
+    },
+    {
+      "muapiId": "seedream-5.0",
+      "category": "t2i",
+      "status": "partial",
+      "falSlug": "fal-ai/bytedance/seedream/v5/lite/text-to-image",
+      "statusReason": "Only lite variant of Seedream 5.0 on fal; no full/pro version.",
+      "inputMap": {
+        "prompt": "prompt",
+        "aspect_ratio": "aspect_ratio"
+      },
+      "outputField": "images[0].url"
+    },
+    {
+      "muapiId": "minimax-image-01",
+      "category": "t2i",
+      "status": "exact",
+      "falSlug": "fal-ai/minimax/image-01",
+      "statusReason": "Direct match.",
+      "inputMap": {
+        "prompt": "prompt",
+        "aspect_ratio": "aspect_ratio",
+        "num_images": "num_images"
+      },
+      "outputField": "images[0].url"
+    },
+    {
+      "muapiId": "seedance-lite-t2v",
+      "category": "t2v",
+      "status": "partial",
+      "falSlug": "fal-ai/bytedance/seedance/v1/lite/text-to-video",
+      "statusReason": "Slug exists but is deprecated; auto-reroutes to v1/pro/fast.",
+      "inputMap": {
+        "prompt": "prompt",
+        "aspect_ratio": "aspect_ratio",
+        "resolution": "resolution",
+        "duration": "duration"
+      },
+      "outputField": "video.url"
+    },
+    {
+      "muapiId": "seedance-pro-t2v",
+      "category": "t2v",
+      "status": "exact",
+      "falSlug": "fal-ai/bytedance/seedance/v1/pro/text-to-video",
+      "statusReason": "Direct match.",
+      "inputMap": {
+        "prompt": "prompt",
+        "aspect_ratio": "aspect_ratio",
+        "resolution": "resolution",
+        "duration": "duration"
+      },
+      "outputField": "video.url"
+    },
+    {
+      "muapiId": "seedance-pro-t2v-fast",
+      "category": "t2v",
+      "status": "exact",
+      "falSlug": "fal-ai/bytedance/seedance/v1/pro/fast/text-to-video",
+      "statusReason": "Direct match.",
+      "inputMap": {
+        "prompt": "prompt",
+        "aspect_ratio": "aspect_ratio",
+        "resolution": "resolution",
+        "duration": "duration"
+      },
+      "outputField": "video.url"
+    },
+    {
+      "muapiId": "seedance-v1.5-pro-t2v",
+      "category": "t2v",
+      "status": "exact",
+      "falSlug": "fal-ai/bytedance/seedance/v1.5/pro/text-to-video",
+      "statusReason": "Direct match.",
+      "inputMap": {
+        "prompt": "prompt",
+        "aspect_ratio": "aspect_ratio",
+        "resolution": "resolution",
+        "duration": "duration",
+        "camera_fixed": "camera_fixed",
+        "generate_audio": "generate_audio"
+      },
+      "outputField": "video.url"
+    },
+    {
+      "muapiId": "seedance-v1.5-pro-t2v-fast",
+      "category": "t2v",
+      "status": "none",
+      "falSlug": "",
+      "statusReason": "No v1.5/pro/fast t2v endpoint on fal; only v1/pro/fast and v1.5/pro exist.",
+      "inputMap": {},
+      "outputField": ""
+    },
+    {
+      "muapiId": "seedance-v2.0-t2v",
+      "category": "t2v",
+      "status": "exact",
+      "falSlug": "bytedance/seedance-2.0/text-to-video",
+      "statusReason": "Direct match (no fal-ai/ prefix for v2.0).",
+      "inputMap": {
+        "prompt": "prompt",
+        "aspect_ratio": "aspect_ratio",
+        "resolution": "resolution",
+        "duration": "duration",
+        "generate_audio": "generate_audio"
+      },
+      "outputField": "video.url"
+    },
+    {
+      "muapiId": "seedance-v2.0-extend",
+      "category": "t2v",
+      "status": "none",
+      "falSlug": "",
+      "statusReason": "MuAPI-specific video-extension workflow (uses request_id); no fal equivalent.",
+      "inputMap": {},
+      "outputField": ""
+    },
+    {
+      "muapiId": "kling-v2.1-master-t2v",
+      "category": "t2v",
+      "status": "exact",
+      "falSlug": "fal-ai/kling-video/v2.1/master/text-to-video",
+      "statusReason": "Direct match.",
+      "inputMap": {
+        "prompt": "prompt",
+        "aspect_ratio": "aspect_ratio",
+        "duration": "duration",
+        "negative_prompt": "negative_prompt",
+        "cfg_scale": "cfg_scale"
+      },
+      "outputField": "video.url"
+    },
+    {
+      "muapiId": "kling-v2.5-turbo-pro-t2v",
+      "category": "t2v",
+      "status": "exact",
+      "falSlug": "fal-ai/kling-video/v2.5-turbo/pro/text-to-video",
+      "statusReason": "Direct match.",
+      "inputMap": {
+        "prompt": "prompt",
+        "aspect_ratio": "aspect_ratio",
+        "duration": "duration"
+      },
+      "outputField": "video.url"
+    },
+    {
+      "muapiId": "kling-v2.6-pro-t2v",
+      "category": "t2v",
+      "status": "exact",
+      "falSlug": "fal-ai/kling-video/v2.6/pro/text-to-video",
+      "statusReason": "Direct match.",
+      "inputMap": {
+        "prompt": "prompt",
+        "aspect_ratio": "aspect_ratio",
+        "duration": "duration",
+        "negative_prompt": "negative_prompt",
+        "cfg_scale": "cfg_scale",
+        "generate_audio": "generate_audio"
+      },
+      "outputField": "video.url"
+    },
+    {
+      "muapiId": "kling-o1-text-to-video",
+      "category": "t2v",
+      "status": "none",
+      "falSlug": "",
+      "statusReason": "Kling O1 on fal has no t2v endpoint; only i2v and ref modes.",
+      "inputMap": {},
+      "outputField": ""
+    },
+    {
+      "muapiId": "kling-v3.0-pro-text-to-video",
+      "category": "t2v",
+      "status": "exact",
+      "falSlug": "fal-ai/kling-video/v3/pro/text-to-video",
+      "statusReason": "Direct match.",
+      "inputMap": {
+        "prompt": "prompt",
+        "aspect_ratio": "aspect_ratio",
+        "duration": "duration",
+        "generate_audio": "generate_audio",
+        "cfg_scale": "cfg_scale",
+        "negative_prompt": "negative_prompt"
+      },
+      "outputField": "video.url"
+    },
+    {
+      "muapiId": "kling-v3.0-standard-text-to-video",
+      "category": "t2v",
+      "status": "exact",
+      "falSlug": "fal-ai/kling-video/v3/standard/text-to-video",
+      "statusReason": "Direct match.",
+      "inputMap": {
+        "prompt": "prompt",
+        "aspect_ratio": "aspect_ratio",
+        "duration": "duration",
+        "generate_audio": "generate_audio"
+      },
+      "outputField": "video.url"
+    },
+    {
+      "muapiId": "veo3-text-to-video",
+      "category": "t2v",
+      "status": "exact",
+      "falSlug": "fal-ai/veo3",
+      "statusReason": "Direct match.",
+      "inputMap": {
+        "prompt": "prompt",
+        "aspect_ratio": "aspect_ratio",
+        "duration": "duration",
+        "resolution": "resolution",
+        "generate_audio": "generate_audio",
+        "negative_prompt": "negative_prompt"
+      },
+      "outputField": "video.url"
+    },
+    {
+      "muapiId": "veo3-fast-text-to-video",
+      "category": "t2v",
+      "status": "exact",
+      "falSlug": "fal-ai/veo3/fast",
+      "statusReason": "Direct match.",
+      "inputMap": {
+        "prompt": "prompt",
+        "aspect_ratio": "aspect_ratio",
+        "generate_audio": "generate_audio"
+      },
+      "outputField": "video.url"
+    },
+    {
+      "muapiId": "veo3.1-text-to-video",
+      "category": "t2v",
+      "status": "exact",
+      "falSlug": "fal-ai/veo3.1",
+      "statusReason": "Direct match.",
+      "inputMap": {
+        "prompt": "prompt",
+        "aspect_ratio": "aspect_ratio",
+        "duration": "duration",
+        "resolution": "resolution",
+        "generate_audio": "generate_audio",
+        "negative_prompt": "negative_prompt"
+      },
+      "outputField": "video.url"
+    },
+    {
+      "muapiId": "veo3.1-fast-text-to-video",
+      "category": "t2v",
+      "status": "exact",
+      "falSlug": "fal-ai/veo3.1/fast",
+      "statusReason": "Direct match.",
+      "inputMap": {
+        "prompt": "prompt",
+        "aspect_ratio": "aspect_ratio",
+        "duration": "duration",
+        "resolution": "resolution",
+        "generate_audio": "generate_audio"
+      },
+      "outputField": "video.url"
+    },
+    {
+      "muapiId": "veo3.1-lite-text-to-video",
+      "category": "t2v",
+      "status": "exact",
+      "falSlug": "fal-ai/veo3.1/lite",
+      "statusReason": "Direct match.",
+      "inputMap": {
+        "prompt": "prompt",
+        "aspect_ratio": "aspect_ratio",
+        "duration": "duration",
+        "resolution": "resolution"
+      },
+      "outputField": "video.url"
+    },
+    {
+      "muapiId": "runway-text-to-video",
+      "category": "t2v",
+      "status": "none",
+      "falSlug": "",
+      "statusReason": "Runway on fal is i2v only (Gen3 Turbo); no t2v endpoint.",
+      "inputMap": {},
+      "outputField": ""
+    },
+    {
+      "muapiId": "wan2.1-text-to-video",
+      "category": "t2v",
+      "status": "exact",
+      "falSlug": "fal-ai/wan-t2v",
+      "statusReason": "Direct match; fal uses legacy slug wan-t2v.",
+      "inputMap": {
+        "prompt": "prompt",
+        "aspect_ratio": "aspect_ratio",
+        "resolution": "resolution",
+        "num_frames": "num_frames",
+        "frames_per_second": "frames_per_second"
+      },
+      "outputField": "video.url"
+    },
+    {
+      "muapiId": "wan2.2-text-to-video",
+      "category": "t2v",
+      "status": "exact",
+      "falSlug": "fal-ai/wan/v2.2-a14b/text-to-video",
+      "statusReason": "Direct match.",
+      "inputMap": {
+        "prompt": "prompt",
+        "aspect_ratio": "aspect_ratio",
+        "resolution": "resolution",
+        "num_frames": "num_frames",
+        "frames_per_second": "frames_per_second",
+        "guidance_scale": "guidance_scale"
+      },
+      "outputField": "video.url"
+    },
+    {
+      "muapiId": "wan2.2-5b-fast-t2v",
+      "category": "t2v",
+      "status": "exact",
+      "falSlug": "fal-ai/wan/v2.2-5b/text-to-video/fast-wan",
+      "statusReason": "Direct match.",
+      "inputMap": {
+        "prompt": "prompt",
+        "aspect_ratio": "aspect_ratio",
+        "resolution": "resolution",
+        "num_frames": "num_frames",
+        "frames_per_second": "frames_per_second"
+      },
+      "outputField": "video.url"
+    },
+    {
+      "muapiId": "wan2.5-text-to-video",
+      "category": "t2v",
+      "status": "exact",
+      "falSlug": "fal-ai/wan-25-preview/text-to-video",
+      "statusReason": "Direct match.",
+      "inputMap": {
+        "prompt": "prompt",
+        "aspect_ratio": "aspect_ratio",
+        "resolution": "resolution",
+        "duration": "duration",
+        "audio_url": "audio_url"
+      },
+      "outputField": "video.url"
+    },
+    {
+      "muapiId": "wan2.5-text-to-video-fast",
+      "category": "t2v",
+      "status": "none",
+      "falSlug": "",
+      "statusReason": "No fast Wan 2.5 t2v variant on fal.",
+      "inputMap": {},
+      "outputField": ""
+    },
+    {
+      "muapiId": "wan2.6-text-to-video",
+      "category": "t2v",
+      "status": "exact",
+      "falSlug": "wan/v2.6/text-to-video",
+      "statusReason": "Direct match (no fal-ai/ prefix).",
+      "inputMap": {
+        "prompt": "prompt",
+        "audio_url": "audio_url"
+      },
+      "outputField": "video.url"
+    },
+    {
+      "muapiId": "hunyuan-text-to-video",
+      "category": "t2v",
+      "status": "exact",
+      "falSlug": "fal-ai/hunyuan-video",
+      "statusReason": "Direct match.",
+      "inputMap": {
+        "prompt": "prompt",
+        "aspect_ratio": "aspect_ratio",
+        "resolution": "resolution",
+        "num_frames": "num_frames",
+        "pro_mode": "pro_mode"
+      },
+      "outputField": "video.url"
+    },
+    {
+      "muapiId": "hunyuan-fast-text-to-video",
+      "category": "t2v",
+      "status": "partial",
+      "falSlug": "fal-ai/hunyuan-video-v1.5/text-to-video",
+      "statusReason": "No hunyuan/fast endpoint; closest is HunyuanVideo v1.5 (newer, faster model).",
+      "inputMap": {
+        "prompt": "prompt",
+        "aspect_ratio": "aspect_ratio"
+      },
+      "outputField": "video.url"
+    },
+    {
+      "muapiId": "pixverse-v4.5-t2v",
+      "category": "t2v",
+      "status": "exact",
+      "falSlug": "fal-ai/pixverse/v4.5/text-to-video",
+      "statusReason": "Direct match.",
+      "inputMap": {
+        "prompt": "prompt",
+        "aspect_ratio": "aspect_ratio",
+        "duration": "duration",
+        "resolution": "resolution"
+      },
+      "outputField": "video.url"
+    },
+    {
+      "muapiId": "pixverse-v5-t2v",
+      "category": "t2v",
+      "status": "exact",
+      "falSlug": "fal-ai/pixverse/v5/text-to-video",
+      "statusReason": "Direct match.",
+      "inputMap": {
+        "prompt": "prompt",
+        "aspect_ratio": "aspect_ratio",
+        "duration": "duration",
+        "resolution": "resolution"
+      },
+      "outputField": "video.url"
+    },
+    {
+      "muapiId": "pixverse-v5.5-t2v",
+      "category": "t2v",
+      "status": "exact",
+      "falSlug": "fal-ai/pixverse/v5.5/text-to-video",
+      "statusReason": "Direct match.",
+      "inputMap": {
+        "prompt": "prompt",
+        "aspect_ratio": "aspect_ratio",
+        "duration": "duration",
+        "resolution": "resolution",
+        "negative_prompt": "negative_prompt",
+        "style": "style",
+        "generate_audio_switch": "generate_audio_switch"
+      },
+      "outputField": "video.url"
+    },
+    {
+      "muapiId": "minimax-hailuo-02-standard-t2v",
+      "category": "t2v",
+      "status": "exact",
+      "falSlug": "fal-ai/minimax/hailuo-02/standard/text-to-video",
+      "statusReason": "Direct match.",
+      "inputMap": {
+        "prompt": "prompt",
+        "duration": "duration",
+        "prompt_optimizer": "prompt_optimizer"
+      },
+      "outputField": "video.url"
+    },
+    {
+      "muapiId": "minimax-hailuo-02-pro-t2v",
+      "category": "t2v",
+      "status": "exact",
+      "falSlug": "fal-ai/minimax/hailuo-02/pro/text-to-video",
+      "statusReason": "Direct match.",
+      "inputMap": {
+        "prompt": "prompt",
+        "duration": "duration",
+        "prompt_optimizer": "prompt_optimizer"
+      },
+      "outputField": "video.url"
+    },
+    {
+      "muapiId": "minimax-hailuo-2.3-pro-t2v",
+      "category": "t2v",
+      "status": "exact",
+      "falSlug": "fal-ai/minimax/hailuo-2.3/pro/text-to-video",
+      "statusReason": "Direct match.",
+      "inputMap": {
+        "prompt": "prompt",
+        "prompt_optimizer": "prompt_optimizer"
+      },
+      "outputField": "video.url"
+    },
+    {
+      "muapiId": "minimax-hailuo-2.3-standard-t2v",
+      "category": "t2v",
+      "status": "exact",
+      "falSlug": "fal-ai/minimax/hailuo-2.3/standard/text-to-video",
+      "statusReason": "Direct match.",
+      "inputMap": {
+        "prompt": "prompt",
+        "duration": "duration",
+        "prompt_optimizer": "prompt_optimizer"
+      },
+      "outputField": "video.url"
+    },
+    {
+      "muapiId": "openai-sora",
+      "category": "t2v",
+      "status": "none",
+      "falSlug": "",
+      "statusReason": "OpenAI Sora is OpenAI-only; not on fal.",
+      "inputMap": {},
+      "outputField": ""
+    },
+    {
+      "muapiId": "openai-sora-2-text-to-video",
+      "category": "t2v",
+      "status": "none",
+      "falSlug": "",
+      "statusReason": "OpenAI Sora 2 is OpenAI-only; not on fal.",
+      "inputMap": {},
+      "outputField": ""
+    },
+    {
+      "muapiId": "openai-sora-2-pro-text-to-video",
+      "category": "t2v",
+      "status": "none",
+      "falSlug": "",
+      "statusReason": "OpenAI Sora 2 Pro is OpenAI-only; not on fal.",
+      "inputMap": {},
+      "outputField": ""
+    },
+    {
+      "muapiId": "vidu-v2.0-t2v",
+      "category": "t2v",
+      "status": "partial",
+      "falSlug": "fal-ai/vidu/q2/text-to-video",
+      "statusReason": "MuAPI calls it vidu-v2.0; fal labels the same model as Vidu Q2.",
+      "inputMap": {
+        "prompt": "prompt",
+        "aspect_ratio": "aspect_ratio",
+        "duration": "duration",
+        "resolution": "resolution",
+        "movement_amplitude": "movement_amplitude"
+      },
+      "outputField": "video.url"
+    },
+    {
+      "muapiId": "ovi-text-to-video",
+      "category": "t2v",
+      "status": "exact",
+      "falSlug": "fal-ai/ovi",
+      "statusReason": "Direct match.",
+      "inputMap": {
+        "prompt": "prompt"
+      },
+      "outputField": "video.url"
+    },
+    {
+      "muapiId": "grok-imagine-text-to-video",
+      "category": "t2v",
+      "status": "exact",
+      "falSlug": "xai/grok-imagine-video/text-to-video",
+      "statusReason": "Direct match under xai/ namespace.",
+      "inputMap": {
+        "prompt": "prompt",
+        "aspect_ratio": "aspect_ratio",
+        "duration": "duration",
+        "resolution": "resolution"
+      },
+      "outputField": "video.url"
+    },
+    {
+      "muapiId": "ltx-2-pro-text-to-video",
+      "category": "t2v",
+      "status": "exact",
+      "falSlug": "fal-ai/ltx-2/text-to-video",
+      "statusReason": "Direct match.",
+      "inputMap": {
+        "prompt": "prompt",
+        "resolution": "resolution",
+        "duration": "duration"
+      },
+      "outputField": "video.url"
+    },
+    {
+      "muapiId": "ltx-2-fast-text-to-video",
+      "category": "t2v",
+      "status": "exact",
+      "falSlug": "fal-ai/ltx-2/text-to-video/fast",
+      "statusReason": "Direct match.",
+      "inputMap": {
+        "prompt": "prompt",
+        "resolution": "resolution",
+        "duration": "duration"
+      },
+      "outputField": "video.url"
+    },
+    {
+      "muapiId": "ltx-2-19b-text-to-video",
+      "category": "t2v",
+      "status": "exact",
+      "falSlug": "fal-ai/ltx-2-19b/text-to-video",
+      "statusReason": "Direct match.",
+      "inputMap": {
+        "prompt": "prompt",
+        "generate_audio": "generate_audio"
+      },
+      "outputField": "video.url"
+    },
+    {
+      "muapiId": "ai-image-upscaler",
+      "category": "i2i",
+      "status": "partial",
+      "falSlug": "fal-ai/clarity-upscaler",
+      "statusReason": "Generic upscaler; fal's clarity-upscaler is closest but param names differ.",
+      "inputMap": {
+        "image_url": "image_url",
+        "scale": "upscaling_factor"
+      },
+      "outputField": "images[0].url"
+    },
+    {
+      "muapiId": "ai-image-face-swap",
+      "category": "i2i",
+      "status": "none",
+      "falSlug": "",
+      "statusReason": "Face swap not available on fal.",
+      "inputMap": {},
+      "outputField": ""
+    },
+    {
+      "muapiId": "ai-dress-change",
+      "category": "i2i",
+      "status": "none",
+      "falSlug": "",
+      "statusReason": "MuAPI-proprietary feature; no fal equivalent.",
+      "inputMap": {},
+      "outputField": ""
+    },
+    {
+      "muapiId": "ai-background-remover",
+      "category": "i2i",
+      "status": "partial",
+      "falSlug": "fal-ai/birefnet",
+      "statusReason": "BiRefNet on fal removes backgrounds; interface differs.",
+      "inputMap": {
+        "image_url": "image_url"
+      },
+      "outputField": "images[0].url"
+    },
+    {
+      "muapiId": "ai-product-shot",
+      "category": "i2i",
+      "status": "partial",
+      "falSlug": "fal-ai/bria/product-shot",
+      "statusReason": "fal has Bria product shot; prompt/bg param names differ.",
+      "inputMap": {
+        "image_url": "image_url",
+        "prompt": "scene_description"
+      },
+      "outputField": "images[0].url"
+    },
+    {
+      "muapiId": "ai-skin-enhancer",
+      "category": "i2i",
+      "status": "none",
+      "falSlug": "",
+      "statusReason": "MuAPI-proprietary feature; no fal equivalent.",
+      "inputMap": {},
+      "outputField": ""
+    },
+    {
+      "muapiId": "ai-color-photo",
+      "category": "i2i",
+      "status": "none",
+      "falSlug": "",
+      "statusReason": "MuAPI-proprietary colorization; no fal equivalent.",
+      "inputMap": {},
+      "outputField": ""
+    },
+    {
+      "muapiId": "flux-kontext-dev-i2i",
+      "category": "i2i",
+      "status": "exact",
+      "falSlug": "fal-ai/flux-kontext/dev",
+      "statusReason": "Direct match.",
+      "inputMap": {
+        "image_url": "image_url",
+        "prompt": "prompt",
+        "aspect_ratio": "aspect_ratio"
+      },
+      "outputField": "images[0].url"
+    },
+    {
+      "muapiId": "ai-product-photography",
+      "category": "i2i",
+      "status": "partial",
+      "falSlug": "fal-ai/bria/product-shot",
+      "statusReason": "Closest fal equivalent; param mapping needed.",
+      "inputMap": {
+        "image_url": "image_url",
+        "prompt": "scene_description"
+      },
+      "outputField": "images[0].url"
+    },
+    {
+      "muapiId": "ai-ghibli-style",
+      "category": "i2i",
+      "status": "exact",
+      "falSlug": "fal-ai/ghiblify",
+      "statusReason": "Direct match.",
+      "inputMap": {
+        "image_url": "image_url"
+      },
+      "outputField": "images[0].url"
+    },
+    {
+      "muapiId": "ai-image-extension",
+      "category": "i2i",
+      "status": "none",
+      "falSlug": "",
+      "statusReason": "MuAPI-proprietary outpainting; no direct fal equivalent.",
+      "inputMap": {},
+      "outputField": ""
+    },
+    {
+      "muapiId": "ai-object-eraser",
+      "category": "i2i",
+      "status": "partial",
+      "falSlug": "fal-ai/inpaint",
+      "statusReason": "fal inpainting can erase objects; mask handling param names differ.",
+      "inputMap": {
+        "image_url": "image_url",
+        "mask_url": "mask_image_url"
+      },
+      "outputField": "images[0].url"
+    },
+    {
+      "muapiId": "flux-kontext-pro-i2i",
+      "category": "i2i",
+      "status": "exact",
+      "falSlug": "fal-ai/flux-pro/kontext",
+      "statusReason": "Direct match.",
+      "inputMap": {
+        "image_url": "image_url",
+        "prompt": "prompt",
+        "aspect_ratio": "aspect_ratio"
+      },
+      "outputField": "images[0].url"
+    },
+    {
+      "muapiId": "flux-kontext-max-i2i",
+      "category": "i2i",
+      "status": "exact",
+      "falSlug": "fal-ai/flux-pro/kontext/max",
+      "statusReason": "Direct match.",
+      "inputMap": {
+        "image_url": "image_url",
+        "prompt": "prompt",
+        "aspect_ratio": "aspect_ratio"
+      },
+      "outputField": "images[0].url"
+    },
+    {
+      "muapiId": "gpt4o-image-to-image",
+      "category": "i2i",
+      "status": "none",
+      "falSlug": "",
+      "statusReason": "GPT-4o i2i is OpenAI-only; not on fal.",
+      "inputMap": {},
+      "outputField": ""
+    },
+    {
+      "muapiId": "gpt4o-edit",
+      "category": "i2i",
+      "status": "none",
+      "falSlug": "",
+      "statusReason": "GPT-4o edit is OpenAI-only; not on fal.",
+      "inputMap": {},
+      "outputField": ""
+    },
+    {
+      "muapiId": "midjourney-v7-image-to-image",
+      "category": "i2i",
+      "status": "none",
+      "falSlug": "",
+      "statusReason": "Midjourney is not available on fal.",
+      "inputMap": {},
+      "outputField": ""
+    },
+    {
+      "muapiId": "bytedance-seededit-v3",
+      "category": "i2i",
+      "status": "exact",
+      "falSlug": "fal-ai/bytedance/seededit/v3/edit-image",
+      "statusReason": "Matches; fal endpoint is deprecated — auto-routes to newer SeedEdit.",
+      "inputMap": {
+        "image_url": "image_url",
+        "prompt": "prompt"
+      },
+      "outputField": "images[0].url"
+    },
+    {
+      "muapiId": "midjourney-v7-style-reference",
+      "category": "i2i",
+      "status": "none",
+      "falSlug": "",
+      "statusReason": "Midjourney is not available on fal.",
+      "inputMap": {},
+      "outputField": ""
+    },
+    {
+      "muapiId": "midjourney-v7-omni-reference",
+      "category": "i2i",
+      "status": "none",
+      "falSlug": "",
+      "statusReason": "Midjourney is not available on fal.",
+      "inputMap": {},
+      "outputField": ""
+    },
+    {
+      "muapiId": "minimax-image-01-subject-reference",
+      "category": "i2i",
+      "status": "exact",
+      "falSlug": "fal-ai/minimax/image-01/subject-reference",
+      "statusReason": "Direct match.",
+      "inputMap": {
+        "image_url": "subject_image_url",
+        "prompt": "prompt"
+      },
+      "outputField": "images[0].url"
+    },
+    {
+      "muapiId": "ideogram-character",
+      "category": "i2i",
+      "status": "exact",
+      "falSlug": "fal-ai/ideogram/character",
+      "statusReason": "Direct match.",
+      "inputMap": {
+        "image_url": "image_url",
+        "prompt": "prompt"
+      },
+      "outputField": "images[0].url"
+    },
+    {
+      "muapiId": "flux-pulid",
+      "category": "i2i",
+      "status": "exact",
+      "falSlug": "fal-ai/flux-pulid",
+      "statusReason": "Direct match.",
+      "inputMap": {
+        "reference_image_url": "reference_image_url",
+        "prompt": "prompt",
+        "num_images": "num_images"
+      },
+      "outputField": "images[0].url"
+    },
+    {
+      "muapiId": "qwen-image-edit",
+      "category": "i2i",
+      "status": "exact",
+      "falSlug": "fal-ai/qwen-image-edit",
+      "statusReason": "Direct match.",
+      "inputMap": {
+        "image_url": "image_url",
+        "prompt": "prompt"
+      },
+      "outputField": "images[0].url"
+    },
+    {
+      "muapiId": "image-effects",
+      "category": "i2i",
+      "status": "none",
+      "falSlug": "",
+      "statusReason": "MuAPI-proprietary effects pipeline; no fal equivalent.",
+      "inputMap": {},
+      "outputField": ""
+    },
+    {
+      "muapiId": "nano-banana-edit",
+      "category": "i2i",
+      "status": "exact",
+      "falSlug": "fal-ai/nano-banana/edit",
+      "statusReason": "Direct match.",
+      "inputMap": {
+        "image_url": "image_url",
+        "prompt": "prompt"
+      },
+      "outputField": "images[0].url"
+    },
+    {
+      "muapiId": "ideogram-v3-reframe",
+      "category": "i2i",
+      "status": "exact",
+      "falSlug": "fal-ai/ideogram/v3/reframe",
+      "statusReason": "Direct match.",
+      "inputMap": {
+        "image_url": "image_url",
+        "aspect_ratio": "resolution"
+      },
+      "outputField": "images[0].url"
+    },
+    {
+      "muapiId": "bytedance-seedream-edit-v4",
+      "category": "i2i",
+      "status": "exact",
+      "falSlug": "fal-ai/bytedance/seedream/v4/edit",
+      "statusReason": "Direct match.",
+      "inputMap": {
+        "image_url": "image_url",
+        "prompt": "prompt"
+      },
+      "outputField": "images[0].url"
+    },
+    {
+      "muapiId": "nano-banana-effects",
+      "category": "i2i",
+      "status": "none",
+      "falSlug": "",
+      "statusReason": "MuAPI-proprietary effects; no fal equivalent.",
+      "inputMap": {},
+      "outputField": ""
+    },
+    {
+      "muapiId": "flux-kontext-effects",
+      "category": "i2i",
+      "status": "partial",
+      "falSlug": "fal-ai/flux-pro/kontext",
+      "statusReason": "Closest match is flux-pro/kontext; effects-specific params differ.",
+      "inputMap": {
+        "image_url": "image_url",
+        "prompt": "prompt"
+      },
+      "outputField": "images[0].url"
+    },
+    {
+      "muapiId": "flux-redux",
+      "category": "i2i",
+      "status": "partial",
+      "falSlug": "fal-ai/flux-pro/redux",
+      "statusReason": "Redux requires input image; variation strength params differ from MuAPI.",
+      "inputMap": {
+        "image_url": "image_url",
+        "prompt": "prompt"
+      },
+      "outputField": "images[0].url"
+    },
+    {
+      "muapiId": "qwen-image-edit-plus",
+      "category": "i2i",
+      "status": "exact",
+      "falSlug": "fal-ai/qwen-image-edit-plus",
+      "statusReason": "Direct match.",
+      "inputMap": {
+        "image_url": "image_url",
+        "prompt": "prompt"
+      },
+      "outputField": "images[0].url"
+    },
+    {
+      "muapiId": "wan2.5-image-edit",
+      "category": "i2i",
+      "status": "exact",
+      "falSlug": "fal-ai/wan-25-preview/image-to-image",
+      "statusReason": "Direct match.",
+      "inputMap": {
+        "image_url": "image_url",
+        "prompt": "prompt",
+        "aspect_ratio": "aspect_ratio"
+      },
+      "outputField": "images[0].url"
+    },
+    {
+      "muapiId": "reve-image-edit",
+      "category": "i2i",
+      "status": "none",
+      "falSlug": "",
+      "statusReason": "Direct match. [404 on fal — demoted by slug validation 2026-06-26]",
+      "inputMap": {},
+      "outputField": ""
+    },
+    {
+      "muapiId": "topaz-image-upscale",
+      "category": "i2i",
+      "status": "exact",
+      "falSlug": "fal-ai/topaz/upscale/image",
+      "statusReason": "Direct match.",
+      "inputMap": {
+        "image_url": "image_url",
+        "scale": "scale"
+      },
+      "outputField": "images[0].url"
+    },
+    {
+      "muapiId": "seedvr2-image-upscale",
+      "category": "i2i",
+      "status": "exact",
+      "falSlug": "fal-ai/seedvr/upscale/image",
+      "statusReason": "Direct match.",
+      "inputMap": {
+        "image_url": "image_url"
+      },
+      "outputField": "images[0].url"
+    },
+    {
+      "muapiId": "qwen-image-edit-plus-lora",
+      "category": "i2i",
+      "status": "partial",
+      "falSlug": "fal-ai/qwen-image-edit-plus",
+      "statusReason": "Base endpoint matches; fal does not expose a LoRA variant — lora param ignored.",
+      "inputMap": {
+        "image_url": "image_url",
+        "prompt": "prompt"
+      },
+      "outputField": "images[0].url"
+    },
+    {
+      "muapiId": "nano-banana-pro-edit",
+      "category": "i2i",
+      "status": "exact",
+      "falSlug": "fal-ai/nano-banana-pro/edit",
+      "statusReason": "Direct match.",
+      "inputMap": {
+        "image_url": "image_url",
+        "prompt": "prompt"
+      },
+      "outputField": "images[0].url"
+    },
+    {
+      "muapiId": "image-passthrough",
+      "category": "i2i",
+      "status": "none",
+      "falSlug": "",
+      "statusReason": "MuAPI internal passthrough utility; no fal equivalent.",
+      "inputMap": {},
+      "outputField": ""
+    },
+    {
+      "muapiId": "kling-o1-edit-image",
+      "category": "i2i",
+      "status": "exact",
+      "falSlug": "fal-ai/kling-image/o1",
+      "statusReason": "Direct match.",
+      "inputMap": {
+        "image_url": "image_url",
+        "prompt": "prompt",
+        "aspect_ratio": "aspect_ratio"
+      },
+      "outputField": "images[0].url"
+    },
+    {
+      "muapiId": "flux-2-dev-edit",
+      "category": "i2i",
+      "status": "exact",
+      "falSlug": "fal-ai/flux-2/edit",
+      "statusReason": "Direct match.",
+      "inputMap": {
+        "image_url": "image_url",
+        "prompt": "prompt"
+      },
+      "outputField": "images[0].url"
+    },
+    {
+      "muapiId": "flux-2-flex-edit",
+      "category": "i2i",
+      "status": "exact",
+      "falSlug": "fal-ai/flux-2-flex/edit",
+      "statusReason": "Direct match.",
+      "inputMap": {
+        "image_url": "image_url",
+        "prompt": "prompt"
+      },
+      "outputField": "images[0].url"
+    },
+    {
+      "muapiId": "flux-2-pro-edit",
+      "category": "i2i",
+      "status": "exact",
+      "falSlug": "fal-ai/flux-2-pro/edit",
+      "statusReason": "Direct match.",
+      "inputMap": {
+        "image_url": "image_url",
+        "prompt": "prompt"
+      },
+      "outputField": "images[0].url"
+    },
+    {
+      "muapiId": "vidu-q2-reference-to-image",
+      "category": "i2i",
+      "status": "exact",
+      "falSlug": "fal-ai/vidu/q2/reference-to-image",
+      "statusReason": "Direct match.",
+      "inputMap": {
+        "image_url": "image_url",
+        "prompt": "prompt",
+        "aspect_ratio": "aspect_ratio"
+      },
+      "outputField": "images[0].url"
+    },
+    {
+      "muapiId": "bytedance-seedream-v4.5-edit",
+      "category": "i2i",
+      "status": "exact",
+      "falSlug": "fal-ai/bytedance/seedream/v4.5/edit",
+      "statusReason": "Direct match.",
+      "inputMap": {
+        "image_url": "image_url",
+        "prompt": "prompt"
+      },
+      "outputField": "images[0].url"
+    },
+    {
+      "muapiId": "qwen-image-edit-2511",
+      "category": "i2i",
+      "status": "exact",
+      "falSlug": "fal-ai/qwen-image-edit-2511",
+      "statusReason": "Direct match.",
+      "inputMap": {
+        "image_url": "image_url",
+        "prompt": "prompt"
+      },
+      "outputField": "images[0].url"
+    },
+    {
+      "muapiId": "wan2.6-image-edit",
+      "category": "i2i",
+      "status": "exact",
+      "falSlug": "wan/v2.6/image-to-image",
+      "statusReason": "Direct match (no fal-ai/ prefix).",
+      "inputMap": {
+        "image_url": "image_url",
+        "prompt": "prompt"
+      },
+      "outputField": "images[0].url"
+    },
+    {
+      "muapiId": "qwen-text-to-image-2512",
+      "category": "i2i",
+      "status": "exact",
+      "falSlug": "fal-ai/qwen-image-2/text-to-image",
+      "statusReason": "Same model appears in i2i section; direct match.",
+      "inputMap": {
+        "prompt": "prompt",
+        "width": "width",
+        "height": "height"
+      },
+      "outputField": "images[0].url"
+    },
+    {
+      "muapiId": "gpt-image-2-edit",
+      "category": "i2i",
+      "status": "none",
+      "falSlug": "",
+      "statusReason": "GPT-Image-2 edit is OpenAI-only; not on fal.",
+      "inputMap": {},
+      "outputField": ""
+    },
+    {
+      "muapiId": "gpt-image-1.5-edit",
+      "category": "i2i",
+      "status": "none",
+      "falSlug": "",
+      "statusReason": "GPT-Image-1.5 edit is OpenAI-only; not on fal.",
+      "inputMap": {},
+      "outputField": ""
+    },
+    {
+      "muapiId": "grok-imagine-image-to-image",
+      "category": "i2i",
+      "status": "none",
+      "falSlug": "",
+      "statusReason": "Grok image-to-image not available on fal (only t2i and t2v).",
+      "inputMap": {},
+      "outputField": ""
+    },
+    {
+      "muapiId": "Api Node",
+      "category": "i2i",
+      "status": "none",
+      "falSlug": "",
+      "statusReason": "MuAPI workflow node; no fal equivalent.",
+      "inputMap": {},
+      "outputField": ""
+    },
+    {
+      "muapiId": "flux-2-klein-4b-edit",
+      "category": "i2i",
+      "status": "exact",
+      "falSlug": "fal-ai/flux-2/klein/4b/edit",
+      "statusReason": "Direct match.",
+      "inputMap": {
+        "image_url": "image_url",
+        "prompt": "prompt"
+      },
+      "outputField": "images[0].url"
+    },
+    {
+      "muapiId": "flux-2-klein-9b-edit",
+      "category": "i2i",
+      "status": "exact",
+      "falSlug": "fal-ai/flux-2/klein/9b/edit",
+      "statusReason": "Direct match.",
+      "inputMap": {
+        "image_url": "image_url",
+        "prompt": "prompt"
+      },
+      "outputField": "images[0].url"
+    },
+    {
+      "muapiId": "add-image-watermark",
+      "category": "i2i",
+      "status": "none",
+      "falSlug": "",
+      "statusReason": "MuAPI-proprietary utility; no fal equivalent.",
+      "inputMap": {},
+      "outputField": ""
+    },
+    {
+      "muapiId": "nano-banana-2-edit",
+      "category": "i2i",
+      "status": "exact",
+      "falSlug": "fal-ai/nano-banana-2/edit",
+      "statusReason": "Direct match.",
+      "inputMap": {
+        "image_url": "image_url",
+        "prompt": "prompt"
+      },
+      "outputField": "images[0].url"
+    },
+    {
+      "muapiId": "seedream-5.0-edit",
+      "category": "i2i",
+      "status": "partial",
+      "falSlug": "fal-ai/bytedance/seedream/v5/lite/edit",
+      "statusReason": "Only lite variant of Seedream 5.0 edit on fal.",
+      "inputMap": {
+        "image_url": "image_url",
+        "prompt": "prompt"
+      },
+      "outputField": "images[0].url"
+    },
+    {
+      "muapiId": "ai-video-effects",
+      "category": "i2v",
+      "status": "none",
+      "falSlug": "",
+      "statusReason": "MuAPI-proprietary video effects; no fal equivalent.",
+      "inputMap": {},
+      "outputField": ""
+    },
+    {
+      "muapiId": "motion-controls",
+      "category": "i2v",
+      "status": "none",
+      "falSlug": "",
+      "statusReason": "MuAPI-proprietary motion control UI; no fal equivalent.",
+      "inputMap": {},
+      "outputField": ""
+    },
+    {
+      "muapiId": "vfx",
+      "category": "i2v",
+      "status": "none",
+      "falSlug": "",
+      "statusReason": "MuAPI-proprietary VFX pipeline; no fal equivalent.",
+      "inputMap": {},
+      "outputField": ""
+    },
+    {
+      "muapiId": "veo3-image-to-video",
+      "category": "i2v",
+      "status": "exact",
+      "falSlug": "fal-ai/veo3/image-to-video",
+      "statusReason": "Direct match.",
+      "inputMap": {
+        "image_url": "image_url",
+        "prompt": "prompt",
+        "aspect_ratio": "aspect_ratio",
+        "duration": "duration",
+        "generate_audio": "generate_audio"
+      },
+      "outputField": "video.url"
+    },
+    {
+      "muapiId": "veo3-fast-image-to-video",
+      "category": "i2v",
+      "status": "exact",
+      "falSlug": "fal-ai/veo3/fast/image-to-video",
+      "statusReason": "Direct match.",
+      "inputMap": {
+        "image_url": "image_url",
+        "prompt": "prompt",
+        "aspect_ratio": "aspect_ratio",
+        "generate_audio": "generate_audio"
+      },
+      "outputField": "video.url"
+    },
+    {
+      "muapiId": "runway-image-to-video",
+      "category": "i2v",
+      "status": "partial",
+      "falSlug": "fal-ai/runway-gen3/turbo/image-to-video",
+      "statusReason": "Runway Gen3 Turbo i2v; param names differ slightly from MuAPI runway endpoint.",
+      "inputMap": {
+        "image_url": "image_url",
+        "prompt": "prompt",
+        "duration": "duration",
+        "ratio": "ratio"
+      },
+      "outputField": "video.url"
+    },
+    {
+      "muapiId": "wan2.1-image-to-video",
+      "category": "i2v",
+      "status": "none",
+      "falSlug": "",
+      "statusReason": "Direct match. [404 on fal — demoted by slug validation 2026-06-26]",
+      "inputMap": {},
+      "outputField": ""
+    },
+    {
+      "muapiId": "midjourney-v7-image-to-video",
+      "category": "i2v",
+      "status": "none",
+      "falSlug": "",
+      "statusReason": "Midjourney is not available on fal.",
+      "inputMap": {},
+      "outputField": ""
+    },
+    {
+      "muapiId": "hunyuan-image-to-video",
+      "category": "i2v",
+      "status": "exact",
+      "falSlug": "fal-ai/hunyuan-video/image-to-video",
+      "statusReason": "Direct match.",
+      "inputMap": {
+        "image_url": "image_url",
+        "prompt": "prompt",
+        "aspect_ratio": "aspect_ratio",
+        "num_frames": "num_frames"
+      },
+      "outputField": "video.url"
+    },
+    {
+      "muapiId": "kling-v2.1-master-i2v",
+      "category": "i2v",
+      "status": "exact",
+      "falSlug": "fal-ai/kling-video/v2.1/master/image-to-video",
+      "statusReason": "Direct match.",
+      "inputMap": {
+        "image_url": "image_url",
+        "prompt": "prompt",
+        "aspect_ratio": "aspect_ratio",
+        "duration": "duration",
+        "negative_prompt": "negative_prompt",
+        "cfg_scale": "cfg_scale"
+      },
+      "outputField": "video.url"
+    },
+    {
+      "muapiId": "kling-v2.1-standard-i2v",
+      "category": "i2v",
+      "status": "exact",
+      "falSlug": "fal-ai/kling-video/v2.1/standard/image-to-video",
+      "statusReason": "Direct match.",
+      "inputMap": {
+        "image_url": "image_url",
+        "prompt": "prompt",
+        "aspect_ratio": "aspect_ratio",
+        "duration": "duration"
+      },
+      "outputField": "video.url"
+    },
+    {
+      "muapiId": "kling-v2.1-pro-i2v",
+      "category": "i2v",
+      "status": "exact",
+      "falSlug": "fal-ai/kling-video/v2.1/pro/image-to-video",
+      "statusReason": "Direct match.",
+      "inputMap": {
+        "image_url": "image_url",
+        "prompt": "prompt",
+        "aspect_ratio": "aspect_ratio",
+        "duration": "duration"
+      },
+      "outputField": "video.url"
+    },
+    {
+      "muapiId": "wan2.2-image-to-video",
+      "category": "i2v",
+      "status": "exact",
+      "falSlug": "fal-ai/wan/v2.2-a14b/image-to-video",
+      "statusReason": "Direct match.",
+      "inputMap": {
+        "image_url": "image_url",
+        "prompt": "prompt",
+        "aspect_ratio": "aspect_ratio",
+        "num_frames": "num_frames",
+        "frames_per_second": "frames_per_second"
+      },
+      "outputField": "video.url"
+    },
+    {
+      "muapiId": "runway-act-two-i2v",
+      "category": "i2v",
+      "status": "none",
+      "falSlug": "",
+      "statusReason": "Runway Act Two not on fal.",
+      "inputMap": {},
+      "outputField": ""
+    },
+    {
+      "muapiId": "pixverse-v4.5-i2v",
+      "category": "i2v",
+      "status": "exact",
+      "falSlug": "fal-ai/pixverse/v4.5/image-to-video",
+      "statusReason": "Direct match.",
+      "inputMap": {
+        "image_url": "image_url",
+        "prompt": "prompt",
+        "aspect_ratio": "aspect_ratio",
+        "duration": "duration"
+      },
+      "outputField": "video.url"
+    },
+    {
+      "muapiId": "vidu-v2.0-i2v",
+      "category": "i2v",
+      "status": "partial",
+      "falSlug": "fal-ai/vidu/q2/image-to-video",
+      "statusReason": "MuAPI calls it vidu-v2.0; fal labels the same model Vidu Q2.",
+      "inputMap": {
+        "image_url": "image_url",
+        "prompt": "prompt",
+        "aspect_ratio": "aspect_ratio",
+        "duration": "duration"
+      },
+      "outputField": "video.url"
+    },
+    {
+      "muapiId": "vidu-q1-reference",
+      "category": "i2v",
+      "status": "exact",
+      "falSlug": "fal-ai/vidu/q1/reference-to-video",
+      "statusReason": "Direct match.",
+      "inputMap": {
+        "image_url": "image_url",
+        "prompt": "prompt",
+        "aspect_ratio": "aspect_ratio",
+        "duration": "duration"
+      },
+      "outputField": "video.url"
+    },
+    {
+      "muapiId": "minimax-hailuo-02-standard-i2v",
+      "category": "i2v",
+      "status": "exact",
+      "falSlug": "fal-ai/minimax/hailuo-02/standard/image-to-video",
+      "statusReason": "Direct match.",
+      "inputMap": {
+        "image_url": "image_url",
+        "prompt": "prompt",
+        "prompt_optimizer": "prompt_optimizer"
+      },
+      "outputField": "video.url"
+    },
+    {
+      "muapiId": "minimax-hailuo-02-pro-i2v",
+      "category": "i2v",
+      "status": "exact",
+      "falSlug": "fal-ai/minimax/hailuo-02/pro/image-to-video",
+      "statusReason": "Direct match.",
+      "inputMap": {
+        "image_url": "image_url",
+        "prompt": "prompt",
+        "prompt_optimizer": "prompt_optimizer"
+      },
+      "outputField": "video.url"
+    },
+    {
+      "muapiId": "video-effects",
+      "category": "i2v",
+      "status": "none",
+      "falSlug": "",
+      "statusReason": "MuAPI-proprietary video effects; no fal equivalent.",
+      "inputMap": {},
+      "outputField": ""
+    },
+    {
+      "muapiId": "seedance-lite-i2v",
+      "category": "i2v",
+      "status": "exact",
+      "falSlug": "fal-ai/bytedance/seedance/v1/lite/image-to-video",
+      "statusReason": "Direct match.",
+      "inputMap": {
+        "image_url": "image_url",
+        "prompt": "prompt",
+        "aspect_ratio": "aspect_ratio",
+        "duration": "duration"
+      },
+      "outputField": "video.url"
+    },
+    {
+      "muapiId": "seedance-pro-i2v",
+      "category": "i2v",
+      "status": "exact",
+      "falSlug": "fal-ai/bytedance/seedance/v1/pro/image-to-video",
+      "statusReason": "Direct match.",
+      "inputMap": {
+        "image_url": "image_url",
+        "prompt": "prompt",
+        "aspect_ratio": "aspect_ratio",
+        "duration": "duration"
+      },
+      "outputField": "video.url"
+    },
+    {
+      "muapiId": "pixverse-v5-i2v",
+      "category": "i2v",
+      "status": "exact",
+      "falSlug": "fal-ai/pixverse/v5/image-to-video",
+      "statusReason": "Direct match.",
+      "inputMap": {
+        "image_url": "image_url",
+        "prompt": "prompt",
+        "aspect_ratio": "aspect_ratio",
+        "duration": "duration"
+      },
+      "outputField": "video.url"
+    },
+    {
+      "muapiId": "seedance-lite-reference-video",
+      "category": "i2v",
+      "status": "exact",
+      "falSlug": "fal-ai/bytedance/seedance/v1/lite/image-to-video/reference",
+      "statusReason": "Direct match.",
+      "inputMap": {
+        "image_url": "image_url",
+        "prompt": "prompt",
+        "aspect_ratio": "aspect_ratio"
+      },
+      "outputField": "video.url"
+    },
+    {
+      "muapiId": "wan2.1-reference-video",
+      "category": "i2v",
+      "status": "partial",
+      "falSlug": "fal-ai/wan-flf2v/image-to-video",
+      "statusReason": "Reference video maps to wan-flf2v endpoint; param names differ.",
+      "inputMap": {
+        "image_url": "image_url",
+        "prompt": "prompt",
+        "end_image_url": "end_frame_url"
+      },
+      "outputField": "video.url"
+    },
+    {
+      "muapiId": "kling-v2.5-turbo-pro-i2v",
+      "category": "i2v",
+      "status": "exact",
+      "falSlug": "fal-ai/kling-video/v2.5-turbo/pro/image-to-video",
+      "statusReason": "Direct match.",
+      "inputMap": {
+        "image_url": "image_url",
+        "prompt": "prompt",
+        "aspect_ratio": "aspect_ratio",
+        "duration": "duration"
+      },
+      "outputField": "video.url"
+    },
+    {
+      "muapiId": "wan2.5-image-to-video",
+      "category": "i2v",
+      "status": "exact",
+      "falSlug": "fal-ai/wan-25-preview/image-to-video",
+      "statusReason": "Direct match.",
+      "inputMap": {
+        "image_url": "image_url",
+        "prompt": "prompt",
+        "aspect_ratio": "aspect_ratio",
+        "duration": "duration"
+      },
+      "outputField": "video.url"
+    },
+    {
+      "muapiId": "wan2.5-image-to-video-fast",
+      "category": "i2v",
+      "status": "none",
+      "falSlug": "",
+      "statusReason": "No fast Wan 2.5 i2v variant on fal.",
+      "inputMap": {},
+      "outputField": ""
+    },
+    {
+      "muapiId": "openai-sora-2-image-to-video",
+      "category": "i2v",
+      "status": "none",
+      "falSlug": "",
+      "statusReason": "OpenAI Sora 2 is OpenAI-only; not on fal.",
+      "inputMap": {},
+      "outputField": ""
+    },
+    {
+      "muapiId": "ovi-image-to-video",
+      "category": "i2v",
+      "status": "exact",
+      "falSlug": "fal-ai/ovi/image-to-video",
+      "statusReason": "Direct match.",
+      "inputMap": {
+        "image_url": "image_url",
+        "prompt": "prompt"
+      },
+      "outputField": "video.url"
+    },
+    {
+      "muapiId": "openai-sora-2-pro-image-to-video",
+      "category": "i2v",
+      "status": "none",
+      "falSlug": "",
+      "statusReason": "OpenAI Sora 2 Pro is OpenAI-only; not on fal.",
+      "inputMap": {},
+      "outputField": ""
+    },
+    {
+      "muapiId": "leonardoai-motion-2.0",
+      "category": "i2v",
+      "status": "none",
+      "falSlug": "",
+      "statusReason": "Leonardo AI not available on fal.",
+      "inputMap": {},
+      "outputField": ""
+    },
+    {
+      "muapiId": "veo3.1-image-to-video",
+      "category": "i2v",
+      "status": "exact",
+      "falSlug": "fal-ai/veo3.1/image-to-video",
+      "statusReason": "Direct match.",
+      "inputMap": {
+        "image_url": "image_url",
+        "prompt": "prompt",
+        "aspect_ratio": "aspect_ratio",
+        "duration": "duration",
+        "generate_audio": "generate_audio"
+      },
+      "outputField": "video.url"
+    },
+    {
+      "muapiId": "veo3.1-fast-image-to-video",
+      "category": "i2v",
+      "status": "exact",
+      "falSlug": "fal-ai/veo3.1/fast/image-to-video",
+      "statusReason": "Direct match.",
+      "inputMap": {
+        "image_url": "image_url",
+        "prompt": "prompt",
+        "aspect_ratio": "aspect_ratio",
+        "duration": "duration"
+      },
+      "outputField": "video.url"
+    },
+    {
+      "muapiId": "veo3.1-lite-image-to-video",
+      "category": "i2v",
+      "status": "exact",
+      "falSlug": "fal-ai/veo3.1/lite/image-to-video",
+      "statusReason": "Direct match.",
+      "inputMap": {
+        "image_url": "image_url",
+        "prompt": "prompt",
+        "aspect_ratio": "aspect_ratio",
+        "duration": "duration"
+      },
+      "outputField": "video.url"
+    },
+    {
+      "muapiId": "veo3.1-reference-to-video",
+      "category": "i2v",
+      "status": "exact",
+      "falSlug": "fal-ai/veo3.1/reference-to-video",
+      "statusReason": "Direct match.",
+      "inputMap": {
+        "image_url": "image_url",
+        "prompt": "prompt",
+        "aspect_ratio": "aspect_ratio",
+        "duration": "duration"
+      },
+      "outputField": "video.url"
+    },
+    {
+      "muapiId": "seedance-pro-i2v-fast",
+      "category": "i2v",
+      "status": "exact",
+      "falSlug": "fal-ai/bytedance/seedance/v1/pro/fast/image-to-video",
+      "statusReason": "Direct match.",
+      "inputMap": {
+        "image_url": "image_url",
+        "prompt": "prompt",
+        "aspect_ratio": "aspect_ratio",
+        "duration": "duration"
+      },
+      "outputField": "video.url"
+    },
+    {
+      "muapiId": "ltx-2-pro-image-to-video",
+      "category": "i2v",
+      "status": "exact",
+      "falSlug": "fal-ai/ltx-2/image-to-video",
+      "statusReason": "Direct match.",
+      "inputMap": {
+        "image_url": "image_url",
+        "prompt": "prompt",
+        "resolution": "resolution",
+        "duration": "duration"
+      },
+      "outputField": "video.url"
+    },
+    {
+      "muapiId": "ltx-2-fast-image-to-video",
+      "category": "i2v",
+      "status": "exact",
+      "falSlug": "fal-ai/ltx-2/image-to-video/fast",
+      "statusReason": "Direct match.",
+      "inputMap": {
+        "image_url": "image_url",
+        "prompt": "prompt",
+        "resolution": "resolution",
+        "duration": "duration"
+      },
+      "outputField": "video.url"
+    },
+    {
+      "muapiId": "vidu-q2-reference",
+      "category": "i2v",
+      "status": "exact",
+      "falSlug": "fal-ai/vidu/q2/reference-to-video",
+      "statusReason": "Direct match.",
+      "inputMap": {
+        "image_url": "image_url",
+        "prompt": "prompt",
+        "aspect_ratio": "aspect_ratio",
+        "duration": "duration"
+      },
+      "outputField": "video.url"
+    },
+    {
+      "muapiId": "vidu-q2-turbo-start-end-video",
+      "category": "i2v",
+      "status": "partial",
+      "falSlug": "fal-ai/vidu/q2/start-end-to-video",
+      "statusReason": "Start+end frame mode; fal slug differs, input param names may vary.",
+      "inputMap": {
+        "start_image_url": "start_image_url",
+        "end_image_url": "end_image_url",
+        "prompt": "prompt"
+      },
+      "outputField": "video.url"
+    },
+    {
+      "muapiId": "vidu-q2-pro-start-end-video",
+      "category": "i2v",
+      "status": "partial",
+      "falSlug": "fal-ai/vidu/q2/pro/start-end-to-video",
+      "statusReason": "Pro start+end frame mode; fal slug differs, input param names may vary.",
+      "inputMap": {
+        "start_image_url": "start_image_url",
+        "end_image_url": "end_image_url",
+        "prompt": "prompt"
+      },
+      "outputField": "video.url"
+    },
+    {
+      "muapiId": "minimax-hailuo-2.3-pro-i2v",
+      "category": "i2v",
+      "status": "exact",
+      "falSlug": "fal-ai/minimax/hailuo-2.3/pro/image-to-video",
+      "statusReason": "Direct match.",
+      "inputMap": {
+        "image_url": "image_url",
+        "prompt": "prompt",
+        "prompt_optimizer": "prompt_optimizer"
+      },
+      "outputField": "video.url"
+    },
+    {
+      "muapiId": "minimax-hailuo-2.3-standard-i2v",
+      "category": "i2v",
+      "status": "exact",
+      "falSlug": "fal-ai/minimax/hailuo-2.3/standard/image-to-video",
+      "statusReason": "Direct match.",
+      "inputMap": {
+        "image_url": "image_url",
+        "prompt": "prompt",
+        "prompt_optimizer": "prompt_optimizer"
+      },
+      "outputField": "video.url"
+    },
+    {
+      "muapiId": "minimax-hailuo-2.3-fast",
+      "category": "i2v",
+      "status": "partial",
+      "falSlug": "fal-ai/minimax/hailuo-2.3/fast/image-to-video",
+      "statusReason": "Fast variant exists but prompt_optimizer param not present on fal.",
+      "inputMap": {
+        "image_url": "image_url",
+        "prompt": "prompt"
+      },
+      "outputField": "video.url"
+    },
+    {
+      "muapiId": "kling-v2.5-turbo-std-i2v",
+      "category": "i2v",
+      "status": "exact",
+      "falSlug": "fal-ai/kling-video/v2.5-turbo/standard/image-to-video",
+      "statusReason": "Direct match.",
+      "inputMap": {
+        "image_url": "image_url",
+        "prompt": "prompt",
+        "aspect_ratio": "aspect_ratio",
+        "duration": "duration"
+      },
+      "outputField": "video.url"
+    },
+    {
+      "muapiId": "grok-imagine-image-to-video",
+      "category": "i2v",
+      "status": "none",
+      "falSlug": "",
+      "statusReason": "Grok video image-to-video not available on fal (only t2v).",
+      "inputMap": {},
+      "outputField": ""
+    },
+    {
+      "muapiId": "kling-o1-image-to-video",
+      "category": "i2v",
+      "status": "exact",
+      "falSlug": "fal-ai/kling-video/o1/pro/image-to-video",
+      "statusReason": "Direct match.",
+      "inputMap": {
+        "image_url": "image_url",
+        "prompt": "prompt",
+        "aspect_ratio": "aspect_ratio",
+        "duration": "duration"
+      },
+      "outputField": "video.url"
+    },
+    {
+      "muapiId": "kling-o1-reference-to-video",
+      "category": "i2v",
+      "status": "exact",
+      "falSlug": "fal-ai/kling-video/o1/pro/reference-to-video",
+      "statusReason": "Direct match.",
+      "inputMap": {
+        "image_url": "image_url",
+        "prompt": "prompt",
+        "aspect_ratio": "aspect_ratio",
+        "duration": "duration"
+      },
+      "outputField": "video.url"
+    },
+    {
+      "muapiId": "kling-v2.6-pro-i2v",
+      "category": "i2v",
+      "status": "exact",
+      "falSlug": "fal-ai/kling-video/v2.6/pro/image-to-video",
+      "statusReason": "Direct match.",
+      "inputMap": {
+        "image_url": "image_url",
+        "prompt": "prompt",
+        "aspect_ratio": "aspect_ratio",
+        "duration": "duration",
+        "generate_audio": "generate_audio"
+      },
+      "outputField": "video.url"
+    },
+    {
+      "muapiId": "pixverse-v5.5-i2v",
+      "category": "i2v",
+      "status": "exact",
+      "falSlug": "fal-ai/pixverse/v5.5/image-to-video",
+      "statusReason": "Direct match.",
+      "inputMap": {
+        "image_url": "image_url",
+        "prompt": "prompt",
+        "aspect_ratio": "aspect_ratio",
+        "duration": "duration",
+        "style": "style"
+      },
+      "outputField": "video.url"
+    },
+    {
+      "muapiId": "wan2.2-spicy-image-to-video",
+      "category": "i2v",
+      "status": "none",
+      "falSlug": "",
+      "statusReason": "NSFW/Spicy variant not available on fal.",
+      "inputMap": {},
+      "outputField": ""
+    },
+    {
+      "muapiId": "wan2.6-image-to-video",
+      "category": "i2v",
+      "status": "exact",
+      "falSlug": "wan/v2.6/image-to-video",
+      "statusReason": "Direct match (no fal-ai/ prefix).",
+      "inputMap": {
+        "image_url": "image_url",
+        "prompt": "prompt",
+        "audio_url": "audio_url"
+      },
+      "outputField": "video.url"
+    },
+    {
+      "muapiId": "kling-o1-standard-image-to-video",
+      "category": "i2v",
+      "status": "exact",
+      "falSlug": "fal-ai/kling-video/o1/standard/image-to-video",
+      "statusReason": "Direct match.",
+      "inputMap": {
+        "image_url": "image_url",
+        "prompt": "prompt",
+        "aspect_ratio": "aspect_ratio",
+        "duration": "duration"
+      },
+      "outputField": "video.url"
+    },
+    {
+      "muapiId": "kling-o1-standard-reference-to-video",
+      "category": "i2v",
+      "status": "exact",
+      "falSlug": "fal-ai/kling-video/o1/standard/reference-to-video",
+      "statusReason": "Direct match.",
+      "inputMap": {
+        "image_url": "image_url",
+        "prompt": "prompt",
+        "aspect_ratio": "aspect_ratio",
+        "duration": "duration"
+      },
+      "outputField": "video.url"
+    },
+    {
+      "muapiId": "seedance-v1.5-pro-i2v",
+      "category": "i2v",
+      "status": "exact",
+      "falSlug": "fal-ai/bytedance/seedance/v1.5/pro/image-to-video",
+      "statusReason": "Direct match.",
+      "inputMap": {
+        "image_url": "image_url",
+        "prompt": "prompt",
+        "aspect_ratio": "aspect_ratio",
+        "duration": "duration",
+        "generate_audio": "generate_audio"
+      },
+      "outputField": "video.url"
+    },
+    {
+      "muapiId": "seedance-v1.5-pro-i2v-fast",
+      "category": "i2v",
+      "status": "none",
+      "falSlug": "",
+      "statusReason": "No v1.5/pro/fast i2v endpoint on fal.",
+      "inputMap": {},
+      "outputField": ""
+    },
+    {
+      "muapiId": "ltx-2-19b-image-to-video",
+      "category": "i2v",
+      "status": "exact",
+      "falSlug": "fal-ai/ltx-2-19b/image-to-video",
+      "statusReason": "Direct match.",
+      "inputMap": {
+        "image_url": "image_url",
+        "prompt": "prompt",
+        "resolution": "resolution",
+        "duration": "duration"
+      },
+      "outputField": "video.url"
+    },
+    {
+      "muapiId": "kling-v3.0-omni-standard-image-to-video",
+      "category": "i2v",
+      "status": "partial",
+      "falSlug": "fal-ai/kling-video/v3/omni/standard/image-to-video",
+      "statusReason": "Omni variant may not be live on fal; verify endpoint before use.",
+      "inputMap": {
+        "image_url": "image_url",
+        "prompt": "prompt",
+        "aspect_ratio": "aspect_ratio",
+        "duration": "duration"
+      },
+      "outputField": "video.url"
+    },
+    {
+      "muapiId": "kling-v3.0-omni-pro-image-to-video",
+      "category": "i2v",
+      "status": "partial",
+      "falSlug": "fal-ai/kling-video/v3/omni/pro/image-to-video",
+      "statusReason": "Omni variant may not be live on fal; verify endpoint before use.",
+      "inputMap": {
+        "image_url": "image_url",
+        "prompt": "prompt",
+        "aspect_ratio": "aspect_ratio",
+        "duration": "duration"
+      },
+      "outputField": "video.url"
+    },
+    {
+      "muapiId": "kling-v3.0-omni-4k-image-to-video",
+      "category": "i2v",
+      "status": "partial",
+      "falSlug": "fal-ai/kling-video/v3/omni/4k/image-to-video",
+      "statusReason": "Omni 4K variant may not be live on fal; verify endpoint before use.",
+      "inputMap": {
+        "image_url": "image_url",
+        "prompt": "prompt",
+        "aspect_ratio": "aspect_ratio",
+        "duration": "duration"
+      },
+      "outputField": "video.url"
+    },
+    {
+      "muapiId": "kling-v3.0-pro-image-to-video",
+      "category": "i2v",
+      "status": "exact",
+      "falSlug": "fal-ai/kling-video/v3/pro/image-to-video",
+      "statusReason": "Direct match.",
+      "inputMap": {
+        "image_url": "image_url",
+        "prompt": "prompt",
+        "aspect_ratio": "aspect_ratio",
+        "duration": "duration",
+        "generate_audio": "generate_audio"
+      },
+      "outputField": "video.url"
+    },
+    {
+      "muapiId": "kling-v3.0-standard-image-to-video",
+      "category": "i2v",
+      "status": "exact",
+      "falSlug": "fal-ai/kling-video/v3/standard/image-to-video",
+      "statusReason": "Direct match.",
+      "inputMap": {
+        "image_url": "image_url",
+        "prompt": "prompt",
+        "aspect_ratio": "aspect_ratio",
+        "duration": "duration"
+      },
+      "outputField": "video.url"
+    },
+    {
+      "muapiId": "seedance-v2.0-i2v",
+      "category": "i2v",
+      "status": "exact",
+      "falSlug": "bytedance/seedance-2.0/image-to-video",
+      "statusReason": "Direct match (no fal-ai/ prefix for v2.0).",
+      "inputMap": {
+        "image_url": "image_url",
+        "prompt": "prompt",
+        "aspect_ratio": "aspect_ratio",
+        "duration": "duration",
+        "quality": "quality"
+      },
+      "outputField": "video.url"
+    },
+    {
+      "muapiId": "video-watermark-remover",
+      "category": "v2v",
+      "status": "none",
+      "falSlug": "",
+      "statusReason": "fal has a watermark-remover endpoint; slug/params need verification. [404 on fal — demoted by slug validation 2026-06-26]",
+      "inputMap": {},
+      "outputField": ""
+    },
+    {
+      "muapiId": "kling-v2.6-std-motion-control",
+      "category": "v2v",
+      "status": "exact",
+      "falSlug": "fal-ai/kling-video/v2.6/standard/motion-control",
+      "statusReason": "Direct match.",
+      "inputMap": {
+        "video_url": "video_url",
+        "prompt": "prompt",
+        "motion_type": "motion_type"
+      },
+      "outputField": "video.url"
+    },
+    {
+      "muapiId": "kling-v3.0-std-motion-control",
+      "category": "v2v",
+      "status": "exact",
+      "falSlug": "fal-ai/kling-video/v3/standard/motion-control",
+      "statusReason": "Direct match.",
+      "inputMap": {
+        "video_url": "video_url",
+        "prompt": "prompt",
+        "motion_type": "motion_type"
+      },
+      "outputField": "video.url"
+    },
+    {
+      "muapiId": "kling-v3.0-pro-motion-control",
+      "category": "v2v",
+      "status": "exact",
+      "falSlug": "fal-ai/kling-video/v3/pro/motion-control",
+      "statusReason": "Direct match.",
+      "inputMap": {
+        "video_url": "video_url",
+        "prompt": "prompt",
+        "motion_type": "motion_type"
+      },
+      "outputField": "video.url"
+    },
+    {
+      "muapiId": "infinitetalk-image-to-video",
+      "category": "lipsync",
+      "status": "none",
+      "falSlug": "",
+      "statusReason": "Direct match. [404 on fal — demoted by slug validation 2026-06-26]",
+      "inputMap": {},
+      "outputField": ""
+    },
+    {
+      "muapiId": "wan2.2-speech-to-video",
+      "category": "lipsync",
+      "status": "exact",
+      "falSlug": "fal-ai/wan/v2.2-a14b/speech-to-video",
+      "statusReason": "Direct match.",
+      "inputMap": {
+        "image_url": "image_url",
+        "audio_url": "audio_url",
+        "prompt": "prompt"
+      },
+      "outputField": "video.url"
+    },
+    {
+      "muapiId": "ltx-2.3-lipsync",
+      "category": "lipsync",
+      "status": "none",
+      "falSlug": "",
+      "statusReason": "LTX 2.3 lipsync not available on fal.",
+      "inputMap": {},
+      "outputField": ""
+    },
+    {
+      "muapiId": "ltx-2-19b-lipsync",
+      "category": "lipsync",
+      "status": "none",
+      "falSlug": "",
+      "statusReason": "LTX 2 19B lipsync not available on fal.",
+      "inputMap": {},
+      "outputField": ""
+    },
+    {
+      "muapiId": "sync-lipsync",
+      "category": "lipsync",
+      "status": "exact",
+      "falSlug": "fal-ai/sync-lipsync",
+      "statusReason": "Direct match.",
+      "inputMap": {
+        "video_url": "video_url",
+        "audio_url": "audio_url"
+      },
+      "outputField": "video.url"
+    },
+    {
+      "muapiId": "latent-sync",
+      "category": "lipsync",
+      "status": "exact",
+      "falSlug": "fal-ai/latentsync",
+      "statusReason": "Direct match.",
+      "inputMap": {
+        "video_url": "video_url",
+        "audio_url": "audio_url"
+      },
+      "outputField": "video.url"
+    },
+    {
+      "muapiId": "creatify-lipsync",
+      "category": "lipsync",
+      "status": "partial",
+      "falSlug": "fal-ai/creatify/lipsync",
+      "statusReason": "Creatify lipsync exists on fal but API params and auth may differ.",
+      "inputMap": {
+        "video_url": "video_url",
+        "audio_url": "audio_url"
+      },
+      "outputField": "video.url"
+    },
+    {
+      "muapiId": "veed-lipsync",
+      "category": "lipsync",
+      "status": "exact",
+      "falSlug": "veed/lipsync",
+      "statusReason": "Direct match (veed/ namespace, no fal-ai/ prefix).",
+      "inputMap": {
+        "video_url": "video_url",
+        "audio_url": "audio_url"
+      },
+      "outputField": "video.url"
+    },
+    {
+      "muapiId": "infinitetalk-video-to-video",
+      "category": "lipsync",
+      "status": "none",
+      "falSlug": "",
+      "statusReason": "Direct match. [404 on fal — demoted by slug validation 2026-06-26]",
+      "inputMap": {},
+      "outputField": ""
+    },
+    {
+      "muapiId": "suno-create-music",
+      "category": "audio",
+      "status": "none",
+      "falSlug": "",
+      "statusReason": "Suno is Suno-only; not on fal.",
+      "inputMap": {},
+      "outputField": ""
+    },
+    {
+      "muapiId": "suno-remix-music",
+      "category": "audio",
+      "status": "none",
+      "falSlug": "",
+      "statusReason": "Suno is Suno-only; not on fal.",
+      "inputMap": {},
+      "outputField": ""
+    },
+    {
+      "muapiId": "suno-extend-music",
+      "category": "audio",
+      "status": "none",
+      "falSlug": "",
+      "statusReason": "Suno is Suno-only; not on fal.",
+      "inputMap": {},
+      "outputField": ""
+    },
+    {
+      "muapiId": "suno-generate-sounds",
+      "category": "audio",
+      "status": "none",
+      "falSlug": "",
+      "statusReason": "Suno is Suno-only; not on fal.",
+      "inputMap": {},
+      "outputField": ""
+    },
+    {
+      "muapiId": "suno-add-vocals",
+      "category": "audio",
+      "status": "none",
+      "falSlug": "",
+      "statusReason": "Suno is Suno-only; not on fal.",
+      "inputMap": {},
+      "outputField": ""
+    },
+    {
+      "muapiId": "suno-generate-mashup",
+      "category": "audio",
+      "status": "none",
+      "falSlug": "",
+      "statusReason": "Suno is Suno-only; not on fal.",
+      "inputMap": {},
+      "outputField": ""
+    },
+    {
+      "muapiId": "suno-add-instrumental",
+      "category": "audio",
+      "status": "none",
+      "falSlug": "",
+      "statusReason": "Suno is Suno-only; not on fal.",
+      "inputMap": {},
+      "outputField": ""
+    },
+    {
+      "muapiId": "suno-voice-clone",
+      "category": "audio",
+      "status": "none",
+      "falSlug": "",
+      "statusReason": "Suno is Suno-only; not on fal.",
+      "inputMap": {},
+      "outputField": ""
+    },
+    {
+      "muapiId": "minimax-voice-clone",
+      "category": "audio",
+      "status": "exact",
+      "falSlug": "fal-ai/minimax/voice-clone",
+      "statusReason": "Direct match; returns custom_voice_id string, not audio URL.",
+      "inputMap": {
+        "audio_url": "audio_url",
+        "voice_id": "voice_id"
+      },
+      "outputField": "custom_voice_id"
+    },
+    {
+      "muapiId": "minimax-speech-2.6-hd",
+      "category": "audio",
+      "status": "exact",
+      "falSlug": "fal-ai/minimax/speech-2.6-hd",
+      "statusReason": "Direct match.",
+      "inputMap": {
+        "text": "text",
+        "voice_id": "voice_id",
+        "speed": "speed"
+      },
+      "outputField": "audio.url"
+    },
+    {
+      "muapiId": "minimax-speech-2.6-turbo",
+      "category": "audio",
+      "status": "exact",
+      "falSlug": "fal-ai/minimax/speech-2.6-turbo",
+      "statusReason": "Direct match.",
+      "inputMap": {
+        "text": "text",
+        "voice_id": "voice_id",
+        "speed": "speed"
+      },
+      "outputField": "audio.url"
+    },
+    {
+      "muapiId": "mmaudio-v2-text-to-audio",
+      "category": "audio",
+      "status": "exact",
+      "falSlug": "fal-ai/mmaudio-v2/text-to-audio",
+      "statusReason": "Direct match.",
+      "inputMap": {
+        "prompt": "prompt",
+        "duration": "duration"
+      },
+      "outputField": "audio.url"
+    }
+  ]
+}

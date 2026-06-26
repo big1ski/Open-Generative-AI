@@ -3,7 +3,7 @@ import AgentChatClient from "../AgentChatClient";
 
 /**
  * Server component — fetches both agentDetails and initialHistory
- * from the /api/agents proxy using the muapi_key cookie, then renders
+ * from the /api/agents proxy using the fal_key cookie, then renders
  * the client chat component with existing conversation messages pre-loaded.
  *
  * URL: /agents/[agent_id]/[conversation_id]
@@ -91,7 +91,7 @@ async function fetchUserData(apiKey) {
 export default async function AgentConversationPage({ params }) {
   const { agent_id, conversation_id } = await params;
   const cookieStore = await cookies();
-  const apiKey = cookieStore.get("muapi_key")?.value;
+  const apiKey = cookieStore.get("fal_key")?.value;
 
   console.log(`[ConvPage] Loading for agent: ${agent_id}, conv: ${conversation_id}, hasKey: ${!!apiKey}`);
 

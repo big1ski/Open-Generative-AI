@@ -7,8 +7,8 @@ function getApiKey(request) {
     const headerKey = request.headers.get('x-api-key');
     if (headerKey) return headerKey;
 
-    // Priority 2: muapi_key cookie (used by the fixed builder library)
-    const cookieKey = request.cookies.get('muapi_key')?.value;
+    // Priority 2: fal_key cookie (used by the fixed builder library)
+    const cookieKey = request.cookies.get('fal_key')?.value;
     return cookieKey;
 }
 

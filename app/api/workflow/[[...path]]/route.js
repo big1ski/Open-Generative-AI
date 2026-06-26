@@ -7,8 +7,8 @@ function getApiKey(request) {
     const headerKey = request.headers.get('x-api-key');
     if (headerKey) return headerKey;
 
-    // Priority 2: muapi_key cookie (used by the fixed builder library)
-    const cookieKey = request.cookies.get('muapi_key')?.value;
+    // Priority 2: fal_key cookie (used by the fixed builder library)
+    const cookieKey = request.cookies.get('fal_key')?.value;
     return cookieKey;
 }
 
@@ -60,7 +60,7 @@ export async function POST(request, { params }) {
     const headers = cleanHeaders(request);
 
     const apiKey = getApiKey(request);
-    console.log(`[proxy POST] ${targetUrl} | apiKey: ${apiKey ? apiKey.slice(0,8)+'...' : 'MISSING'} | cookie: ${request.cookies.get('muapi_key')?.value?.slice(0,8) || 'NONE'} | header: ${request.headers.get('x-api-key')?.slice(0,8) || 'NONE'}`);
+    console.log(`[proxy POST] ${targetUrl} | apiKey: ${apiKey ? apiKey.slice(0,8)+'...' : 'MISSING'} | cookie: ${request.cookies.get('fal_key')?.value?.slice(0,8) || 'NONE'} | header: ${request.headers.get('x-api-key')?.slice(0,8) || 'NONE'}`);
     if (apiKey) headers.set('x-api-key', apiKey);
 
     try {

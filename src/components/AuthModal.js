@@ -34,7 +34,7 @@ export function AuthModal(onSuccess) {
                 <button id="save-key-btn" class="w-full bg-primary text-black font-black py-4 rounded-2xl hover:shadow-glow hover:scale-[1.02] active:scale-[0.98] transition-all">
                     ${t('auth.initBtn')}
                 </button>
-                <a href="https://muapi.ai/access-keys" target="_blank" rel="noreferrer" class="text-center text-[11px] font-bold text-muted hover:text-white transition-colors py-2 uppercase tracking-tighter">
+                <a href="https://fal.ai/dashboard/keys" target="_blank" rel="noreferrer" class="text-center text-[11px] font-bold text-muted hover:text-white transition-colors py-2 uppercase tracking-tighter">
                     ${t('auth.createKey')}
                 </a>
             </div>
@@ -50,7 +50,7 @@ export function AuthModal(onSuccess) {
     btn.onclick = () => {
         const key = input.value.trim();
         if (key) {
-            localStorage.setItem('muapi_key', key);
+            localStorage.setItem('fal_key', key);
             document.body.removeChild(overlay);
             if (onSuccess) onSuccess();
         } else {

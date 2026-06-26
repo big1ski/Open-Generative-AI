@@ -109,7 +109,7 @@ async function falSubmitAndPoll(falSlug, payload, key, onRequestId, maxAttempts,
 export class MuapiClient {
     getKey() {
         // Phase 3 will rename this to 'fal_key'
-        const key = window.__MUAPI_KEY__ || localStorage.getItem('muapi_key');
+        const key = window.__MUAPI_KEY__ || localStorage.getItem('fal_key');
         if (!key) throw new Error('API Key missing. Please set it in Settings.');
         return key;
     }

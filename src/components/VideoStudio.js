@@ -354,15 +354,6 @@ export function VideoStudio() {
     topRow.appendChild(textarea);
     bar.appendChild(topRow);
 
-    // Extend mode banner (shown when extend model is active, not editable by user)
-    const extendBanner = document.createElement('div');
-    extendBanner.className = 'hidden items-center gap-2 px-4 py-2 mx-2 mt-2 bg-primary/10 border border-primary/20 rounded-xl text-xs text-primary';
-    extendBanner.innerHTML = `
-        <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
-        <span>Extending previous Seedance 2.0 generation — add an optional prompt to guide the continuation</span>
-    `;
-    bar.appendChild(extendBanner);
-
     // Bottom Row: Controls
     const bottomRow = document.createElement('div');
     bottomRow.className = 'flex flex-col sm:flex-row items-stretch sm:items-center justify-between gap-4 px-2 pt-4 border-t border-white/5';
@@ -466,8 +457,6 @@ export function VideoStudio() {
             qualityBtn.style.display = 'none';
             modeBtn.style.display = 'none';
             effectNameBtn.style.display = 'none';
-            extendBanner.classList.add('hidden');
-            extendBanner.classList.remove('flex');
             return;
         }
 
@@ -532,15 +521,6 @@ export function VideoStudio() {
         } else {
             selectedEffectName = '';
             effectNameBtn.style.display = 'none';
-        }
-
-        // Extend banner (extend model only)
-        if (model?.requiresRequestId) {
-            extendBanner.classList.remove('hidden');
-            extendBanner.classList.add('flex');
-        } else {
-            extendBanner.classList.add('hidden');
-            extendBanner.classList.remove('flex');
         }
     };
 
@@ -875,17 +855,11 @@ export function VideoStudio() {
     downloadBtn.className = 'bg-primary text-black px-6 py-2.5 rounded-2xl text-xs font-bold transition-all shadow-glow active:scale-95';
     downloadBtn.textContent = t('video.download');
 
-    const extendBtn = document.createElement('button');
-    extendBtn.className = 'hidden bg-white/10 hover:bg-white/20 px-6 py-2.5 rounded-2xl text-xs font-bold transition-all border border-primary/30 text-primary backdrop-blur-lg';
-    extendBtn.textContent = t('video.extend');
-    extendBtn.title = 'Extend this video using Seedance 2.0 Extend';
-
     const newPromptBtn = document.createElement('button');
     newPromptBtn.className = 'bg-white/10 hover:bg-white/20 px-6 py-2.5 rounded-2xl text-xs font-bold transition-all border border-white/5 backdrop-blur-lg text-white';
     newPromptBtn.textContent = t('video.new');
 
     canvasControls.appendChild(regenerateBtn);
-    canvasControls.appendChild(extendBtn);
     canvasControls.appendChild(downloadBtn);
     canvasControls.appendChild(newPromptBtn);
 
@@ -897,10 +871,6 @@ export function VideoStudio() {
     const showVideoInCanvas = (videoUrl, genModel) => {
         hero.classList.add('hidden');
         promptWrapper.classList.add('hidden');
-
-        // Show extend button only for seedance-v2.0-t2v and i2v (not extend itself)
-        const isSeedance2 = genModel && (genModel === 'seedance-v2.0-t2v' || genModel === 'seedance-v2.0-i2v');
-        extendBtn.classList.toggle('hidden', !isSeedance2);
 
         resultVideo.src = videoUrl;
         resultVideo.onloadeddata = () => {
@@ -1059,21 +1029,6 @@ export function VideoStudio() {
         updateControlsForModel(selectedModel);
         textarea.placeholder = 'Describe the video you want to create';
         textarea.disabled = false;
-        textarea.focus();
-    };
-
-    extendBtn.onclick = () => {
-        if (!lastGenerationId) return;
-        resetToPromptBar();
-        textarea.value = '';
-        picker.reset();
-        uploadedImageUrl = null;
-        imageMode = false;
-        selectedModel = 'seedance-v2.0-extend';
-        selectedModelName = 'Seedance 2.0 Extend';
-        document.getElementById('v-model-btn-label').textContent = selectedModelName;
-        updateControlsForModel(selectedModel);
-        textarea.placeholder = 'Optional: describe how to continue the video...';
         textarea.focus();
     };
 

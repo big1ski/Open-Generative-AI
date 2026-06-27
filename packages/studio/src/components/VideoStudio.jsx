@@ -1134,23 +1134,7 @@ export default function VideoStudio({
     setTimeout(() => textareaRef.current?.focus(), 50);
   }, [resetToPromptBar, applyControlsForModel]);
 
-  const handleExtend = useCallback(() => {
-    if (!lastGenerationId) return;
-    resetToPromptBar();
-    setPrompt("");
-    setUploadedImageUrl(null);
-    setUploadedImageUrls([]);
-    setImageMode(false);
-    setSelectedModel("seedance-v2.0-extend");
-    setSelectedModelName("Seedance 2.0 Extend");
-    applyControlsForModel("seedance-v2.0-extend", false, false);
-    setPromptDisabled(false);
-    setTimeout(() => textareaRef.current?.focus(), 50);
-  }, [lastGenerationId, resetToPromptBar, applyControlsForModel]);
-
   // ── derived UI values ────────────────────────────────────────────────────
-  const isSeedance2Canvas =
-    canvasModel === "seedance-v2.0-t2v" || canvasModel === "seedance-v2.0-i2v";
   const currentModelObj = getCurrentModel();
   const isExtendMode = currentModelObj?.requiresRequestId;
 
@@ -1182,7 +1166,6 @@ export default function VideoStudio({
         {history.length > 0 ? (
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 w-full pt-4 animate-fade-in-up">
             {history.map((entry, idx) => {
-              const isSeedance2 = entry.model === "seedance-v2.0-t2v" || entry.model === "seedance-v2.0-i2v";
               return (
                 <div
                   key={entry.id || idx}
@@ -1234,22 +1217,6 @@ export default function VideoStudio({
                         <path d="M21 15v4a2 2 0 01-2 2H5a2 2 0 01-2-2v-4M7 10l5 5 5-5M12 15V3" />
                       </svg>
                     </button>
-                    {isSeedance2 && (
-                      <button
-                        type="button"
-                        title="Extend this video using Seedance 2.0 Extend"
-                        onClick={(e) => {
-                          e.stopPropagation();
-                          setLastGenerationId(entry.id);
-                          handleExtend();
-                        }}
-                        className="p-2 bg-black/60 backdrop-blur-md rounded-full text-white hover:bg-primary hover:text-black transition-all border border-white/10"
-                      >
-                        <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2">
-                          <path d="M5 12h14M12 5l7 7-7 7" />
-                        </svg>
-                      </button>
-                    )}
                   </div>
 
                   {/* Prompt & Details */}
@@ -1590,23 +1557,6 @@ export default function VideoStudio({
               />
             </div>
           </div>
-
-          {/* Extend banner */}
-          {isExtendMode && (
-            <div className="flex items-center gap-2 px-3 py-1.5 mx-3 bg-primary/5 border border-primary/10 rounded-lg text-[10px] text-primary/80 font-medium tracking-tight">
-              <svg
-                width="13"
-                height="13"
-                viewBox="0 0 24 24"
-                fill="none"
-                stroke="currentColor"
-                strokeWidth="2.5"
-              >
-                <path d="M5 12h14M12 5l7 7-7 7" />
-              </svg>
-              <span>Extending previous Seedance 2.0 generation</span>
-            </div>
-          )}
 
           {/* Bottom row: controls + generate */}
           <div className="flex flex-col sm:flex-row items-stretch sm:items-center justify-between gap-4 pt-2 border-t border-white/[0.03] relative">

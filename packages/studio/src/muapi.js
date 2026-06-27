@@ -92,6 +92,13 @@ async function falPoll(statusUrl, responseUrl, key, maxAttempts, interval) {
 }
 
 async function falSubmitAndPoll(falSlug, payload, key, onRequestId, maxAttempts = 900, interval = 2000) {
+    // No key yet — nudge the user to enter one instead of sending "Key null" to fal.
+    if (!key || !String(key).trim()) {
+        if (typeof window !== 'undefined') {
+            window.dispatchEvent(new CustomEvent('og:api-key-required'));
+        }
+        throw new Error('Please enter your fal.ai API key first.');
+    }
     const res = await fetch(`${FAL_PROXY}/${falSlug}`, {
         method: 'POST',
         headers: { 'Content-Type': 'application/json', 'Authorization': `Key ${key}` },

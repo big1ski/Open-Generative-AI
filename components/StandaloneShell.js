@@ -35,6 +35,8 @@ export default function StandaloneShell() {
   const [activeTab, setActiveTab] = useState(getInitialTab());
 
   const [showSettings, setShowSettings] = useState(false);
+  const [showApiKeyModal, setShowApiKeyModal] = useState(false);
+  const [pulseTick, setPulseTick] = useState(0); // bumped to (re)trigger the button nudge
   const [isHeaderVisible, setIsHeaderVisible] = useState(true);
   const [hasMounted, setHasMounted] = useState(false);
 
@@ -66,11 +68,20 @@ export default function StandaloneShell() {
   const handleKeySave = useCallback((key) => {
     localStorage.setItem(STORAGE_KEY, key);
     setApiKey(key);
+    setShowApiKeyModal(false);
   }, []);
 
   const handleKeyChange = useCallback(() => {
     localStorage.removeItem(STORAGE_KEY);
     setApiKey(null);
+    setShowSettings(false);
+  }, []);
+
+  // When a studio attempts to generate without a key, nudge the header button.
+  useEffect(() => {
+    const onKeyRequired = () => setPulseTick((t) => t + 1);
+    window.addEventListener('og:api-key-required', onKeyRequired);
+    return () => window.removeEventListener('og:api-key-required', onKeyRequired);
   }, []);
 
   // Inject the fal key into outgoing Axios requests bound for our own /api/fal* proxy.
@@ -138,10 +149,6 @@ export default function StandaloneShell() {
       <div className="animate-spin text-[#22d3ee] text-3xl">◌</div>
     </div>
   );
-
-  if (!apiKey) {
-    return <ApiKeyModal onSave={handleKeySave} />;
-  }
 
   return (
     <div
@@ -212,17 +219,31 @@ export default function StandaloneShell() {
 
           {/* Right: Actions */}
           <div className="flex-shrink-0 flex items-center gap-4">
-            <button
-              onClick={() => setShowSettings(true)}
-              title="Settings — API key, local models, preferences"
-              className="flex items-center gap-2 px-3 py-1.5 rounded-md border border-white/10 bg-white/5 text-[13px] font-bold text-white/80 hover:text-white hover:bg-white/10 hover:border-white/20 transition-colors"
-            >
-              <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
-                <circle cx="12" cy="12" r="3" />
-                <path d="M19.4 15a1.65 1.65 0 0 0 .33 1.82l.06.06a2 2 0 0 1 0 2.83 2 2 0 0 1-2.83 0l-.06-.06a1.65 1.65 0 0 0-1.82-.33 1.65 1.65 0 0 0-1 1.51V21a2 2 0 0 1-2 2 2 2 0 0 1-2-2v-.09A1.65 1.65 0 0 0 9 19.4a1.65 1.65 0 0 0-1.82.33l-.06.06a2 2 0 0 1-2.83 0 2 2 0 0 1 0-2.83l.06-.06a1.65 1.65 0 0 0 .33-1.82 1.65 1.65 0 0 0-1.51-1H3a2 2 0 0 1-2-2 2 2 0 0 1 2-2h.09A1.65 1.65 0 0 0 4.6 9a1.65 1.65 0 0 0-.33-1.82l-.06-.06a2 2 0 0 1 0-2.83 2 2 0 0 1 2.83 0l.06.06a1.65 1.65 0 0 0 1.82.33H9a1.65 1.65 0 0 0 1-1.51V3a2 2 0 0 1 2-2 2 2 0 0 1 2 2v.09a1.65 1.65 0 0 0 1 1.51 1.65 1.65 0 0 0 1.82-.33l.06-.06a2 2 0 0 1 2.83 0 2 2 0 0 1 0 2.83l-.06.06a1.65 1.65 0 0 0-.33 1.82V9a1.65 1.65 0 0 0 1.51 1H21a2 2 0 0 1 2 2 2 2 0 0 1-2 2h-.09a1.65 1.65 0 0 0-1.51 1z" />
-              </svg>
-              <span>Settings</span>
-            </button>
+            {apiKey ? (
+              <button
+                onClick={() => setShowSettings(true)}
+                title="Settings — API key, local models, preferences"
+                className="flex items-center gap-2 px-3 py-1.5 rounded-md border border-white/10 bg-white/5 text-[13px] font-bold text-white/80 hover:text-white hover:bg-white/10 hover:border-white/20 transition-colors"
+              >
+                <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
+                  <circle cx="12" cy="12" r="3" />
+                  <path d="M19.4 15a1.65 1.65 0 0 0 .33 1.82l.06.06a2 2 0 0 1 0 2.83 2 2 0 0 1-2.83 0l-.06-.06a1.65 1.65 0 0 0-1.82-.33 1.65 1.65 0 0 0-1 1.51V21a2 2 0 0 1-2 2 2 2 0 0 1-2-2v-.09A1.65 1.65 0 0 0 9 19.4a1.65 1.65 0 0 0-1.82.33l-.06.06a2 2 0 0 1-2.83 0 2 2 0 0 1 0-2.83l.06-.06a1.65 1.65 0 0 0 .33-1.82 1.65 1.65 0 0 0-1.51-1H3a2 2 0 0 1-2-2 2 2 0 0 1 2-2h.09A1.65 1.65 0 0 0 4.6 9a1.65 1.65 0 0 0-.33-1.82l-.06-.06a2 2 0 0 1 0-2.83 2 2 0 0 1 2.83 0l.06.06a1.65 1.65 0 0 0 1.82.33H9a1.65 1.65 0 0 0 1-1.51V3a2 2 0 0 1 2-2 2 2 0 0 1 2 2v.09a1.65 1.65 0 0 0 1 1.51 1.65 1.65 0 0 0 1.82-.33l.06-.06a2 2 0 0 1 2.83 0 2 2 0 0 1 0 2.83l-.06.06a1.65 1.65 0 0 0-.33 1.82V9a1.65 1.65 0 0 0 1.51 1H21a2 2 0 0 1 2 2 2 2 0 0 1-2 2h-.09a1.65 1.65 0 0 0-1.51 1z" />
+                </svg>
+                <span>Settings</span>
+              </button>
+            ) : (
+              <button
+                key={pulseTick}
+                onClick={() => setShowApiKeyModal(true)}
+                title="Enter your fal.ai API key to start generating"
+                className={`flex items-center gap-2 px-3 py-1.5 rounded-md bg-[#22d3ee] text-black text-[13px] font-bold hover:bg-[#e5ff33] transition-colors ${pulseTick > 0 ? 'animate-attention' : ''}`}
+              >
+                <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.2" strokeLinecap="round" strokeLinejoin="round">
+                  <path d="M21 2l-2 2m-7.61 7.61a5.5 5.5 0 1 1-7.778 7.778 5.5 5.5 0 0 1 7.777-7.777zm0 0L15.5 7.5m0 0l3 3" />
+                </svg>
+                <span>Enter API Key</span>
+              </button>
+            )}
           </div>
         </header>
       )}
@@ -251,7 +272,7 @@ export default function StandaloneShell() {
                    Active API Key
                 </label>
                 <div className="text-[13px] font-mono text-white/80">
-                  {apiKey.slice(0, 8)}••••••••••••••••
+                  {apiKey?.slice(0, 8)}••••••••••••••••
                 </div>
               </div>
             </div>
@@ -272,6 +293,11 @@ export default function StandaloneShell() {
             </div>
           </div>
         </div>
+      )}
+
+      {/* API key entry — opened from the header "Enter API Key" button */}
+      {showApiKeyModal && (
+        <ApiKeyModal overlay onClose={() => setShowApiKeyModal(false)} onSave={handleKeySave} />
       )}
     </div>
   );

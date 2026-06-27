@@ -43,7 +43,7 @@ export default function ApiKeyModal({ onSave, onClose, overlay = false, title, s
           </h1>
           <p className="text-white/40 text-[13px] leading-relaxed px-4">
             {subtitle || (
-              <>Enter your <a href="https://muapi.ai/access-keys" target="_blank" rel="noreferrer" className="text-[#22d3ee] hover:text-[#e5ff33] transition-colors">Muapi.ai</a> API key to start creating</>
+              <>Enter your <a href="https://fal.ai/dashboard/keys" target="_blank" rel="noreferrer" className="text-[#22d3ee] hover:text-[#e5ff33] transition-colors">fal.ai</a> API key to start creating</>
             )}
           </p>
         </div>
@@ -74,7 +74,7 @@ export default function ApiKeyModal({ onSave, onClose, overlay = false, title, s
 
           <p className="text-center text-[12px] text-white/20 pt-2">
             Need a key?{' '}
-            <a href="https://muapi.ai/access-keys" target="_blank" rel="noreferrer" className="text-white/40 hover:text-[#22d3ee] transition-colors font-medium">
+            <a href="https://fal.ai/dashboard/keys" target="_blank" rel="noreferrer" className="text-white/40 hover:text-[#22d3ee] transition-colors font-medium">
               Get one free →
             </a>
           </p>

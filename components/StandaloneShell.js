@@ -2,70 +2,39 @@
 
 import { useState, useEffect, useCallback } from 'react';
 import { useParams, useRouter } from 'next/navigation';
-import dynamic from 'next/dynamic';
-import { ImageStudio, VideoStudio, ClippingStudio, VibeMotionStudio, LipSyncStudio, CinemaStudio, AudioStudio, MarketingStudio, WorkflowStudio, AgentStudio, AppsStudio, getUserBalance } from 'studio';
-
-const DesignAgentStudio = dynamic(() => import('studio').then(mod => mod.DesignAgentStudio), {
-  ssr: false,
-  loading: () => <div className="h-full w-full bg-black flex items-center justify-center text-white/20">Loading Design Studio...</div>
-});
+import { ImageStudio, VideoStudio, LipSyncStudio, CinemaStudio, AudioStudio, AppsStudio } from 'studio';
 import axios from 'axios';
 import ApiKeyModal from './ApiKeyModal';
 
+// MuAPI-only surfaces (Workflows, Agents, Design Agent, AI Clipping, Vibe Motion,
+// Marketing Studio) have no fal equivalent — their clients were stubbed during the
+// fal migration. They are removed from the web shell so every tab is fal-backed.
 const TABS = [
   { id: 'image',   label: 'Image Studio' },
   { id: 'video',   label: 'Video Studio' },
   { id: 'audio',   label: 'Audio Studio' },
-  { id: 'clipping', label: 'AI Clipping' },
-  { id: 'vibe-motion', label: 'Vibe Motion' },
   { id: 'lipsync', label: 'Lip Sync' },
   { id: 'cinema',  label: 'Cinema Studio' },
-  { id: 'marketing', label: 'Marketing Studio' },
-  { id: 'workflows', label: 'Workflows' },
-  { id: 'agents', label: 'Agents' },
-  { id: 'design-agent', label: 'Design Agent' },
   { id: 'apps', label: 'Explore Apps' },
 ];
 
-const STORAGE_KEY = 'muapi_key';
+const STORAGE_KEY = 'fal_key';
 
 export default function StandaloneShell() {
   const params = useParams();
   const router = useRouter();
-  const slug = params?.slug || []; 
-  const idFromParams = params?.id;
-  const tabFromParams = params?.tab;
+  const slug = params?.slug || [];
 
-  // Helper to extract workflow details precisely from either route structure
-  const getWorkflowInfo = useCallback(() => {
-    if (idFromParams) {
-        return { id: idFromParams, tab: tabFromParams || null };
-    }
-    const wfIndex = slug.findIndex(s => s === 'workflows' || s === 'workflow');
-    if (wfIndex === -1) return { id: null, tab: null };
-    return {
-      id: slug[wfIndex + 1] || null,
-      tab: slug[wfIndex + 2] || null
-    };
-  }, [slug, idFromParams, tabFromParams]);
-
-  const { id: urlWorkflowId } = getWorkflowInfo();
-
-  // Initialize activeTab from URL slug/params or default to 'image'
+  // Initialize activeTab from URL slug or default to 'image'
   const getInitialTab = () => {
-    if (idFromParams || slug.includes('workflow')) return 'workflows';
-    if (slug.includes('agents')) return 'agents';
-    if (slug.includes('design-agent')) return 'design-agent';
-    if (slug.includes('apps')) return 'apps';
     const firstSegment = slug[0];
     if (firstSegment && TABS.find(t => t.id === firstSegment)) return firstSegment;
     return 'image';
   };
-  
+
   const [apiKey, setApiKey] = useState(null);
   const [activeTab, setActiveTab] = useState(getInitialTab());
 
-  const [balance, setBalance] = useState(null);
   const [showSettings, setShowSettings] = useState(false);
   const [isHeaderVisible, setIsHeaderVisible] = useState(true);
   const [hasMounted, setHasMounted] = useState(false);
@@ -80,103 +49,54 @@ export default function StandaloneShell() {
 
   // Sync tab with URL if user navigates manually or via browser back/forward
   useEffect(() => {
-    const info = getWorkflowInfo();
-    if (info.id) {
-        setActiveTab('workflows');
-    } else if (slug.includes('agents')) {
-        setActiveTab('agents');
-    } else if (slug.includes('design-agent')) {
-        setActiveTab('design-agent');
-    } else if (slug.includes('apps')) {
-        setActiveTab('apps');
-    } else {
-        const firstSegment = slug[0];
-        if (firstSegment && TABS.find(t => t.id === firstSegment)) {
-          setActiveTab(firstSegment);
-        }
+    const firstSegment = slug[0];
+    if (firstSegment && TABS.find(t => t.id === firstSegment)) {
+      setActiveTab(firstSegment);
     }
-  }, [slug, getWorkflowInfo]);
+  }, [slug]);
 
   const handleTabChange = (tabId) => {
     router.push(`/studio/${tabId}`);
-    // setActiveTab(tabId);
   };
-
-  // Auto-hide header when inside a specific workflow view or design agent
-  useEffect(() => {
-    const isEditingWorkflow = (activeTab === 'workflows' || !!idFromParams) && urlWorkflowId;
-    const isDesignAgent = activeTab === 'design-agent';
-    
-    if (isEditingWorkflow || isDesignAgent) {
-      setIsHeaderVisible(false);
-    } else {
-      setIsHeaderVisible(true);
-    }
-  }, [activeTab, urlWorkflowId, idFromParams]);
-
-  // Global builder CSS cleanup when switching away from Workflows or Design Agent tabs
-  useEffect(() => {
-    const fromBuilder = sessionStorage.getItem("fromWorkflowBuilder");
-    const fromDesignAgent = sessionStorage.getItem("fromDesignAgent");
-    
-    if ((fromBuilder && activeTab !== 'workflows') || (fromDesignAgent && activeTab !== 'design-agent')) {
-      sessionStorage.removeItem("fromWorkflowBuilder");
-      sessionStorage.removeItem("fromDesignAgent");
-      window.location.reload();
-    }
-  }, [activeTab]);
-
-  const fetchBalance = useCallback(async (key) => {
-    try {
-      const data = await getUserBalance(key);
-      setBalance(data.balance);
-    } catch (err) {
-      console.error('Balance fetch failed:', err);
-    }
-  }, []);
 
   useEffect(() => {
     setHasMounted(true);
     const stored = localStorage.getItem(STORAGE_KEY);
     if (stored) {
       setApiKey(stored);
-      fetchBalance(stored);
       // Sync cookie immediately on mount to establish identity for background requests
-      document.cookie = `muapi_key=${stored}; path=/; max-age=31536000; SameSite=Lax`;
+      document.cookie = `fal_key=${stored}; path=/; max-age=31536000; SameSite=Lax`;
     }
-  }, [fetchBalance]);
+  }, []);
 
   const handleKeySave = useCallback((key) => {
     localStorage.setItem(STORAGE_KEY, key);
     setApiKey(key);
-    fetchBalance(key);
-    document.cookie = `muapi_key=${key}; path=/; max-age=31536000; SameSite=Lax`;
-  }, [fetchBalance]);
+    document.cookie = `fal_key=${key}; path=/; max-age=31536000; SameSite=Lax`;
+  }, []);
 
   const handleKeyChange = useCallback(() => {
     localStorage.removeItem(STORAGE_KEY);
     setApiKey(null);
-    setBalance(null);
-    document.cookie = "muapi_key=; path=/; expires=Thu, 01 Jan 1970 00:00:00 GMT";
+    document.cookie = "fal_key=; path=/; expires=Thu, 01 Jan 1970 00:00:00 GMT";
   }, []);
 
-  // Inject API key into all outgoing Axios requests (prop-based approach)
-  // We use an interceptor to be selective and NOT send the key to external domains like S3
+  // Inject the fal key into outgoing Axios requests bound for our own /api/fal* proxy.
+  // External domains (S3/CDN) never receive the key.
   useEffect(() => {
-    // Safety: Clear any global defaults that might have been set previously
     delete axios.defaults.headers.common['x-api-key'];
+    delete axios.defaults.headers.common['Authorization'];
 
     if (!apiKey) return;
 
     const interceptorId = axios.interceptors.request.use((config) => {
-      // Check if URL is local/proxied
       const isRelative = config.url.startsWith('/') || !config.url.startsWith('http');
-      const isInternalProxy = config.url.includes('/api/app') || config.url.includes('/api/workflow') || config.url.includes('/api/agents') || config.url.includes('/api/api') || config.url.includes('/api/v1');
+      const isFalProxy = config.url.includes('/api/fal');
 
-      if (isRelative || isInternalProxy) {
-        config.headers['x-api-key'] = apiKey;
+      if (isRelative || isFalProxy) {
+        config.headers['Authorization'] = `Key ${apiKey}`;
       }
-      
+
       return config;
     });
 
@@ -184,13 +104,6 @@ export default function StandaloneShell() {
       axios.interceptors.request.eject(interceptorId);
     };
   }, [apiKey]);
-
-  // Poll for balance every 30 seconds if key is present
-  useEffect(() => {
-    if (!apiKey) return;
-    const interval = setInterval(() => fetchBalance(apiKey), 30000);
-    return () => clearInterval(interval);
-  }, [apiKey, fetchBalance]);
 
   // Drag and Drop Handlers
   const handleDragOver = useCallback((e) => {
@@ -240,7 +153,7 @@ export default function StandaloneShell() {
   }
 
   return (
-    <div 
+    <div
       className="h-screen bg-[#030303] flex flex-col overflow-hidden text-white relative"
       onDragOver={handleDragOver}
       onDragEnter={handleDragEnter}
@@ -305,7 +218,7 @@ export default function StandaloneShell() {
           <div className="flex-1 min-w-0 mx-4 sm:mx-6 relative overflow-hidden h-full flex items-center justify-start lg:justify-center">
             {/* Fade Left Overlay */}
             <div className="absolute left-0 top-0 bottom-0 w-8 bg-gradient-to-r from-[#030303] to-transparent pointer-events-none z-10 block lg:hidden" />
-            
+
             <nav className="flex items-center gap-4 overflow-x-auto scrollbar-none w-full lg:w-auto h-full px-4 lg:px-0">
               {TABS.map((tab) => (
                 <button
@@ -324,22 +237,13 @@ export default function StandaloneShell() {
                 </button>
               ))}
             </nav>
-            
+
             {/* Fade Right Overlay */}
             <div className="absolute right-0 top-0 bottom-0 w-8 bg-gradient-to-l from-[#030303] to-transparent pointer-events-none z-10 block lg:hidden" />
           </div>
 
           {/* Right: Actions */}
           <div className="flex-shrink-0 flex items-center gap-4">
-            <div className="flex items-center gap-3 bg-white/5 px-3 py-1.5 rounded-full border border-white/5 transition-colors">
-              <div className="w-2 h-2 rounded-full bg-green-500 animate-pulse" />
-              <div className="flex flex-col">
-                <span className="text-xs font-bold text-white/90">
-                  ${balance !== null ? `${balance}` : '---'}
-                </span>
-              </div>
-            </div>
-
             <button
               onClick={() => setShowSettings(true)}
               title="Settings — API key, local models, preferences"
@@ -359,15 +263,9 @@ export default function StandaloneShell() {
       <div className="flex-1 min-h-0 relative overflow-hidden">
         {activeTab === 'image'   && <ImageStudio   apiKey={apiKey} droppedFiles={droppedFiles} onFilesHandled={handleFilesHandled} />}
         {activeTab === 'video'   && <VideoStudio   apiKey={apiKey} droppedFiles={droppedFiles} onFilesHandled={handleFilesHandled} />}
-        {activeTab === 'clipping' && <ClippingStudio apiKey={apiKey} droppedFiles={droppedFiles} onFilesHandled={handleFilesHandled} />}
-        {activeTab === 'vibe-motion' && <VibeMotionStudio apiKey={apiKey} />}
         {activeTab === 'lipsync' && <LipSyncStudio apiKey={apiKey} droppedFiles={droppedFiles} onFilesHandled={handleFilesHandled} />}
         {activeTab === 'cinema'  && <CinemaStudio  apiKey={apiKey} />}
         {activeTab === 'audio'   && <AudioStudio   apiKey={apiKey} droppedFiles={droppedFiles} onFilesHandled={handleFilesHandled} />}
-        {activeTab === 'marketing' && <MarketingStudio apiKey={apiKey} droppedFiles={droppedFiles} onFilesHandled={handleFilesHandled} />}
-        {activeTab === 'workflows' && <WorkflowStudio apiKey={apiKey} isHeaderVisible={isHeaderVisible} onToggleHeader={setIsHeaderVisible} />}
-        {activeTab === 'agents' && <AgentStudio apiKey={apiKey} isHeaderVisible={isHeaderVisible} onToggleHeader={setIsHeaderVisible} />}
-        {activeTab === 'design-agent' && <DesignAgentStudio apiKey={apiKey} isHeaderVisible={isHeaderVisible} onToggleHeader={setIsHeaderVisible} />}
         {activeTab === 'apps' && <AppsStudio apiKey={apiKey} />}
       </div>
 
@@ -379,7 +277,7 @@ export default function StandaloneShell() {
             <p className="text-white/40 text-[13px] mb-8">
               Manage your AI studio preferences and authentication.
             </p>
-            
+
             <div className="space-y-4 mb-8">
               <div className="bg-white/5 border border-white/[0.03] rounded-md p-4">
                 <label className="block text-xs font-bold text-white/30 mb-2">

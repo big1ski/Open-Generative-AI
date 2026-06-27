@@ -7,8 +7,7 @@
 
 ## 🌐 Try it Online — No Install Required
 
-**Hosted version:** [https://open-generative-ai-puce-five.vercel.app/studio](https://open-generative-ai-puce-five.vercel.app/studio)
-
+**Hosted version:** [https://open-generative-ai.brpr.vercel.app/studio](https://open-generative-ai.brpr.vercel.app/studio)
 Use all studios (Image, Video, Audio, AI Clipping, Vibe Motion, Lip Sync, Cinema, Marketing, Workflows, Agents, Design Agent, Apps, MCP & CLI) directly in your browser — no Node.js, no setup. Sign up for a free account to start generating. The hosted version is always up to date with the latest models.
 
 **Follow** the [creator](https://x.com/matchaman11) for updates

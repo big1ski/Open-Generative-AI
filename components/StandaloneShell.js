@@ -84,7 +84,6 @@ export default function StandaloneShell() {
   // Inject the fal key into outgoing Axios requests bound for our own /api/fal* proxy.
   // External domains (S3/CDN) never receive the key.
   useEffect(() => {
-    delete axios.defaults.headers.common['x-api-key'];
     delete axios.defaults.headers.common['Authorization'];
 
     if (!apiKey) return;

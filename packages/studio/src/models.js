@@ -2,6 +2,12 @@
 export const t2iModels = [
   {
     "id": "nano-banana",
+    "falSlug": "fal-ai/nano-banana",
+    "inputMap": {
+      "prompt": "prompt",
+      "aspect_ratio": "aspect_ratio"
+    },
+    "outputField": "images[0].url",
     "name": "Nano Banana",
     "endpoint": "nano-banana",
     "inputs": {
@@ -37,6 +43,14 @@ export const t2iModels = [
   },
   {
     "id": "flux-dev",
+    "falSlug": "fal-ai/flux/dev",
+    "inputMap": {
+      "prompt": "prompt",
+      "width": "image_size.width",
+      "height": "image_size.height",
+      "num_images": "num_images"
+    },
+    "outputField": "images[0].url",
     "name": "Flux Dev",
     "endpoint": "flux-dev-image",
     "inputs": {
@@ -83,6 +97,14 @@ export const t2iModels = [
   },
   {
     "id": "flux-dev-lora",
+    "falSlug": "fal-ai/flux-lora",
+    "inputMap": {
+      "prompt": "prompt",
+      "model_id": "loras[0].path",
+      "width": "image_size.width",
+      "height": "image_size.height"
+    },
+    "outputField": "images[0].url",
     "name": "Flux Dev Lora",
     "inputs": {
       "prompt": {
@@ -164,6 +186,12 @@ export const t2iModels = [
   },
   {
     "id": "flux-kontext-dev-t2i",
+    "falSlug": "fal-ai/flux-pro/kontext/text-to-image",
+    "inputMap": {
+      "prompt": "prompt",
+      "aspect_ratio": "aspect_ratio"
+    },
+    "outputField": "images[0].url",
     "name": "Flux Kontext Dev T2I",
     "inputs": {
       "prompt": {
@@ -208,6 +236,14 @@ export const t2iModels = [
   },
   {
     "id": "hidream-i1-fast",
+    "falSlug": "fal-ai/hidream-i1-fast",
+    "inputMap": {
+      "prompt": "prompt",
+      "width": "image_size.width",
+      "height": "image_size.height",
+      "num_images": "num_images"
+    },
+    "outputField": "images[0].url",
     "name": "Hidream I1 Fast",
     "inputs": {
       "prompt": {
@@ -253,6 +289,13 @@ export const t2iModels = [
   },
   {
     "id": "hidream-i1-dev",
+    "falSlug": "fal-ai/hidream-i1-dev",
+    "inputMap": {
+      "prompt": "prompt",
+      "width": "image_size.width",
+      "height": "image_size.height"
+    },
+    "outputField": "images[0].url",
     "name": "Hidream I1 Dev",
     "inputs": {
       "prompt": {
@@ -298,6 +341,13 @@ export const t2iModels = [
   },
   {
     "id": "hidream-i1-full",
+    "falSlug": "fal-ai/hidream-i1-full",
+    "inputMap": {
+      "prompt": "prompt",
+      "width": "image_size.width",
+      "height": "image_size.height"
+    },
+    "outputField": "images[0].url",
     "name": "Hidream I1 Full",
     "inputs": {
       "prompt": {
@@ -342,79 +392,14 @@ export const t2iModels = [
     }
   },
   {
-    "id": "ai-anime-generator",
-    "name": "Ai Anime Generator",
-    "inputs": {
-      "prompt": {
-        "examples": [
-          "A cheerful anime girl with short pink hair and green eyes, wearing a school uniform, standing under cherry blossom trees, soft lighting, anime style."
-        ],
-        "description": "Text prompt describing the image.",
-        "type": "string",
-        "title": "Prompt",
-        "name": "prompt"
-      },
-      "width": {
-        "title": "Width",
-        "name": "width",
-        "type": "int",
-        "description": "Width of the output image.",
-        "default": 1024,
-        "minValue": 256,
-        "maxValue": 1536,
-        "step": 1,
-        "isEdit": true
-      },
-      "height": {
-        "title": "Height",
-        "name": "height",
-        "type": "int",
-        "description": "Height of the output image.",
-        "default": 1024,
-        "minValue": 256,
-        "maxValue": 1536,
-        "step": 1,
-        "isEdit": true
-      }
-    }
-  },
-  {
-    "id": "wan2.1-text-to-image",
-    "name": "Wan2.1 Text To Image",
-    "inputs": {
-      "prompt": {
-        "examples": [
-          "A young woman with freckles and natural makeup, standing in soft sunlight, sharp focus, DSLR photo style, ultra-realistic skin texture."
-        ],
-        "description": "Text prompt describing the image.",
-        "type": "string",
-        "title": "Prompt",
-        "name": "prompt"
-      },
-      "width": {
-        "title": "Width",
-        "name": "width",
-        "type": "int",
-        "description": "Width of the output image.",
-        "default": 1024,
-        "minValue": 256,
-        "maxValue": 1536,
-        "step": 1
-      },
-      "height": {
-        "title": "Height",
-        "name": "height",
-        "type": "int",
-        "description": "Height of the output image.",
-        "default": 1024,
-        "minValue": 256,
-        "maxValue": 1536,
-        "step": 1
-      }
-    }
-  },
-  {
     "id": "flux-kontext-pro-t2i",
+    "falSlug": "fal-ai/flux-pro/kontext/text-to-image",
+    "inputMap": {
+      "prompt": "prompt",
+      "aspect_ratio": "aspect_ratio",
+      "num_images": "num_images"
+    },
+    "outputField": "images[0].url",
     "name": "Flux Kontext Pro T2I",
     "inputs": {
       "prompt": {
@@ -446,6 +431,13 @@ export const t2iModels = [
   },
   {
     "id": "flux-kontext-max-t2i",
+    "falSlug": "fal-ai/flux-pro/kontext/max/text-to-image",
+    "inputMap": {
+      "prompt": "prompt",
+      "aspect_ratio": "aspect_ratio",
+      "num_images": "num_images"
+    },
+    "outputField": "images[0].url",
     "name": "Flux Kontext Max T2I",
     "inputs": {
       "prompt": {
@@ -476,123 +468,15 @@ export const t2iModels = [
     }
   },
   {
-    "id": "gpt4o-text-to-image",
-    "name": "Gpt4o Text To Image",
-    "inputs": {
-      "prompt": {
-        "examples": [
-          "A diagram of the solar system with labeled planets, cartoon style."
-        ],
-        "description": "Text prompt describing the image.",
-        "type": "string",
-        "title": "Prompt",
-        "name": "prompt"
-      },
-      "aspect_ratio": {
-        "enum": [
-          "1:1",
-          "2:3",
-          "3:2"
-        ],
-        "title": "Aspect Ratio",
-        "name": "aspect_ratio",
-        "type": "string",
-        "description": "Aspect ratio of the output image.",
-        "default": "1:1"
-      },
-      "num_images": {
-        "enum": [
-          1,
-          2,
-          4
-        ],
-        "title": "Number of images",
-        "name": "num_images",
-        "type": "int",
-        "description": "Number of images generated in single request. Each number will charge separately",
-        "default": 1
-      }
-    }
-  },
-  {
-    "id": "midjourney-v7-text-to-image",
-    "name": "Midjourney v7 Text To Image",
-    "inputs": {
-      "prompt": {
-        "examples": [
-          "A sprawling futuristic city at dusk, illuminated with vibrant neon signs, layered skyscrapers, elevated highways with flying cars, warm atmospheric glow, ultra-detailed sci-fi architecture, cinematic composition — digital art, high contrast, 8K"
-        ],
-        "description": "The prompt to generate the image",
-        "type": "string",
-        "title": "Prompt",
-        "name": "prompt"
-      },
-      "speed": {
-        "enum": [
-          "relaxed",
-          "fast",
-          "turbo"
-        ],
-        "title": "Speed",
-        "name": "speed",
-        "type": "string",
-        "description": "The speed of which corresponds to different speed of Midjourney",
-        "default": "relaxed"
-      },
-      "aspect_ratio": {
-        "enum": [
-          "1:1",
-          "16:9",
-          "9:16",
-          "3:4",
-          "4:3",
-          "1:2",
-          "2:1",
-          "2:3",
-          "3:2",
-          "5:6",
-          "6:5"
-        ],
-        "title": "Aspect Ratio",
-        "name": "aspect_ratio",
-        "type": "string",
-        "description": "Aspect ratio of the output image.",
-        "default": "1:1"
-      },
-      "variety": {
-        "title": "Variety",
-        "name": "variety",
-        "type": "int",
-        "description": "Controls the diversity of generated images. Increment by 5 each time. Higher values create more diverse results. Lower values create more consistent results.",
-        "default": 5,
-        "minValue": 0,
-        "maxValue": 100,
-        "step": 5
-      },
-      "stylization": {
-        "title": "Stylization",
-        "name": "stylization",
-        "type": "int",
-        "description": "Controls the artistic style intensity. Higher values create more stylized results. Lower values create more realistic results.",
-        "default": 1,
-        "minValue": 0,
-        "maxValue": 1000,
-        "step": 1
-      },
-      "weirdness": {
-        "title": "Weirdness",
-        "name": "weirdness",
-        "type": "int",
-        "description": "Controls the creativity and uniqueness. Higher values create more unusual results. Lower values create more conventional results.",
-        "default": 1,
-        "minValue": 0,
-        "maxValue": 3000,
-        "step": 1
-      }
-    }
-  },
-  {
     "id": "flux-schnell",
+    "falSlug": "fal-ai/flux/schnell",
+    "inputMap": {
+      "prompt": "prompt",
+      "width": "image_size.width",
+      "height": "image_size.height",
+      "num_images": "num_images"
+    },
+    "outputField": "images[0].url",
     "name": "Flux Schnell",
     "endpoint": "flux-schnell-image",
     "inputs": {
@@ -639,6 +523,13 @@ export const t2iModels = [
   },
   {
     "id": "bytedance-seedream-v3",
+    "falSlug": "fal-ai/bytedance/seedream/v3/text-to-image",
+    "inputMap": {
+      "prompt": "prompt",
+      "aspect_ratio": "aspect_ratio",
+      "num_images": "num_images"
+    },
+    "outputField": "images[0].url",
     "name": "Bytedance Seedream v3",
     "inputs": {
       "prompt": {
@@ -668,6 +559,13 @@ export const t2iModels = [
   },
   {
     "id": "qwen-image",
+    "falSlug": "fal-ai/qwen-image",
+    "inputMap": {
+      "prompt": "prompt",
+      "width": "width",
+      "height": "height"
+    },
+    "outputField": "images[0].url",
     "name": "Qwen Image",
     "inputs": {
       "prompt": {
@@ -711,6 +609,12 @@ export const t2iModels = [
   },
   {
     "id": "flux-pulid",
+    "falSlug": "fal-ai/flux-pulid",
+    "inputMap": {
+      "prompt": "prompt",
+      "reference_image": "reference_image_url"
+    },
+    "outputField": "images[0].url",
     "name": "Flux Pulid",
     "inputs": {
       "prompt": {
@@ -750,6 +654,13 @@ export const t2iModels = [
   },
   {
     "id": "ideogram-v3-t2i",
+    "falSlug": "fal-ai/ideogram/v3",
+    "inputMap": {
+      "prompt": "prompt",
+      "aspect_ratio": "aspect_ratio",
+      "style_type": "style_type"
+    },
+    "outputField": "images[0].url",
     "name": "Ideogram v3 T2I",
     "inputs": {
       "prompt": {
@@ -814,116 +725,15 @@ export const t2iModels = [
     }
   },
   {
-    "id": "google-imagen4",
-    "name": "Google Imagen4",
-    "inputs": {
-      "prompt": {
-        "examples": [
-          "A grand waterfall cascading down glowing crystal cliffs under a twilight sky, bioluminescent plants illuminating the scene, a lone explorer standing on a cliff edge with a futuristic lantern, cinematic ultra-realism."
-        ],
-        "description": "Text prompt describing the image, what you want the final edited image to look like.",
-        "type": "string",
-        "title": "Prompt",
-        "name": "prompt"
-      },
-      "aspect_ratio": {
-        "enum": [
-          "16:9",
-          "9:16",
-          "1:1",
-          "4:3",
-          "3:4"
-        ],
-        "title": "Aspect Ratio",
-        "name": "aspect_ratio",
-        "type": "string",
-        "description": "Aspect ratio of the output image.",
-        "default": "1:1"
-      },
-      "num_images": {
-        "title": "Number of images",
-        "name": "num_images",
-        "type": "int",
-        "description": "Number of images generated in single request. Each number will charge separately",
-        "default": 1,
-        "minValue": 1,
-        "maxValue": 4,
-        "step": 1,
-        "isEdit": true
-      }
-    }
-  },
-  {
-    "id": "google-imagen4-fast",
-    "name": "Google Imagen4 Fast",
-    "inputs": {
-      "prompt": {
-        "examples": [
-          "A playful panda astronaut bouncing on the moon, leaving heart-shaped footprints, with a pastel-colored galaxy in the background."
-        ],
-        "description": "Text prompt describing the image, what you want the final edited image to look like.",
-        "type": "string",
-        "title": "Prompt",
-        "name": "prompt"
-      },
-      "aspect_ratio": {
-        "enum": [
-          "16:9",
-          "9:16",
-          "1:1",
-          "4:3",
-          "3:4"
-        ],
-        "title": "Aspect Ratio",
-        "name": "aspect_ratio",
-        "type": "string",
-        "description": "Aspect ratio of the output image.",
-        "default": "1:1"
-      },
-      "num_images": {
-        "title": "Number of images",
-        "name": "num_images",
-        "type": "int",
-        "description": "Number of images generated in single request. Each number will charge separately",
-        "default": 1,
-        "minValue": 1,
-        "maxValue": 4,
-        "step": 1,
-        "isEdit": true
-      }
-    }
-  },
-  {
-    "id": "google-imagen4-ultra",
-    "name": "Google Imagen4 Ultra",
-    "inputs": {
-      "prompt": {
-        "examples": [
-          "A close-up portrait of an old lighthouse keeper, wrinkled hands holding a brass lantern, stormy sea waves crashing behind, ultra-detailed realism."
-        ],
-        "description": "Text prompt describing the image, what you want the final edited image to look like.",
-        "type": "string",
-        "title": "Prompt",
-        "name": "prompt"
-      },
-      "aspect_ratio": {
-        "enum": [
-          "16:9",
-          "9:16",
-          "1:1",
-          "4:3",
-          "3:4"
-        ],
-        "title": "Aspect Ratio",
-        "name": "aspect_ratio",
-        "type": "string",
-        "description": "Aspect ratio of the output image.",
-        "default": "1:1"
-      }
-    }
-  },
-  {
     "id": "sdxl-image",
+    "falSlug": "fal-ai/fast-sdxl",
+    "inputMap": {
+      "prompt": "prompt",
+      "negative_prompt": "negative_prompt",
+      "width": "image_size.width",
+      "height": "image_size.height"
+    },
+    "outputField": "images[0].url",
     "name": "Sdxl Image",
     "inputs": {
       "prompt": {
@@ -959,6 +769,13 @@ export const t2iModels = [
   },
   {
     "id": "bytedance-seedream-v4",
+    "falSlug": "fal-ai/bytedance/seedream/v4/text-to-image",
+    "inputMap": {
+      "prompt": "prompt",
+      "aspect_ratio": "aspect_ratio",
+      "num_images": "num_images"
+    },
+    "outputField": "images[0].url",
     "name": "Bytedance Seedream v4",
     "inputs": {
       "prompt": {
@@ -1013,6 +830,13 @@ export const t2iModels = [
   },
   {
     "id": "hunyuan-image-2.1",
+    "falSlug": "fal-ai/hunyuan-image/v2.1/text-to-image",
+    "inputMap": {
+      "prompt": "prompt",
+      "aspect_ratio": "aspect_ratio",
+      "num_images": "num_images"
+    },
+    "outputField": "images[0].url",
     "name": "Hunyuan Image 2.1",
     "inputs": {
       "prompt": {
@@ -1047,42 +871,13 @@ export const t2iModels = [
     }
   },
   {
-    "id": "chroma-image",
-    "name": "Chroma Image",
-    "inputs": {
-      "prompt": {
-        "examples": [
-          "A futuristic studio bathed in radiant beams of shifting neon colors — cyan, magenta, amber, and emerald — that blend into surreal gradients across walls and objects. A crystal-like prism floats at the center, splitting light into vibrant chromatic waves that ripple outward, painting the scene in glowing, ever-changing hues."
-        ],
-        "description": "Text prompt describing the image.",
-        "type": "string",
-        "title": "Prompt",
-        "name": "prompt"
-      },
-      "width": {
-        "title": "Width",
-        "name": "width",
-        "type": "int",
-        "description": "Width of the output image.",
-        "default": 1024,
-        "minValue": 256,
-        "maxValue": 1536,
-        "step": 1
-      },
-      "height": {
-        "title": "Height",
-        "name": "height",
-        "type": "int",
-        "description": "Height of the output image.",
-        "default": 1024,
-        "minValue": 256,
-        "maxValue": 1536,
-        "step": 1
-      }
-    }
-  },
-  {
     "id": "flux-redux",
+    "falSlug": "fal-ai/flux-pro/redux",
+    "inputMap": {
+      "prompt": "prompt",
+      "image_url": "image_url"
+    },
+    "outputField": "images[0].url",
     "name": "Flux Redux",
     "inputs": {
       "prompt": {
@@ -1136,6 +931,13 @@ export const t2iModels = [
   },
   {
     "id": "flux-krea-dev",
+    "falSlug": "fal-ai/flux/krea",
+    "inputMap": {
+      "prompt": "prompt",
+      "aspect_ratio": "aspect_ratio",
+      "num_images": "num_images"
+    },
+    "outputField": "images[0].url",
     "name": "Flux Krea Dev",
     "inputs": {
       "prompt": {
@@ -1178,77 +980,14 @@ export const t2iModels = [
     }
   },
   {
-    "id": "perfect-pony-xl",
-    "name": "Perfect Pony Xl",
-    "inputs": {
-      "prompt": {
-        "examples": [
-          "A warm, photorealistic portrait of a dappled pony standing in a sunlit stable, dust motes floating in golden light, textured mane, high detail on fur and eyes."
-        ],
-        "description": "Text prompt describing the image.",
-        "type": "string",
-        "title": "Prompt",
-        "name": "prompt"
-      },
-      "width": {
-        "title": "Width",
-        "name": "width",
-        "type": "int",
-        "description": "Width of the output image.",
-        "default": 1024,
-        "minValue": 256,
-        "maxValue": 1536,
-        "step": 1
-      },
-      "height": {
-        "title": "Height",
-        "name": "height",
-        "type": "int",
-        "description": "Height of the output image.",
-        "default": 1024,
-        "minValue": 256,
-        "maxValue": 1536,
-        "step": 1
-      }
-    }
-  },
-  {
-    "id": "neta-lumina",
-    "name": "Neta Lumina",
-    "inputs": {
-      "prompt": {
-        "examples": [
-          "A poised young woman with long silver hair and heterochromatic eyes (one blue, one green), wearing a flowing cheongsam with cranes embroidered, standing in a dimly lit grand staircase. Soft ethereal lighting, painterly anime style, rich textures, delicate lace and pearl accessories."
-        ],
-        "description": "Text prompt describing the image.",
-        "type": "string",
-        "title": "Prompt",
-        "name": "prompt"
-      },
-      "width": {
-        "title": "Width",
-        "name": "width",
-        "type": "int",
-        "description": "Width of the output image.",
-        "default": 1024,
-        "minValue": 256,
-        "maxValue": 1536,
-        "step": 1
-      },
-      "height": {
-        "title": "Height",
-        "name": "height",
-        "type": "int",
-        "description": "Height of the output image.",
-        "default": 1024,
-        "minValue": 256,
-        "maxValue": 1536,
-        "step": 1
-      }
-    }
-  },
-  {
     "id": "wan2.5-text-to-image",
+    "falSlug": "fal-ai/wan-25-preview/text-to-image",
+    "inputMap": {
+      "prompt": "prompt",
+      "aspect_ratio": "aspect_ratio",
+      "resolution": "resolution"
+    },
+    "outputField": "images[0].url",
     "name": "Wan2.5 Text To Image",
     "inputs": {
       "prompt": {
@@ -1284,6 +1023,12 @@ export const t2iModels = [
   },
   {
     "id": "hunyuan-image-3.0",
+    "falSlug": "fal-ai/hunyuan-image/v3/text-to-image",
+    "inputMap": {
+      "prompt": "prompt",
+      "aspect_ratio": "aspect_ratio"
+    },
+    "outputField": "images[0].url",
     "name": "Hunyuan Image 3.0",
     "inputs": {
       "prompt": {
@@ -1318,104 +1063,13 @@ export const t2iModels = [
     }
   },
   {
-    "id": "leonardoai-phoenix-1.0",
-    "name": "Leonardoai Phoenix 1.0",
-    "inputs": {
-      "prompt": {
-        "examples": [
-          "A magical forest at twilight, giant bioluminescent mushrooms illuminating a misty path, a crystal-clear river winding through twisted trees, fireflies dancing, soft ambient glow, ancient stone ruins partially visible, cinematic fantasy lighting, high-detail textures on foliage and moss, ethereal atmosphere, volumetric lighting rays piercing through branches."
-        ],
-        "description": "Text prompt describing the image.",
-        "type": "string",
-        "title": "Prompt",
-        "name": "prompt"
-      },
-      "aspect_ratio": {
-        "enum": [
-          "1:1",
-          "16:9",
-          "9:16",
-          "3:4",
-          "4:3",
-          "4:5",
-          "5:4",
-          "2:3",
-          "3:2"
-        ],
-        "title": "Aspect Ratio",
-        "name": "aspect_ratio",
-        "type": "string",
-        "description": "Aspect ratio of the output image.",
-        "default": "1:1"
-      }
-    }
-  },
-  {
-    "id": "leonardoai-lucid-origin",
-    "name": "Leonardoai Lucid Origin",
-    "inputs": {
-      "prompt": {
-        "examples": [
-          "A towering medieval castle perched on a cliff, waterfalls cascading around it, sunrise casting golden light on the stone walls, mist rising from the valley below, flying dragons circling above, realistic clouds and sky reflections, cinematic wide-angle view, ultra-detailed textures on stone and water, epic fantasy atmosphere."
-        ],
-        "description": "Text prompt describing the image.",
-        "type": "string",
-        "title": "Prompt",
-        "name": "prompt"
-      },
-      "aspect_ratio": {
-        "enum": [
-          "1:1",
-          "16:9",
-          "9:16",
-          "3:4",
-          "4:3",
-          "4:5",
-          "5:4",
-          "2:3",
-          "3:2"
-        ],
-        "title": "Aspect Ratio",
-        "name": "aspect_ratio",
-        "type": "string",
-        "description": "Aspect ratio of the output image.",
-        "default": "1:1"
-      }
-    }
-  },
-  {
-    "id": "reve-text-to-image",
-    "name": "Reve Text To Image",
-    "inputs": {
-      "prompt": {
-        "examples": [
-          "An astronaut stands in a strange, bioluminescent purple jungle on an alien planet. She slowly reaches out her hand as a graceful creature made of translucent energy curiously approaches, gently touching her glove's fingertip with its tendril. The reflection of the planet's two moons is visible on her helmet's visor. Sense of wonder, photorealistic, cinematic."
-        ],
-        "description": "Text prompt describing the image.",
-        "type": "string",
-        "title": "Prompt",
-        "name": "prompt"
-      },
-      "aspect_ratio": {
-        "enum": [
-          "21:9",
-          "16:9",
-          "4:3",
-          "1:1",
-          "3:4",
-          "9:16",
-          "9:21"
-        ],
-        "title": "Aspect Ratio",
-        "name": "aspect_ratio",
-        "type": "string",
-        "description": "Aspect ratio of the output image.",
-        "default": "1:1"
-      }
-    }
-  },
-  {
     "id": "grok-imagine-text-to-image",
+    "falSlug": "xai/grok-imagine-image",
+    "inputMap": {
+      "prompt": "prompt",
+      "aspect_ratio": "aspect_ratio"
+    },
+    "outputField": "images[0].url",
     "name": "Grok Imagine Text To Image",
     "inputs": {
       "prompt": {
@@ -1445,6 +1099,12 @@ export const t2iModels = [
   },
   {
     "id": "nano-banana-pro",
+    "falSlug": "fal-ai/nano-banana-pro",
+    "inputMap": {
+      "prompt": "prompt",
+      "aspect_ratio": "aspect_ratio"
+    },
+    "outputField": "images[0].url",
     "name": "Nano Banana Pro",
     "endpoint": "nano-banana-pro",
     "inputs": {
@@ -1492,6 +1152,12 @@ export const t2iModels = [
   },
   {
     "id": "kling-o1-text-to-image",
+    "falSlug": "fal-ai/kling-image/o1",
+    "inputMap": {
+      "prompt": "prompt",
+      "image_url": "image_url"
+    },
+    "outputField": "images[0].url",
     "name": "Kling O1 Text To Image",
     "inputs": {
       "prompt": {
@@ -1545,6 +1211,13 @@ export const t2iModels = [
   },
   {
     "id": "z-image-turbo",
+    "falSlug": "fal-ai/z-image/turbo",
+    "inputMap": {
+      "prompt": "prompt",
+      "aspect_ratio": "aspect_ratio",
+      "num_images": "num_images"
+    },
+    "outputField": "images[0].url",
     "name": "Z Image Turbo",
     "inputs": {
       "prompt": {
@@ -1580,6 +1253,13 @@ export const t2iModels = [
   },
   {
     "id": "flux-2-dev",
+    "falSlug": "fal-ai/flux-2",
+    "inputMap": {
+      "prompt": "prompt",
+      "aspect_ratio": "aspect_ratio",
+      "num_images": "num_images"
+    },
+    "outputField": "images[0].url",
     "name": "Flux 2 Dev",
     "inputs": {
       "prompt": {
@@ -1615,6 +1295,13 @@ export const t2iModels = [
   },
   {
     "id": "flux-2-flex",
+    "falSlug": "fal-ai/flux-2-flex",
+    "inputMap": {
+      "prompt": "prompt",
+      "aspect_ratio": "aspect_ratio",
+      "num_images": "num_images"
+    },
+    "outputField": "images[0].url",
     "name": "Flux 2 Flex",
     "inputs": {
       "prompt": {
@@ -1657,6 +1344,13 @@ export const t2iModels = [
   },
   {
     "id": "flux-2-pro",
+    "falSlug": "fal-ai/flux-2-pro",
+    "inputMap": {
+      "prompt": "prompt",
+      "aspect_ratio": "aspect_ratio",
+      "num_images": "num_images"
+    },
+    "outputField": "images[0].url",
     "name": "Flux 2 Pro",
     "inputs": {
       "prompt": {
@@ -1699,6 +1393,13 @@ export const t2iModels = [
   },
   {
     "id": "vidu-q2-text-to-image",
+    "falSlug": "fal-ai/vidu/q2/text-to-image",
+    "inputMap": {
+      "prompt": "prompt",
+      "aspect_ratio": "aspect_ratio",
+      "duration": "duration"
+    },
+    "outputField": "images[0].url",
     "name": "Vidu Q2 Text To Image",
     "inputs": {
       "prompt": {
@@ -1743,6 +1444,13 @@ export const t2iModels = [
   },
   {
     "id": "bytedance-seedream-v4.5",
+    "falSlug": "fal-ai/bytedance/seedream/v4.5/text-to-image",
+    "inputMap": {
+      "prompt": "prompt",
+      "aspect_ratio": "aspect_ratio",
+      "num_images": "num_images"
+    },
+    "outputField": "images[0].url",
     "name": "Bytedance Seedream V4.5",
     "inputs": {
       "prompt": {
@@ -1785,46 +1493,14 @@ export const t2iModels = [
     }
   },
   {
-    "id": "gpt-image-1.5",
-    "name": "Gpt Image 1.5",
-    "inputs": {
-      "prompt": {
-        "examples": [
-          "A colossal hourglass floating in a silent cosmic void, its upper chamber filled with swirling golden sand that transforms into glowing constellations as it falls. The lower chamber contains a miniature ocean suspended in zero gravity, with waves frozen mid-motion and bioluminescent creatures glowing beneath the surface. Cracks in the glass emit thin beams of white light that bend and refract through drifting stardust. In the background, fragmented planets orbit slowly, partially illuminated by a distant supernova. Ultra-cinematic surreal concept, dramatic contrast between warm gold and deep blue, hyper-detailed textures, volumetric light rays, 8k clarity, dreamlike atmosphere."
-        ],
-        "description": "Text prompt describing the image.",
-        "type": "string",
-        "title": "Prompt",
-        "name": "prompt"
-      },
-      "aspect_ratio": {
-        "enum": [
-          "1:1",
-          "2:3",
-          "3:2"
-        ],
-        "title": "Aspect Ratio",
-        "name": "aspect_ratio",
-        "type": "string",
-        "description": "Aspect ratio of the output image.",
-        "default": "1:1"
-      },
-      "quality": {
-        "enum": [
-          "low",
-          "medium",
-          "high"
-        ],
-        "title": "Quality",
-        "name": "quality",
-        "type": "string",
-        "description": "The quality of the generated image.",
-        "default": "medium"
-      }
-    }
-  },
-  {
     "id": "gpt-image-2",
+    "falSlug": "openai/gpt-image-2",
+    "inputMap": {
+      "prompt": "prompt",
+      "aspect_ratio": "aspect_ratio",
+      "num_images": "num_images"
+    },
+    "outputField": "images[0].url",
     "name": "Gpt Image 2",
     "endpoint": "gpt-image-2-text-to-image",
     "family": "gpt-2",
@@ -1869,6 +1545,12 @@ export const t2iModels = [
   },
   {
     "id": "wan2.6-text-to-image",
+    "falSlug": "wan/v2.6/text-to-image",
+    "inputMap": {
+      "prompt": "prompt",
+      "aspect_ratio": "aspect_ratio"
+    },
+    "outputField": "images[0].url",
     "name": "Wan2.6 Text To Image",
     "inputs": {
       "prompt": {
@@ -1904,6 +1586,13 @@ export const t2iModels = [
   },
   {
     "id": "qwen-text-to-image-2512",
+    "falSlug": "fal-ai/qwen-image-2/text-to-image",
+    "inputMap": {
+      "prompt": "prompt",
+      "width": "width",
+      "height": "height"
+    },
+    "outputField": "images[0].url",
     "name": "Qwen Text To Image 2512",
     "inputs": {
       "prompt": {
@@ -1939,6 +1628,13 @@ export const t2iModels = [
   },
   {
     "id": "flux-2-klein-4b",
+    "falSlug": "fal-ai/flux-2/klein/4b",
+    "inputMap": {
+      "prompt": "prompt",
+      "aspect_ratio": "aspect_ratio",
+      "num_images": "num_images"
+    },
+    "outputField": "images[0].url",
     "name": "Flux 2 Klein 4b",
     "inputs": {
       "prompt": {
@@ -1970,6 +1666,13 @@ export const t2iModels = [
   },
   {
     "id": "flux-2-klein-9b",
+    "falSlug": "fal-ai/flux-2/klein/9b",
+    "inputMap": {
+      "prompt": "prompt",
+      "aspect_ratio": "aspect_ratio",
+      "num_images": "num_images"
+    },
+    "outputField": "images[0].url",
     "name": "Flux 2 Klein 9b",
     "inputs": {
       "prompt": {
@@ -2000,58 +1703,13 @@ export const t2iModels = [
     }
   },
   {
-    "id": "z-image-base",
-    "name": "Z Image Base",
-    "inputs": {
-      "prompt": {
-        "examples": [
-          "A cozy late-night diner interior with warm yellow lighting, rain tapping against large glass windows, and a lone barista cleaning the counter. A slice of pie sits under a glass dome, steam rises from a fresh cup of coffee, and neon signs outside softly glow and reflect across the wet street. Cinematic realism, shallow depth of field, calm mood, high detail, modern photography style."
-        ],
-        "description": "Text prompt describing the image.",
-        "type": "string",
-        "title": "Prompt",
-        "name": "prompt"
-      },
-      "image_url": {
-        "examples": [
-          null
-        ],
-        "description": "URL of the input image.",
-        "field": "image",
-        "type": "string",
-        "title": "Image URL",
-        "name": "image_url"
-      },
-      "aspect_ratio": {
-        "enum": [
-          "16:9",
-          "9:16",
-          "1:1",
-          "3:4",
-          "4:3",
-          "21:9",
-          "9:21"
-        ],
-        "title": "Aspect Ratio",
-        "name": "aspect_ratio",
-        "type": "string",
-        "description": "The aspect ratio of the generated image",
-        "default": "1:1"
-      },
-      "strength": {
-        "title": "Strength",
-        "name": "strength",
-        "type": "int",
-        "description": "Controls the strength of the transformation. Higher values produce outputs more different from the input image.",
-        "default": 0.6,
-        "minValue": 0,
-        "maxValue": 1,
-        "step": 0.01
-      }
-    }
-  },
-  {
     "id": "nano-banana-2",
+    "falSlug": "fal-ai/nano-banana-2",
+    "inputMap": {
+      "prompt": "prompt",
+      "aspect_ratio": "aspect_ratio"
+    },
+    "outputField": "images[0].url",
     "name": "Nano Banana 2",
     "endpoint": "nano-banana-2",
     "family": "nano",
@@ -2067,8 +1725,21 @@ export const t2iModels = [
       },
       "aspect_ratio": {
         "enum": [
-          "1:1", "1:4", "1:8", "2:3", "3:2", "3:4", "4:1", "4:3", "4:5",
-          "5:4", "8:1", "9:16", "16:9", "21:9", "auto"
+          "1:1",
+          "1:4",
+          "1:8",
+          "2:3",
+          "3:2",
+          "3:4",
+          "4:1",
+          "4:3",
+          "4:5",
+          "5:4",
+          "8:1",
+          "9:16",
+          "16:9",
+          "21:9",
+          "auto"
         ],
         "title": "Aspect Ratio",
         "name": "aspect_ratio",
@@ -2077,7 +1748,11 @@ export const t2iModels = [
         "default": "auto"
       },
       "resolution": {
-        "enum": ["1k", "2k", "4k"],
+        "enum": [
+          "1k",
+          "2k",
+          "4k"
+        ],
         "title": "Resolution",
         "name": "resolution",
         "type": "string",
@@ -2092,7 +1767,10 @@ export const t2iModels = [
         "default": false
       },
       "output_format": {
-        "enum": ["jpg", "png"],
+        "enum": [
+          "jpg",
+          "png"
+        ],
         "title": "Output Format",
         "name": "output_format",
         "type": "string",
@@ -2103,6 +1781,12 @@ export const t2iModels = [
   },
   {
     "id": "seedream-5.0",
+    "falSlug": "fal-ai/bytedance/seedream/v5/lite/text-to-image",
+    "inputMap": {
+      "prompt": "prompt",
+      "aspect_ratio": "aspect_ratio"
+    },
+    "outputField": "images[0].url",
     "name": "Seedream 5.0",
     "endpoint": "seedream-5.0",
     "family": "seedream",
@@ -2117,7 +1801,16 @@ export const t2iModels = [
         ]
       },
       "aspect_ratio": {
-        "enum": ["1:1", "16:9", "9:16", "4:3", "3:4", "2:3", "3:2", "21:9"],
+        "enum": [
+          "1:1",
+          "16:9",
+          "9:16",
+          "4:3",
+          "3:4",
+          "2:3",
+          "3:2",
+          "21:9"
+        ],
         "title": "Aspect Ratio",
         "name": "aspect_ratio",
         "type": "string",
@@ -2125,7 +1818,10 @@ export const t2iModels = [
         "default": "1:1"
       },
       "quality": {
-        "enum": ["basic", "high"],
+        "enum": [
+          "basic",
+          "high"
+        ],
         "title": "Quality",
         "name": "quality",
         "type": "string",
@@ -2136,6 +1832,13 @@ export const t2iModels = [
   },
   {
     "id": "minimax-image-01",
+    "falSlug": "fal-ai/minimax/image-01",
+    "inputMap": {
+      "prompt": "prompt",
+      "aspect_ratio": "aspect_ratio",
+      "num_images": "num_images"
+    },
+    "outputField": "images[0].url",
     "name": "MiniMax Image 01",
     "endpoint": "minimax-image-01",
     "family": "minimax",
@@ -2200,406 +1903,1636 @@ export const getAspectRatiosForModel = (modelId) => {
 export const t2vModels = [
   {
     "id": "seedance-lite-t2v",
+    "falSlug": "fal-ai/bytedance/seedance/v1/lite/text-to-video",
+    "inputMap": {
+      "prompt": "prompt",
+      "aspect_ratio": "aspect_ratio",
+      "resolution": "resolution",
+      "duration": "duration"
+    },
+    "outputField": "video.url",
     "name": "Seedance Lite",
     "inputs": {
-      "prompt": { "type": "string", "title": "Prompt", "name": "prompt", "description": "The prompt to generate the video" },
-      "aspect_ratio": { "enum": ["16:9", "9:16", "1:1", "4:3", "3:4", "21:9", "9:21"], "title": "Aspect Ratio", "name": "aspect_ratio", "type": "string", "description": "Aspect ratio of the output video.", "default": "16:9" },
-      "duration": { "title": "Duration", "name": "duration", "type": "int", "description": "The duration of the generated video in seconds", "default": 5, "minValue": 3, "maxValue": 12, "step": 1 },
-      "resolution": { "enum": ["480p", "720p", "1080p"], "title": "Resolution", "name": "resolution", "type": "string", "description": "The resolution of the generated video.", "default": "480p" }
+      "prompt": {
+        "type": "string",
+        "title": "Prompt",
+        "name": "prompt",
+        "description": "The prompt to generate the video"
+      },
+      "aspect_ratio": {
+        "enum": [
+          "16:9",
+          "9:16",
+          "1:1",
+          "4:3",
+          "3:4",
+          "21:9",
+          "9:21"
+        ],
+        "title": "Aspect Ratio",
+        "name": "aspect_ratio",
+        "type": "string",
+        "description": "Aspect ratio of the output video.",
+        "default": "16:9"
+      },
+      "duration": {
+        "title": "Duration",
+        "name": "duration",
+        "type": "int",
+        "description": "The duration of the generated video in seconds",
+        "default": 5,
+        "minValue": 3,
+        "maxValue": 12,
+        "step": 1
+      },
+      "resolution": {
+        "enum": [
+          "480p",
+          "720p",
+          "1080p"
+        ],
+        "title": "Resolution",
+        "name": "resolution",
+        "type": "string",
+        "description": "The resolution of the generated video.",
+        "default": "480p"
+      }
     }
   },
   {
     "id": "seedance-pro-t2v",
+    "falSlug": "fal-ai/bytedance/seedance/v1/pro/text-to-video",
+    "inputMap": {
+      "prompt": "prompt",
+      "aspect_ratio": "aspect_ratio",
+      "resolution": "resolution",
+      "duration": "duration"
+    },
+    "outputField": "video.url",
     "name": "Seedance Pro",
     "inputs": {
-      "prompt": { "type": "string", "title": "Prompt", "name": "prompt", "description": "The prompt to generate the video" },
-      "aspect_ratio": { "enum": ["16:9", "9:16", "1:1", "4:3", "3:4", "21:9", "9:21"], "title": "Aspect Ratio", "name": "aspect_ratio", "type": "string", "description": "Aspect ratio of the output video.", "default": "16:9" },
-      "duration": { "title": "Duration", "name": "duration", "type": "int", "description": "The duration of the generated video in seconds", "default": 5, "minValue": 3, "maxValue": 12, "step": 1 },
-      "resolution": { "enum": ["480p", "720p", "1080p"], "title": "Resolution", "name": "resolution", "type": "string", "description": "The resolution of the generated video.", "default": "480p" }
+      "prompt": {
+        "type": "string",
+        "title": "Prompt",
+        "name": "prompt",
+        "description": "The prompt to generate the video"
+      },
+      "aspect_ratio": {
+        "enum": [
+          "16:9",
+          "9:16",
+          "1:1",
+          "4:3",
+          "3:4",
+          "21:9",
+          "9:21"
+        ],
+        "title": "Aspect Ratio",
+        "name": "aspect_ratio",
+        "type": "string",
+        "description": "Aspect ratio of the output video.",
+        "default": "16:9"
+      },
+      "duration": {
+        "title": "Duration",
+        "name": "duration",
+        "type": "int",
+        "description": "The duration of the generated video in seconds",
+        "default": 5,
+        "minValue": 3,
+        "maxValue": 12,
+        "step": 1
+      },
+      "resolution": {
+        "enum": [
+          "480p",
+          "720p",
+          "1080p"
+        ],
+        "title": "Resolution",
+        "name": "resolution",
+        "type": "string",
+        "description": "The resolution of the generated video.",
+        "default": "480p"
+      }
     }
   },
   {
     "id": "seedance-pro-t2v-fast",
+    "falSlug": "fal-ai/bytedance/seedance/v1/pro/fast/text-to-video",
+    "inputMap": {
+      "prompt": "prompt",
+      "aspect_ratio": "aspect_ratio",
+      "resolution": "resolution",
+      "duration": "duration"
+    },
+    "outputField": "video.url",
     "name": "Seedance Pro Fast",
     "inputs": {
-      "prompt": { "type": "string", "title": "Prompt", "name": "prompt", "description": "The prompt to generate the video" },
-      "aspect_ratio": { "enum": ["16:9", "9:16", "1:1", "4:3", "3:4", "21:9"], "title": "Aspect Ratio", "name": "aspect_ratio", "type": "string", "description": "Aspect ratio of the output video.", "default": "16:9" },
-      "duration": { "title": "Duration", "name": "duration", "type": "int", "description": "The duration of the generated video in seconds", "default": 5, "minValue": 2, "maxValue": 12, "step": 1 },
-      "resolution": { "enum": ["480p", "720p", "1080p"], "title": "Resolution", "name": "resolution", "type": "string", "description": "The resolution of the generated video.", "default": "480p" }
+      "prompt": {
+        "type": "string",
+        "title": "Prompt",
+        "name": "prompt",
+        "description": "The prompt to generate the video"
+      },
+      "aspect_ratio": {
+        "enum": [
+          "16:9",
+          "9:16",
+          "1:1",
+          "4:3",
+          "3:4",
+          "21:9"
+        ],
+        "title": "Aspect Ratio",
+        "name": "aspect_ratio",
+        "type": "string",
+        "description": "Aspect ratio of the output video.",
+        "default": "16:9"
+      },
+      "duration": {
+        "title": "Duration",
+        "name": "duration",
+        "type": "int",
+        "description": "The duration of the generated video in seconds",
+        "default": 5,
+        "minValue": 2,
+        "maxValue": 12,
+        "step": 1
+      },
+      "resolution": {
+        "enum": [
+          "480p",
+          "720p",
+          "1080p"
+        ],
+        "title": "Resolution",
+        "name": "resolution",
+        "type": "string",
+        "description": "The resolution of the generated video.",
+        "default": "480p"
+      }
     }
   },
   {
     "id": "seedance-v1.5-pro-t2v",
+    "falSlug": "fal-ai/bytedance/seedance/v1.5/pro/text-to-video",
+    "inputMap": {
+      "prompt": "prompt",
+      "aspect_ratio": "aspect_ratio",
+      "resolution": "resolution",
+      "duration": "duration",
+      "camera_fixed": "camera_fixed",
+      "generate_audio": "generate_audio"
+    },
+    "outputField": "video.url",
     "name": "Seedance v1.5 Pro",
     "inputs": {
-      "prompt": { "type": "string", "title": "Prompt", "name": "prompt", "description": "Text prompt describing the video." },
-      "aspect_ratio": { "enum": ["16:9", "9:16", "1:1", "3:4", "4:3", "21:9"], "title": "Aspect Ratio", "name": "aspect_ratio", "type": "string", "description": "Aspect ratio of the output video.", "default": "16:9" },
-      "duration": { "title": "Duration", "name": "duration", "type": "int", "description": "The duration of the generated video in seconds", "default": 5, "minValue": 4, "maxValue": 12, "step": 1 },
-      "resolution": { "enum": ["480p", "720p", "1080p"], "title": "Resolution", "name": "resolution", "type": "string", "description": "The resolution of the generated video.", "default": "720p" }
-    }
-  },
-  {
-    "id": "seedance-v1.5-pro-t2v-fast",
-    "name": "Seedance v1.5 Pro Fast",
-    "inputs": {
-      "prompt": { "type": "string", "title": "Prompt", "name": "prompt", "description": "Text prompt describing the video." },
-      "aspect_ratio": { "enum": ["16:9", "9:16", "1:1", "3:4", "4:3", "21:9"], "title": "Aspect Ratio", "name": "aspect_ratio", "type": "string", "description": "Aspect ratio of the output video.", "default": "16:9" },
-      "duration": { "title": "Duration", "name": "duration", "type": "int", "description": "The duration of the generated video in seconds", "default": 5, "minValue": 4, "maxValue": 12, "step": 1 },
-      "resolution": { "enum": ["720p", "1080p"], "title": "Resolution", "name": "resolution", "type": "string", "description": "The resolution of the generated video.", "default": "720p" }
+      "prompt": {
+        "type": "string",
+        "title": "Prompt",
+        "name": "prompt",
+        "description": "Text prompt describing the video."
+      },
+      "aspect_ratio": {
+        "enum": [
+          "16:9",
+          "9:16",
+          "1:1",
+          "3:4",
+          "4:3",
+          "21:9"
+        ],
+        "title": "Aspect Ratio",
+        "name": "aspect_ratio",
+        "type": "string",
+        "description": "Aspect ratio of the output video.",
+        "default": "16:9"
+      },
+      "duration": {
+        "title": "Duration",
+        "name": "duration",
+        "type": "int",
+        "description": "The duration of the generated video in seconds",
+        "default": 5,
+        "minValue": 4,
+        "maxValue": 12,
+        "step": 1
+      },
+      "resolution": {
+        "enum": [
+          "480p",
+          "720p",
+          "1080p"
+        ],
+        "title": "Resolution",
+        "name": "resolution",
+        "type": "string",
+        "description": "The resolution of the generated video.",
+        "default": "720p"
+      }
     }
   },
   {
     "id": "seedance-v2.0-t2v",
+    "falSlug": "bytedance/seedance-2.0/text-to-video",
+    "inputMap": {
+      "prompt": "prompt",
+      "aspect_ratio": "aspect_ratio",
+      "resolution": "resolution",
+      "duration": "duration",
+      "generate_audio": "generate_audio"
+    },
+    "outputField": "video.url",
     "name": "Seedance 2.0",
     "inputs": {
-      "prompt": { "type": "string", "title": "Prompt", "name": "prompt", "description": "The prompt to generate the video" },
-      "aspect_ratio": { "enum": ["16:9", "9:16", "4:3", "3:4"], "title": "Aspect Ratio", "name": "aspect_ratio", "type": "string", "description": "Aspect ratio of the output video.", "default": "16:9" },
-      "duration": { "enum": [5, 10, 15], "title": "Duration", "name": "duration", "type": "int", "description": "The duration of the generated video in seconds", "default": 5 },
-      "quality": { "enum": ["high", "basic"], "title": "Quality", "name": "quality", "type": "string", "description": "Quality of the generated video.", "default": "basic" }
-    }
-  },
-  {
-    "id": "seedance-v2.0-extend",
-    "name": "Seedance 2.0 Extend",
-    "requiresRequestId": true,
-    "inputs": {
-      "request_id": { "type": "string", "title": "Request ID", "name": "request_id", "description": "Request ID of the original Seedance 2.0 video generation.", "placeholder": "abcdefg-123-456-789-a1b2c3d4e5f6" },
-      "prompt": { "type": "string", "title": "Prompt", "name": "prompt", "description": "Optional prompt to guide the extension. If omitted, the model continues with the original scene." },
-      "duration": { "enum": [5, 10, 15], "title": "Duration", "name": "duration", "type": "int", "description": "The duration of the generated video extension in seconds", "default": 5 },
-      "quality": { "enum": ["high", "basic"], "title": "Quality", "name": "quality", "type": "string", "description": "Quality of the generated video.", "default": "basic" }
+      "prompt": {
+        "type": "string",
+        "title": "Prompt",
+        "name": "prompt",
+        "description": "The prompt to generate the video"
+      },
+      "aspect_ratio": {
+        "enum": [
+          "16:9",
+          "9:16",
+          "4:3",
+          "3:4"
+        ],
+        "title": "Aspect Ratio",
+        "name": "aspect_ratio",
+        "type": "string",
+        "description": "Aspect ratio of the output video.",
+        "default": "16:9"
+      },
+      "duration": {
+        "enum": [
+          5,
+          10,
+          15
+        ],
+        "title": "Duration",
+        "name": "duration",
+        "type": "int",
+        "description": "The duration of the generated video in seconds",
+        "default": 5
+      },
+      "quality": {
+        "enum": [
+          "high",
+          "basic"
+        ],
+        "title": "Quality",
+        "name": "quality",
+        "type": "string",
+        "description": "Quality of the generated video.",
+        "default": "basic"
+      }
     }
   },
   {
     "id": "kling-v2.1-master-t2v",
+    "falSlug": "fal-ai/kling-video/v2.1/master/text-to-video",
+    "inputMap": {
+      "prompt": "prompt",
+      "aspect_ratio": "aspect_ratio",
+      "duration": "duration",
+      "negative_prompt": "negative_prompt",
+      "cfg_scale": "cfg_scale"
+    },
+    "outputField": "video.url",
     "name": "Kling v2.1 Master",
     "inputs": {
-      "prompt": { "type": "string", "title": "Prompt", "name": "prompt", "description": "Text prompt describing the video." },
-      "aspect_ratio": { "enum": ["16:9", "9:16", "1:1"], "title": "Aspect Ratio", "name": "aspect_ratio", "type": "string", "description": "Aspect ratio of the output video.", "default": "16:9" },
-      "duration": { "title": "Duration", "name": "duration", "type": "int", "description": "The duration of the generated video in seconds", "default": 5, "minValue": 5, "maxValue": 10, "step": 5 }
+      "prompt": {
+        "type": "string",
+        "title": "Prompt",
+        "name": "prompt",
+        "description": "Text prompt describing the video."
+      },
+      "aspect_ratio": {
+        "enum": [
+          "16:9",
+          "9:16",
+          "1:1"
+        ],
+        "title": "Aspect Ratio",
+        "name": "aspect_ratio",
+        "type": "string",
+        "description": "Aspect ratio of the output video.",
+        "default": "16:9"
+      },
+      "duration": {
+        "title": "Duration",
+        "name": "duration",
+        "type": "int",
+        "description": "The duration of the generated video in seconds",
+        "default": 5,
+        "minValue": 5,
+        "maxValue": 10,
+        "step": 5
+      }
     }
   },
   {
     "id": "kling-v2.5-turbo-pro-t2v",
+    "falSlug": "fal-ai/kling-video/v2.5-turbo/pro/text-to-video",
+    "inputMap": {
+      "prompt": "prompt",
+      "aspect_ratio": "aspect_ratio",
+      "duration": "duration"
+    },
+    "outputField": "video.url",
     "name": "Kling v2.5 Turbo Pro",
     "inputs": {
-      "prompt": { "type": "string", "title": "Prompt", "name": "prompt", "description": "Text prompt describing the video." },
-      "aspect_ratio": { "enum": ["16:9", "9:16", "1:1"], "title": "Aspect Ratio", "name": "aspect_ratio", "type": "string", "description": "Aspect ratio of the output video.", "default": "9:16" },
-      "duration": { "title": "Duration", "name": "duration", "type": "int", "description": "The duration of the generated video in seconds", "default": 5, "minValue": 5, "maxValue": 10, "step": 5 }
+      "prompt": {
+        "type": "string",
+        "title": "Prompt",
+        "name": "prompt",
+        "description": "Text prompt describing the video."
+      },
+      "aspect_ratio": {
+        "enum": [
+          "16:9",
+          "9:16",
+          "1:1"
+        ],
+        "title": "Aspect Ratio",
+        "name": "aspect_ratio",
+        "type": "string",
+        "description": "Aspect ratio of the output video.",
+        "default": "9:16"
+      },
+      "duration": {
+        "title": "Duration",
+        "name": "duration",
+        "type": "int",
+        "description": "The duration of the generated video in seconds",
+        "default": 5,
+        "minValue": 5,
+        "maxValue": 10,
+        "step": 5
+      }
     }
   },
   {
     "id": "kling-v2.6-pro-t2v",
+    "falSlug": "fal-ai/kling-video/v2.6/pro/text-to-video",
+    "inputMap": {
+      "prompt": "prompt",
+      "aspect_ratio": "aspect_ratio",
+      "duration": "duration",
+      "negative_prompt": "negative_prompt",
+      "cfg_scale": "cfg_scale",
+      "generate_audio": "generate_audio"
+    },
+    "outputField": "video.url",
     "name": "Kling v2.6 Pro",
     "inputs": {
-      "prompt": { "type": "string", "title": "Prompt", "name": "prompt", "description": "The prompt to generate the video" },
-      "aspect_ratio": { "enum": ["16:9", "9:16", "1:1"], "title": "Aspect Ratio", "name": "aspect_ratio", "type": "string", "description": "Aspect ratio of the output video.", "default": "16:9" },
-      "duration": { "enum": [5, 10], "title": "Duration", "name": "duration", "type": "int", "description": "The duration of the generated video in seconds.", "default": 5 }
-    }
-  },
-  {
-    "id": "kling-o1-text-to-video",
-    "name": "Kling O1 Pro",
-    "inputs": {
-      "prompt": { "type": "string", "title": "Prompt", "name": "prompt", "description": "Text prompt describing the video." },
-      "aspect_ratio": { "enum": ["16:9", "9:16", "1:1"], "title": "Aspect Ratio", "name": "aspect_ratio", "type": "string", "description": "Aspect ratio of the output video.", "default": "16:9" },
-      "duration": { "enum": [5, 10], "title": "Duration", "name": "duration", "type": "int", "description": "The duration of the generated video in seconds", "default": 5 }
+      "prompt": {
+        "type": "string",
+        "title": "Prompt",
+        "name": "prompt",
+        "description": "The prompt to generate the video"
+      },
+      "aspect_ratio": {
+        "enum": [
+          "16:9",
+          "9:16",
+          "1:1"
+        ],
+        "title": "Aspect Ratio",
+        "name": "aspect_ratio",
+        "type": "string",
+        "description": "Aspect ratio of the output video.",
+        "default": "16:9"
+      },
+      "duration": {
+        "enum": [
+          5,
+          10
+        ],
+        "title": "Duration",
+        "name": "duration",
+        "type": "int",
+        "description": "The duration of the generated video in seconds.",
+        "default": 5
+      }
     }
   },
   {
     "id": "kling-v3.0-pro-text-to-video",
+    "falSlug": "fal-ai/kling-video/v3/pro/text-to-video",
+    "inputMap": {
+      "prompt": "prompt",
+      "aspect_ratio": "aspect_ratio",
+      "duration": "duration",
+      "generate_audio": "generate_audio",
+      "cfg_scale": "cfg_scale",
+      "negative_prompt": "negative_prompt"
+    },
+    "outputField": "video.url",
     "name": "Kling v3.0 Pro",
     "inputs": {
-      "prompt": { "type": "string", "title": "Prompt", "name": "prompt", "description": "Text prompt describing the video." },
-      "aspect_ratio": { "enum": ["16:9", "9:16", "1:1"], "title": "Aspect Ratio", "name": "aspect_ratio", "type": "string", "description": "The aspect ratio of the generated video", "default": "16:9" },
-      "duration": { "title": "Duration", "name": "duration", "type": "int", "description": "The duration of the generated video in seconds", "default": 5, "minValue": 3, "maxValue": 15, "step": 1 }
+      "prompt": {
+        "type": "string",
+        "title": "Prompt",
+        "name": "prompt",
+        "description": "Text prompt describing the video."
+      },
+      "aspect_ratio": {
+        "enum": [
+          "16:9",
+          "9:16",
+          "1:1"
+        ],
+        "title": "Aspect Ratio",
+        "name": "aspect_ratio",
+        "type": "string",
+        "description": "The aspect ratio of the generated video",
+        "default": "16:9"
+      },
+      "duration": {
+        "title": "Duration",
+        "name": "duration",
+        "type": "int",
+        "description": "The duration of the generated video in seconds",
+        "default": 5,
+        "minValue": 3,
+        "maxValue": 15,
+        "step": 1
+      }
     }
   },
   {
     "id": "kling-v3.0-standard-text-to-video",
+    "falSlug": "fal-ai/kling-video/v3/standard/text-to-video",
+    "inputMap": {
+      "prompt": "prompt",
+      "aspect_ratio": "aspect_ratio",
+      "duration": "duration",
+      "generate_audio": "generate_audio"
+    },
+    "outputField": "video.url",
     "name": "Kling v3.0 Standard",
     "inputs": {
-      "prompt": { "type": "string", "title": "Prompt", "name": "prompt", "description": "Text prompt describing the video." },
-      "aspect_ratio": { "enum": ["16:9", "9:16", "1:1"], "title": "Aspect Ratio", "name": "aspect_ratio", "type": "string", "description": "The aspect ratio of the generated video", "default": "16:9" },
-      "duration": { "title": "Duration", "name": "duration", "type": "int", "description": "The duration of the generated video in seconds", "default": 5, "minValue": 3, "maxValue": 15, "step": 1 }
+      "prompt": {
+        "type": "string",
+        "title": "Prompt",
+        "name": "prompt",
+        "description": "Text prompt describing the video."
+      },
+      "aspect_ratio": {
+        "enum": [
+          "16:9",
+          "9:16",
+          "1:1"
+        ],
+        "title": "Aspect Ratio",
+        "name": "aspect_ratio",
+        "type": "string",
+        "description": "The aspect ratio of the generated video",
+        "default": "16:9"
+      },
+      "duration": {
+        "title": "Duration",
+        "name": "duration",
+        "type": "int",
+        "description": "The duration of the generated video in seconds",
+        "default": 5,
+        "minValue": 3,
+        "maxValue": 15,
+        "step": 1
+      }
     }
   },
   {
     "id": "veo3-text-to-video",
+    "falSlug": "fal-ai/veo3",
+    "inputMap": {
+      "prompt": "prompt",
+      "aspect_ratio": "aspect_ratio",
+      "duration": "duration",
+      "resolution": "resolution",
+      "generate_audio": "generate_audio",
+      "negative_prompt": "negative_prompt"
+    },
+    "outputField": "video.url",
     "name": "Veo 3",
     "inputs": {
-      "prompt": { "type": "string", "title": "Prompt", "name": "prompt", "description": "Text prompt describing the desired video content." },
-      "aspect_ratio": { "enum": ["16:9", "9:16"], "title": "Aspect Ratio", "name": "aspect_ratio", "type": "string", "description": "Aspect ratio of the output video.", "default": "16:9" }
+      "prompt": {
+        "type": "string",
+        "title": "Prompt",
+        "name": "prompt",
+        "description": "Text prompt describing the desired video content."
+      },
+      "aspect_ratio": {
+        "enum": [
+          "16:9",
+          "9:16"
+        ],
+        "title": "Aspect Ratio",
+        "name": "aspect_ratio",
+        "type": "string",
+        "description": "Aspect ratio of the output video.",
+        "default": "16:9"
+      }
     }
   },
   {
     "id": "veo3-fast-text-to-video",
+    "falSlug": "fal-ai/veo3/fast",
+    "inputMap": {
+      "prompt": "prompt",
+      "aspect_ratio": "aspect_ratio",
+      "generate_audio": "generate_audio"
+    },
+    "outputField": "video.url",
     "name": "Veo 3 Fast",
     "inputs": {
-      "prompt": { "type": "string", "title": "Prompt", "name": "prompt", "description": "Text prompt describing the desired video content." },
-      "aspect_ratio": { "enum": ["16:9", "9:16"], "title": "Aspect Ratio", "name": "aspect_ratio", "type": "string", "description": "Aspect ratio of the output video.", "default": "16:9" }
+      "prompt": {
+        "type": "string",
+        "title": "Prompt",
+        "name": "prompt",
+        "description": "Text prompt describing the desired video content."
+      },
+      "aspect_ratio": {
+        "enum": [
+          "16:9",
+          "9:16"
+        ],
+        "title": "Aspect Ratio",
+        "name": "aspect_ratio",
+        "type": "string",
+        "description": "Aspect ratio of the output video.",
+        "default": "16:9"
+      }
     }
   },
   {
     "id": "veo3.1-text-to-video",
+    "falSlug": "fal-ai/veo3.1",
+    "inputMap": {
+      "prompt": "prompt",
+      "aspect_ratio": "aspect_ratio",
+      "duration": "duration",
+      "resolution": "resolution",
+      "generate_audio": "generate_audio",
+      "negative_prompt": "negative_prompt"
+    },
+    "outputField": "video.url",
     "name": "Veo 3.1",
     "inputs": {
-      "prompt": { "type": "string", "title": "Prompt", "name": "prompt", "description": "Text prompt describing the video." },
-      "aspect_ratio": { "enum": ["16:9", "9:16"], "title": "Aspect Ratio", "name": "aspect_ratio", "type": "string", "description": "Aspect ratio of the output video.", "default": "16:9" },
-      "duration": { "enum": [8], "title": "Duration", "name": "duration", "type": "int", "description": "The duration of the generated video in seconds", "default": 8 },
-      "resolution": { "enum": ["1080p"], "title": "Resolution", "name": "resolution", "type": "string", "description": "The resolution of the generated video.", "default": "1080p" }
+      "prompt": {
+        "type": "string",
+        "title": "Prompt",
+        "name": "prompt",
+        "description": "Text prompt describing the video."
+      },
+      "aspect_ratio": {
+        "enum": [
+          "16:9",
+          "9:16"
+        ],
+        "title": "Aspect Ratio",
+        "name": "aspect_ratio",
+        "type": "string",
+        "description": "Aspect ratio of the output video.",
+        "default": "16:9"
+      },
+      "duration": {
+        "enum": [
+          8
+        ],
+        "title": "Duration",
+        "name": "duration",
+        "type": "int",
+        "description": "The duration of the generated video in seconds",
+        "default": 8
+      },
+      "resolution": {
+        "enum": [
+          "1080p"
+        ],
+        "title": "Resolution",
+        "name": "resolution",
+        "type": "string",
+        "description": "The resolution of the generated video.",
+        "default": "1080p"
+      }
     }
   },
   {
     "id": "veo3.1-fast-text-to-video",
+    "falSlug": "fal-ai/veo3.1/fast",
+    "inputMap": {
+      "prompt": "prompt",
+      "aspect_ratio": "aspect_ratio",
+      "duration": "duration",
+      "resolution": "resolution",
+      "generate_audio": "generate_audio"
+    },
+    "outputField": "video.url",
     "name": "Veo 3.1 Fast",
     "inputs": {
-      "prompt": { "type": "string", "title": "Prompt", "name": "prompt", "description": "Text prompt describing the video." },
-      "aspect_ratio": { "enum": ["16:9", "9:16"], "title": "Aspect Ratio", "name": "aspect_ratio", "type": "string", "description": "Aspect ratio of the output video.", "default": "16:9" },
-      "duration": { "enum": [8], "title": "Duration", "name": "duration", "type": "int", "description": "The duration of the generated video in seconds", "default": 8 },
-      "resolution": { "enum": ["1080p"], "title": "Resolution", "name": "resolution", "type": "string", "description": "The resolution of the generated video.", "default": "1080p" }
+      "prompt": {
+        "type": "string",
+        "title": "Prompt",
+        "name": "prompt",
+        "description": "Text prompt describing the video."
+      },
+      "aspect_ratio": {
+        "enum": [
+          "16:9",
+          "9:16"
+        ],
+        "title": "Aspect Ratio",
+        "name": "aspect_ratio",
+        "type": "string",
+        "description": "Aspect ratio of the output video.",
+        "default": "16:9"
+      },
+      "duration": {
+        "enum": [
+          8
+        ],
+        "title": "Duration",
+        "name": "duration",
+        "type": "int",
+        "description": "The duration of the generated video in seconds",
+        "default": 8
+      },
+      "resolution": {
+        "enum": [
+          "1080p"
+        ],
+        "title": "Resolution",
+        "name": "resolution",
+        "type": "string",
+        "description": "The resolution of the generated video.",
+        "default": "1080p"
+      }
     }
   },
   {
     "id": "veo3.1-lite-text-to-video",
+    "falSlug": "fal-ai/veo3.1/lite",
+    "inputMap": {
+      "prompt": "prompt",
+      "aspect_ratio": "aspect_ratio",
+      "duration": "duration",
+      "resolution": "resolution"
+    },
+    "outputField": "video.url",
     "name": "Veo 3.1 Lite",
     "inputs": {
-      "prompt": { "type": "string", "title": "Prompt", "name": "prompt", "description": "Text prompt describing the video." },
-      "aspect_ratio": { "enum": ["16:9", "9:16"], "title": "Aspect Ratio", "name": "aspect_ratio", "type": "string", "description": "Aspect ratio of the output video.", "default": "16:9" },
-      "duration": { "enum": [8], "title": "Duration", "name": "duration", "type": "int", "description": "The duration of the generated video in seconds", "default": 8 },
-      "resolution": { "enum": ["1080p"], "title": "Resolution", "name": "resolution", "type": "string", "description": "The resolution of the generated video.", "default": "1080p" }
-    }
-  },
-  {
-    "id": "runway-text-to-video",
-    "name": "Runway Gen-3",
-    "inputs": {
-      "prompt": { "type": "string", "title": "Prompt", "name": "prompt", "description": "The prompt to be used to generate a video" },
-      "aspect_ratio": { "enum": ["16:9", "9:16", "1:1", "4:3", "3:4"], "title": "Aspect Ratio", "name": "aspect_ratio", "type": "string", "description": "Aspect ratio of the output video.", "default": "16:9" },
-      "duration": { "enum": [5, 8], "title": "Duration", "name": "duration", "type": "int", "description": "The duration in seconds. If 8-second video is selected, 1080p resolution cannot be used.", "default": 5 },
-      "resolution": { "enum": ["720p", "1080p"], "title": "Resolution", "name": "resolution", "type": "string", "description": "The resolution of the generated video. If 1080p is selected, 8-second video cannot be generated.", "default": "720p" }
+      "prompt": {
+        "type": "string",
+        "title": "Prompt",
+        "name": "prompt",
+        "description": "Text prompt describing the video."
+      },
+      "aspect_ratio": {
+        "enum": [
+          "16:9",
+          "9:16"
+        ],
+        "title": "Aspect Ratio",
+        "name": "aspect_ratio",
+        "type": "string",
+        "description": "Aspect ratio of the output video.",
+        "default": "16:9"
+      },
+      "duration": {
+        "enum": [
+          8
+        ],
+        "title": "Duration",
+        "name": "duration",
+        "type": "int",
+        "description": "The duration of the generated video in seconds",
+        "default": 8
+      },
+      "resolution": {
+        "enum": [
+          "1080p"
+        ],
+        "title": "Resolution",
+        "name": "resolution",
+        "type": "string",
+        "description": "The resolution of the generated video.",
+        "default": "1080p"
+      }
     }
   },
   {
     "id": "wan2.1-text-to-video",
+    "falSlug": "fal-ai/wan-t2v",
+    "inputMap": {
+      "prompt": "prompt",
+      "aspect_ratio": "aspect_ratio",
+      "resolution": "resolution",
+      "num_frames": "num_frames",
+      "frames_per_second": "frames_per_second"
+    },
+    "outputField": "video.url",
     "name": "Wan 2.1",
     "inputs": {
-      "prompt": { "type": "string", "title": "Prompt", "name": "prompt", "description": "The prompt to generate the video" },
-      "aspect_ratio": { "enum": ["16:9", "9:16"], "title": "Aspect Ratio", "name": "aspect_ratio", "type": "string", "description": "Aspect ratio of the output video.", "default": "16:9" },
-      "duration": { "title": "Duration", "name": "duration", "type": "int", "description": "The duration of the generated video in seconds", "default": 5, "minValue": 5, "maxValue": 10, "step": 5 },
-      "resolution": { "enum": ["480p", "720p"], "title": "Resolution", "name": "resolution", "type": "string", "description": "The resolution of the generated video.", "default": "480p" },
-      "quality": { "enum": ["medium", "high"], "title": "Quality", "name": "quality", "type": "string", "description": "The quality of the generated video.", "default": "medium" }
+      "prompt": {
+        "type": "string",
+        "title": "Prompt",
+        "name": "prompt",
+        "description": "The prompt to generate the video"
+      },
+      "aspect_ratio": {
+        "enum": [
+          "16:9",
+          "9:16"
+        ],
+        "title": "Aspect Ratio",
+        "name": "aspect_ratio",
+        "type": "string",
+        "description": "Aspect ratio of the output video.",
+        "default": "16:9"
+      },
+      "duration": {
+        "title": "Duration",
+        "name": "duration",
+        "type": "int",
+        "description": "The duration of the generated video in seconds",
+        "default": 5,
+        "minValue": 5,
+        "maxValue": 10,
+        "step": 5
+      },
+      "resolution": {
+        "enum": [
+          "480p",
+          "720p"
+        ],
+        "title": "Resolution",
+        "name": "resolution",
+        "type": "string",
+        "description": "The resolution of the generated video.",
+        "default": "480p"
+      },
+      "quality": {
+        "enum": [
+          "medium",
+          "high"
+        ],
+        "title": "Quality",
+        "name": "quality",
+        "type": "string",
+        "description": "The quality of the generated video.",
+        "default": "medium"
+      }
     }
   },
   {
     "id": "wan2.2-text-to-video",
+    "falSlug": "fal-ai/wan/v2.2-a14b/text-to-video",
+    "inputMap": {
+      "prompt": "prompt",
+      "aspect_ratio": "aspect_ratio",
+      "resolution": "resolution",
+      "num_frames": "num_frames",
+      "frames_per_second": "frames_per_second",
+      "guidance_scale": "guidance_scale"
+    },
+    "outputField": "video.url",
     "name": "Wan 2.2",
     "inputs": {
-      "prompt": { "type": "string", "title": "Prompt", "name": "prompt", "description": "The prompt to generate the video" },
-      "aspect_ratio": { "enum": ["16:9", "9:16"], "title": "Aspect Ratio", "name": "aspect_ratio", "type": "string", "description": "Aspect ratio of the output video.", "default": "16:9" },
-      "duration": { "title": "Duration", "name": "duration", "type": "int", "description": "The duration of the generated video in seconds.", "default": 5, "minValue": 5, "maxValue": 8, "step": 3 },
-      "resolution": { "enum": ["480p", "720p"], "title": "Resolution", "name": "resolution", "type": "string", "description": "The resolution of the generated video.", "default": "480p" },
-      "quality": { "enum": ["medium", "high"], "title": "Quality", "name": "quality", "type": "string", "description": "The quality of the generated video.", "default": "medium" }
+      "prompt": {
+        "type": "string",
+        "title": "Prompt",
+        "name": "prompt",
+        "description": "The prompt to generate the video"
+      },
+      "aspect_ratio": {
+        "enum": [
+          "16:9",
+          "9:16"
+        ],
+        "title": "Aspect Ratio",
+        "name": "aspect_ratio",
+        "type": "string",
+        "description": "Aspect ratio of the output video.",
+        "default": "16:9"
+      },
+      "duration": {
+        "title": "Duration",
+        "name": "duration",
+        "type": "int",
+        "description": "The duration of the generated video in seconds.",
+        "default": 5,
+        "minValue": 5,
+        "maxValue": 8,
+        "step": 3
+      },
+      "resolution": {
+        "enum": [
+          "480p",
+          "720p"
+        ],
+        "title": "Resolution",
+        "name": "resolution",
+        "type": "string",
+        "description": "The resolution of the generated video.",
+        "default": "480p"
+      },
+      "quality": {
+        "enum": [
+          "medium",
+          "high"
+        ],
+        "title": "Quality",
+        "name": "quality",
+        "type": "string",
+        "description": "The quality of the generated video.",
+        "default": "medium"
+      }
     }
   },
   {
     "id": "wan2.2-5b-fast-t2v",
+    "falSlug": "fal-ai/wan/v2.2-5b/text-to-video/fast-wan",
+    "inputMap": {
+      "prompt": "prompt",
+      "aspect_ratio": "aspect_ratio",
+      "resolution": "resolution",
+      "num_frames": "num_frames",
+      "frames_per_second": "frames_per_second"
+    },
+    "outputField": "video.url",
     "name": "Wan 2.2 Fast",
     "inputs": {
-      "prompt": { "type": "string", "title": "Prompt", "name": "prompt", "description": "Text prompt describing the video." },
-      "aspect_ratio": { "enum": ["16:9", "9:16", "1:1"], "title": "Aspect Ratio", "name": "aspect_ratio", "type": "string", "description": "Aspect ratio of the output video.", "default": "16:9" },
-      "resolution": { "enum": ["480p", "580p", "720p"], "title": "Resolution", "name": "resolution", "type": "string", "description": "The resolution of the generated video.", "default": "480p" }
+      "prompt": {
+        "type": "string",
+        "title": "Prompt",
+        "name": "prompt",
+        "description": "Text prompt describing the video."
+      },
+      "aspect_ratio": {
+        "enum": [
+          "16:9",
+          "9:16",
+          "1:1"
+        ],
+        "title": "Aspect Ratio",
+        "name": "aspect_ratio",
+        "type": "string",
+        "description": "Aspect ratio of the output video.",
+        "default": "16:9"
+      },
+      "resolution": {
+        "enum": [
+          "480p",
+          "580p",
+          "720p"
+        ],
+        "title": "Resolution",
+        "name": "resolution",
+        "type": "string",
+        "description": "The resolution of the generated video.",
+        "default": "480p"
+      }
     }
   },
   {
     "id": "wan2.5-text-to-video",
+    "falSlug": "fal-ai/wan-25-preview/text-to-video",
+    "inputMap": {
+      "prompt": "prompt",
+      "aspect_ratio": "aspect_ratio",
+      "resolution": "resolution",
+      "duration": "duration",
+      "audio_url": "audio_url"
+    },
+    "outputField": "video.url",
     "name": "Wan 2.5",
     "inputs": {
-      "prompt": { "type": "string", "title": "Prompt", "name": "prompt", "description": "The prompt to generate the video" },
-      "aspect_ratio": { "enum": ["16:9", "9:16"], "title": "Aspect Ratio", "name": "aspect_ratio", "type": "string", "description": "Aspect ratio of the output video.", "default": "16:9" },
-      "duration": { "title": "Duration", "name": "duration", "type": "int", "description": "The duration of the generated video in seconds", "default": 5, "minValue": 5, "maxValue": 10, "step": 5 },
-      "resolution": { "enum": ["480p", "720p", "1080p"], "title": "Resolution", "name": "resolution", "type": "string", "description": "The resolution of the generated video.", "default": "480p" }
-    }
-  },
-  {
-    "id": "wan2.5-text-to-video-fast",
-    "name": "Wan 2.5 Fast",
-    "inputs": {
-      "prompt": { "type": "string", "title": "Prompt", "name": "prompt", "description": "The prompt to generate the video" },
-      "aspect_ratio": { "enum": ["16:9", "9:16"], "title": "Aspect Ratio", "name": "aspect_ratio", "type": "string", "description": "Aspect ratio of the output video.", "default": "16:9" },
-      "duration": { "title": "Duration", "name": "duration", "type": "int", "description": "The duration of the generated video in seconds", "default": 5, "minValue": 5, "maxValue": 10, "step": 5 },
-      "resolution": { "enum": ["720p", "1080p"], "title": "Resolution", "name": "resolution", "type": "string", "description": "The resolution of the generated video.", "default": "720p" }
+      "prompt": {
+        "type": "string",
+        "title": "Prompt",
+        "name": "prompt",
+        "description": "The prompt to generate the video"
+      },
+      "aspect_ratio": {
+        "enum": [
+          "16:9",
+          "9:16"
+        ],
+        "title": "Aspect Ratio",
+        "name": "aspect_ratio",
+        "type": "string",
+        "description": "Aspect ratio of the output video.",
+        "default": "16:9"
+      },
+      "duration": {
+        "title": "Duration",
+        "name": "duration",
+        "type": "int",
+        "description": "The duration of the generated video in seconds",
+        "default": 5,
+        "minValue": 5,
+        "maxValue": 10,
+        "step": 5
+      },
+      "resolution": {
+        "enum": [
+          "480p",
+          "720p",
+          "1080p"
+        ],
+        "title": "Resolution",
+        "name": "resolution",
+        "type": "string",
+        "description": "The resolution of the generated video.",
+        "default": "480p"
+      }
     }
   },
   {
     "id": "wan2.6-text-to-video",
+    "falSlug": "wan/v2.6/text-to-video",
+    "inputMap": {
+      "prompt": "prompt",
+      "audio_url": "audio_url"
+    },
+    "outputField": "video.url",
     "name": "Wan 2.6",
     "inputs": {
-      "prompt": { "type": "string", "title": "Prompt", "name": "prompt", "description": "The prompt to generate the video" },
-      "aspect_ratio": { "enum": ["16:9", "9:16"], "title": "Aspect Ratio", "name": "aspect_ratio", "type": "string", "description": "Aspect ratio of the output video.", "default": "16:9" },
-      "duration": { "enum": [5, 10, 15], "title": "Duration", "name": "duration", "type": "int", "description": "The duration of the generated video in seconds", "default": 5 },
-      "resolution": { "enum": ["720p", "1080p"], "title": "Resolution", "name": "resolution", "type": "string", "description": "The resolution of the generated video.", "default": "720p" }
+      "prompt": {
+        "type": "string",
+        "title": "Prompt",
+        "name": "prompt",
+        "description": "The prompt to generate the video"
+      },
+      "aspect_ratio": {
+        "enum": [
+          "16:9",
+          "9:16"
+        ],
+        "title": "Aspect Ratio",
+        "name": "aspect_ratio",
+        "type": "string",
+        "description": "Aspect ratio of the output video.",
+        "default": "16:9"
+      },
+      "duration": {
+        "enum": [
+          5,
+          10,
+          15
+        ],
+        "title": "Duration",
+        "name": "duration",
+        "type": "int",
+        "description": "The duration of the generated video in seconds",
+        "default": 5
+      },
+      "resolution": {
+        "enum": [
+          "720p",
+          "1080p"
+        ],
+        "title": "Resolution",
+        "name": "resolution",
+        "type": "string",
+        "description": "The resolution of the generated video.",
+        "default": "720p"
+      }
     }
   },
   {
     "id": "hunyuan-text-to-video",
+    "falSlug": "fal-ai/hunyuan-video",
+    "inputMap": {
+      "prompt": "prompt",
+      "aspect_ratio": "aspect_ratio",
+      "resolution": "resolution",
+      "num_frames": "num_frames",
+      "pro_mode": "pro_mode"
+    },
+    "outputField": "video.url",
     "name": "Hunyuan",
     "inputs": {
-      "prompt": { "type": "string", "title": "Prompt", "name": "prompt", "description": "Text prompt describing the video." },
-      "aspect_ratio": { "enum": ["16:9", "9:16", "1:1"], "title": "Aspect Ratio", "name": "aspect_ratio", "type": "string", "description": "Aspect ratio of the output video.", "default": "16:9" }
+      "prompt": {
+        "type": "string",
+        "title": "Prompt",
+        "name": "prompt",
+        "description": "Text prompt describing the video."
+      },
+      "aspect_ratio": {
+        "enum": [
+          "16:9",
+          "9:16",
+          "1:1"
+        ],
+        "title": "Aspect Ratio",
+        "name": "aspect_ratio",
+        "type": "string",
+        "description": "Aspect ratio of the output video.",
+        "default": "16:9"
+      }
     }
   },
   {
     "id": "hunyuan-fast-text-to-video",
+    "falSlug": "fal-ai/hunyuan-video-v1.5/text-to-video",
+    "inputMap": {
+      "prompt": "prompt",
+      "aspect_ratio": "aspect_ratio"
+    },
+    "outputField": "video.url",
     "name": "Hunyuan Fast",
     "inputs": {
-      "prompt": { "type": "string", "title": "Prompt", "name": "prompt", "description": "Text prompt describing the video." },
-      "aspect_ratio": { "enum": ["16:9", "9:16", "1:1"], "title": "Aspect Ratio", "name": "aspect_ratio", "type": "string", "description": "Aspect ratio of the output video.", "default": "16:9" }
+      "prompt": {
+        "type": "string",
+        "title": "Prompt",
+        "name": "prompt",
+        "description": "Text prompt describing the video."
+      },
+      "aspect_ratio": {
+        "enum": [
+          "16:9",
+          "9:16",
+          "1:1"
+        ],
+        "title": "Aspect Ratio",
+        "name": "aspect_ratio",
+        "type": "string",
+        "description": "Aspect ratio of the output video.",
+        "default": "16:9"
+      }
     }
   },
   {
     "id": "pixverse-v4.5-t2v",
+    "falSlug": "fal-ai/pixverse/v4.5/text-to-video",
+    "inputMap": {
+      "prompt": "prompt",
+      "aspect_ratio": "aspect_ratio",
+      "duration": "duration",
+      "resolution": "resolution"
+    },
+    "outputField": "video.url",
     "name": "Pixverse v4.5",
     "inputs": {
-      "prompt": { "type": "string", "title": "Prompt", "name": "prompt", "description": "The prompt to generate the video" },
-      "aspect_ratio": { "enum": ["16:9", "9:16", "1:1", "4:3", "3:4"], "title": "Aspect Ratio", "name": "aspect_ratio", "type": "string", "description": "Aspect ratio of the output video.", "default": "16:9" },
-      "duration": { "title": "Duration", "name": "duration", "type": "int", "description": "The duration of the generated video in seconds. 8s not supported for 1080p resolution.", "default": 5, "minValue": 5, "maxValue": 8, "step": 3 },
-      "resolution": { "enum": ["360p", "540p", "720p", "1080p"], "title": "Resolution", "name": "resolution", "type": "string", "description": "The resolution of the generated video.", "default": "720p" }
+      "prompt": {
+        "type": "string",
+        "title": "Prompt",
+        "name": "prompt",
+        "description": "The prompt to generate the video"
+      },
+      "aspect_ratio": {
+        "enum": [
+          "16:9",
+          "9:16",
+          "1:1",
+          "4:3",
+          "3:4"
+        ],
+        "title": "Aspect Ratio",
+        "name": "aspect_ratio",
+        "type": "string",
+        "description": "Aspect ratio of the output video.",
+        "default": "16:9"
+      },
+      "duration": {
+        "title": "Duration",
+        "name": "duration",
+        "type": "int",
+        "description": "The duration of the generated video in seconds. 8s not supported for 1080p resolution.",
+        "default": 5,
+        "minValue": 5,
+        "maxValue": 8,
+        "step": 3
+      },
+      "resolution": {
+        "enum": [
+          "360p",
+          "540p",
+          "720p",
+          "1080p"
+        ],
+        "title": "Resolution",
+        "name": "resolution",
+        "type": "string",
+        "description": "The resolution of the generated video.",
+        "default": "720p"
+      }
     }
   },
   {
     "id": "pixverse-v5-t2v",
+    "falSlug": "fal-ai/pixverse/v5/text-to-video",
+    "inputMap": {
+      "prompt": "prompt",
+      "aspect_ratio": "aspect_ratio",
+      "duration": "duration",
+      "resolution": "resolution"
+    },
+    "outputField": "video.url",
     "name": "Pixverse v5",
     "inputs": {
-      "prompt": { "type": "string", "title": "Prompt", "name": "prompt", "description": "The prompt to generate the video" },
-      "aspect_ratio": { "enum": ["16:9", "9:16", "1:1", "4:3", "3:4"], "title": "Aspect Ratio", "name": "aspect_ratio", "type": "string", "description": "Aspect ratio of the output video.", "default": "16:9" },
-      "duration": { "title": "Duration", "name": "duration", "type": "int", "description": "The duration of the generated video in seconds", "default": 5, "minValue": 5, "maxValue": 8, "step": 3 },
-      "resolution": { "enum": ["360p", "540p", "720p", "1080p"], "title": "Resolution", "name": "resolution", "type": "string", "description": "The resolution of the generated video.", "default": "720p" }
+      "prompt": {
+        "type": "string",
+        "title": "Prompt",
+        "name": "prompt",
+        "description": "The prompt to generate the video"
+      },
+      "aspect_ratio": {
+        "enum": [
+          "16:9",
+          "9:16",
+          "1:1",
+          "4:3",
+          "3:4"
+        ],
+        "title": "Aspect Ratio",
+        "name": "aspect_ratio",
+        "type": "string",
+        "description": "Aspect ratio of the output video.",
+        "default": "16:9"
+      },
+      "duration": {
+        "title": "Duration",
+        "name": "duration",
+        "type": "int",
+        "description": "The duration of the generated video in seconds",
+        "default": 5,
+        "minValue": 5,
+        "maxValue": 8,
+        "step": 3
+      },
+      "resolution": {
+        "enum": [
+          "360p",
+          "540p",
+          "720p",
+          "1080p"
+        ],
+        "title": "Resolution",
+        "name": "resolution",
+        "type": "string",
+        "description": "The resolution of the generated video.",
+        "default": "720p"
+      }
     }
   },
   {
     "id": "pixverse-v5.5-t2v",
+    "falSlug": "fal-ai/pixverse/v5.5/text-to-video",
+    "inputMap": {
+      "prompt": "prompt",
+      "aspect_ratio": "aspect_ratio",
+      "duration": "duration",
+      "resolution": "resolution",
+      "negative_prompt": "negative_prompt",
+      "style": "style",
+      "generate_audio_switch": "generate_audio_switch"
+    },
+    "outputField": "video.url",
     "name": "Pixverse v5.5",
     "inputs": {
-      "prompt": { "type": "string", "title": "Prompt", "name": "prompt", "description": "The prompt to generate the video" },
-      "aspect_ratio": { "enum": ["16:9", "9:16", "1:1", "4:3", "3:4"], "title": "Aspect Ratio", "name": "aspect_ratio", "type": "string", "description": "Aspect ratio of the output video.", "default": "16:9" },
-      "duration": { "enum": [5, 8, 10], "title": "Duration", "name": "duration", "type": "int", "description": "The duration of the generated video in seconds.", "default": 5 },
-      "resolution": { "enum": ["360p", "540p", "720p", "1080p"], "title": "Resolution", "name": "resolution", "type": "string", "description": "The resolution of the generated video.", "default": "360p" }
+      "prompt": {
+        "type": "string",
+        "title": "Prompt",
+        "name": "prompt",
+        "description": "The prompt to generate the video"
+      },
+      "aspect_ratio": {
+        "enum": [
+          "16:9",
+          "9:16",
+          "1:1",
+          "4:3",
+          "3:4"
+        ],
+        "title": "Aspect Ratio",
+        "name": "aspect_ratio",
+        "type": "string",
+        "description": "Aspect ratio of the output video.",
+        "default": "16:9"
+      },
+      "duration": {
+        "enum": [
+          5,
+          8,
+          10
+        ],
+        "title": "Duration",
+        "name": "duration",
+        "type": "int",
+        "description": "The duration of the generated video in seconds.",
+        "default": 5
+      },
+      "resolution": {
+        "enum": [
+          "360p",
+          "540p",
+          "720p",
+          "1080p"
+        ],
+        "title": "Resolution",
+        "name": "resolution",
+        "type": "string",
+        "description": "The resolution of the generated video.",
+        "default": "360p"
+      }
     }
   },
   {
     "id": "minimax-hailuo-02-standard-t2v",
+    "falSlug": "fal-ai/minimax/hailuo-02/standard/text-to-video",
+    "inputMap": {
+      "prompt": "prompt",
+      "duration": "duration",
+      "prompt_optimizer": "prompt_optimizer"
+    },
+    "outputField": "video.url",
     "name": "Hailuo 02 Standard",
     "inputs": {
-      "prompt": { "type": "string", "title": "Prompt", "name": "prompt", "description": "Text prompt describing the video." },
-      "duration": { "enum": [6, 10], "title": "Duration", "name": "duration", "type": "int", "description": "The duration of the generated video in seconds", "default": 6 },
-      "resolution": { "enum": ["768P"], "title": "Resolution", "name": "resolution", "type": "string", "description": "The resolution of the generated video.", "default": "768P" }
+      "prompt": {
+        "type": "string",
+        "title": "Prompt",
+        "name": "prompt",
+        "description": "Text prompt describing the video."
+      },
+      "duration": {
+        "enum": [
+          6,
+          10
+        ],
+        "title": "Duration",
+        "name": "duration",
+        "type": "int",
+        "description": "The duration of the generated video in seconds",
+        "default": 6
+      },
+      "resolution": {
+        "enum": [
+          "768P"
+        ],
+        "title": "Resolution",
+        "name": "resolution",
+        "type": "string",
+        "description": "The resolution of the generated video.",
+        "default": "768P"
+      }
     }
   },
   {
     "id": "minimax-hailuo-02-pro-t2v",
+    "falSlug": "fal-ai/minimax/hailuo-02/pro/text-to-video",
+    "inputMap": {
+      "prompt": "prompt",
+      "duration": "duration",
+      "prompt_optimizer": "prompt_optimizer"
+    },
+    "outputField": "video.url",
     "name": "Hailuo 02 Pro",
     "inputs": {
-      "prompt": { "type": "string", "title": "Prompt", "name": "prompt", "description": "Text prompt describing the video." },
-      "duration": { "enum": [6], "title": "Duration", "name": "duration", "type": "int", "description": "The duration of the generated video in seconds", "default": 6 },
-      "resolution": { "enum": ["1080P"], "title": "Resolution", "name": "resolution", "type": "string", "description": "The resolution of the generated video.", "default": "1080P" }
+      "prompt": {
+        "type": "string",
+        "title": "Prompt",
+        "name": "prompt",
+        "description": "Text prompt describing the video."
+      },
+      "duration": {
+        "enum": [
+          6
+        ],
+        "title": "Duration",
+        "name": "duration",
+        "type": "int",
+        "description": "The duration of the generated video in seconds",
+        "default": 6
+      },
+      "resolution": {
+        "enum": [
+          "1080P"
+        ],
+        "title": "Resolution",
+        "name": "resolution",
+        "type": "string",
+        "description": "The resolution of the generated video.",
+        "default": "1080P"
+      }
     }
   },
   {
     "id": "minimax-hailuo-2.3-pro-t2v",
+    "falSlug": "fal-ai/minimax/hailuo-2.3/pro/text-to-video",
+    "inputMap": {
+      "prompt": "prompt",
+      "prompt_optimizer": "prompt_optimizer"
+    },
+    "outputField": "video.url",
     "name": "Hailuo 2.3 Pro",
     "inputs": {
-      "prompt": { "type": "string", "title": "Prompt", "name": "prompt", "description": "Text prompt describing the video." },
-      "resolution": { "enum": ["1080p"], "title": "Resolution", "name": "resolution", "type": "string", "description": "The resolution of the generated video.", "default": "1080p" }
+      "prompt": {
+        "type": "string",
+        "title": "Prompt",
+        "name": "prompt",
+        "description": "Text prompt describing the video."
+      },
+      "resolution": {
+        "enum": [
+          "1080p"
+        ],
+        "title": "Resolution",
+        "name": "resolution",
+        "type": "string",
+        "description": "The resolution of the generated video.",
+        "default": "1080p"
+      }
     }
   },
   {
     "id": "minimax-hailuo-2.3-standard-t2v",
+    "falSlug": "fal-ai/minimax/hailuo-2.3/standard/text-to-video",
+    "inputMap": {
+      "prompt": "prompt",
+      "duration": "duration",
+      "prompt_optimizer": "prompt_optimizer"
+    },
+    "outputField": "video.url",
     "name": "Hailuo 2.3 Standard",
     "inputs": {
-      "prompt": { "type": "string", "title": "Prompt", "name": "prompt", "description": "Text prompt describing the video." },
-      "duration": { "enum": [6, 10], "title": "Duration", "name": "duration", "type": "int", "description": "The duration of the generated video in seconds", "default": 6 }
-    }
-  },
-  {
-    "id": "openai-sora",
-    "name": "Sora",
-    "inputs": {
-      "prompt": { "type": "string", "title": "Prompt", "name": "prompt", "description": "Text prompt describing the video." },
-      "aspect_ratio": { "enum": ["16:9", "9:16", "1:1"], "title": "Aspect Ratio", "name": "aspect_ratio", "type": "string", "description": "Aspect ratio of the output video.", "default": "16:9" },
-      "resolution": { "enum": ["480p", "720p", "1080p"], "title": "Resolution", "name": "resolution", "type": "string", "description": "The resolution of the generated video.", "default": "480p" }
-    }
-  },
-  {
-    "id": "openai-sora-2-text-to-video",
-    "name": "Sora 2",
-    "inputs": {
-      "prompt": { "type": "string", "title": "Prompt", "name": "prompt", "description": "The prompt to generate the video" },
-      "aspect_ratio": { "enum": ["16:9", "9:16"], "title": "Aspect Ratio", "name": "aspect_ratio", "type": "string", "description": "Aspect ratio of the output video.", "default": "16:9" },
-      "duration": { "enum": [10, 15], "title": "Duration", "name": "duration", "type": "int", "description": "The duration of the generated video in seconds", "default": 10 }
-    }
-  },
-  {
-    "id": "openai-sora-2-pro-text-to-video",
-    "name": "Sora 2 Pro",
-    "inputs": {
-      "prompt": { "type": "string", "title": "Prompt", "name": "prompt", "description": "The prompt to generate the video" },
-      "aspect_ratio": { "enum": ["16:9", "9:16"], "title": "Aspect Ratio", "name": "aspect_ratio", "type": "string", "description": "Aspect ratio of the output video.", "default": "16:9" },
-      "duration": { "enum": [10, 15, 25], "title": "Duration", "name": "duration", "type": "int", "description": "The duration of the generated video in seconds. Currently 25 seconds supports 720p only.", "default": 10 },
-      "resolution": { "enum": ["720p", "1080p"], "title": "Resolution", "name": "resolution", "type": "string", "description": "The resolution of the generated video.", "default": "720p" }
+      "prompt": {
+        "type": "string",
+        "title": "Prompt",
+        "name": "prompt",
+        "description": "Text prompt describing the video."
+      },
+      "duration": {
+        "enum": [
+          6,
+          10
+        ],
+        "title": "Duration",
+        "name": "duration",
+        "type": "int",
+        "description": "The duration of the generated video in seconds",
+        "default": 6
+      }
     }
   },
   {
     "id": "vidu-v2.0-t2v",
+    "falSlug": "fal-ai/vidu/q2/text-to-video",
+    "inputMap": {
+      "prompt": "prompt",
+      "aspect_ratio": "aspect_ratio",
+      "duration": "duration",
+      "resolution": "resolution",
+      "movement_amplitude": "movement_amplitude"
+    },
+    "outputField": "video.url",
     "name": "Vidu v2.0",
     "inputs": {
-      "prompt": { "type": "string", "title": "Prompt", "name": "prompt", "description": "The prompt to generate the video" },
-      "aspect_ratio": { "enum": ["9:16"], "title": "Aspect Ratio", "name": "aspect_ratio", "type": "string", "description": "Aspect ratio of the output video.", "default": "9:16" },
-      "duration": { "enum": [4], "title": "Duration", "name": "duration", "type": "int", "description": "The duration of the generated video in seconds.", "default": 4 },
-      "resolution": { "enum": ["1080p"], "title": "Resolution", "name": "resolution", "type": "string", "description": "The resolution of the generated video.", "default": "1080p" }
+      "prompt": {
+        "type": "string",
+        "title": "Prompt",
+        "name": "prompt",
+        "description": "The prompt to generate the video"
+      },
+      "aspect_ratio": {
+        "enum": [
+          "9:16"
+        ],
+        "title": "Aspect Ratio",
+        "name": "aspect_ratio",
+        "type": "string",
+        "description": "Aspect ratio of the output video.",
+        "default": "9:16"
+      },
+      "duration": {
+        "enum": [
+          4
+        ],
+        "title": "Duration",
+        "name": "duration",
+        "type": "int",
+        "description": "The duration of the generated video in seconds.",
+        "default": 4
+      },
+      "resolution": {
+        "enum": [
+          "1080p"
+        ],
+        "title": "Resolution",
+        "name": "resolution",
+        "type": "string",
+        "description": "The resolution of the generated video.",
+        "default": "1080p"
+      }
     }
   },
   {
     "id": "ovi-text-to-video",
+    "falSlug": "fal-ai/ovi",
+    "inputMap": {
+      "prompt": "prompt"
+    },
+    "outputField": "video.url",
     "name": "OVI",
     "inputs": {
-      "prompt": { "type": "string", "title": "Prompt", "name": "prompt", "description": "Text prompt describing the video." },
-      "aspect_ratio": { "enum": ["16:9", "9:16"], "title": "Aspect Ratio", "name": "aspect_ratio", "type": "string", "description": "Aspect ratio of the output video.", "default": "16:9" }
+      "prompt": {
+        "type": "string",
+        "title": "Prompt",
+        "name": "prompt",
+        "description": "Text prompt describing the video."
+      },
+      "aspect_ratio": {
+        "enum": [
+          "16:9",
+          "9:16"
+        ],
+        "title": "Aspect Ratio",
+        "name": "aspect_ratio",
+        "type": "string",
+        "description": "Aspect ratio of the output video.",
+        "default": "16:9"
+      }
     }
   },
   {
     "id": "grok-imagine-text-to-video",
+    "falSlug": "xai/grok-imagine-video/text-to-video",
+    "inputMap": {
+      "prompt": "prompt",
+      "aspect_ratio": "aspect_ratio",
+      "duration": "duration",
+      "resolution": "resolution"
+    },
+    "outputField": "video.url",
     "name": "Grok Imagine",
     "inputs": {
-      "prompt": { "type": "string", "title": "Prompt", "name": "prompt", "description": "Text prompt describing the video." },
-      "aspect_ratio": { "enum": ["9:16", "16:9", "2:3", "3:2", "1:1"], "title": "Aspect Ratio", "name": "aspect_ratio", "type": "string", "description": "Aspect ratio of the output video.", "default": "1:1" },
-      "mode": { "enum": ["fun", "normal", "spicy"], "title": "Mode", "name": "mode", "type": "string", "description": "Generation style: normal = standard output; fun = more creative/expressive; spicy = edgier content (text-to-video only).", "default": "normal" },
-      "duration": { "enum": [6, 10, 15], "title": "Duration", "name": "duration", "type": "int", "description": "The duration of the generated video in seconds.", "default": 6 }
+      "prompt": {
+        "type": "string",
+        "title": "Prompt",
+        "name": "prompt",
+        "description": "Text prompt describing the video."
+      },
+      "aspect_ratio": {
+        "enum": [
+          "9:16",
+          "16:9",
+          "2:3",
+          "3:2",
+          "1:1"
+        ],
+        "title": "Aspect Ratio",
+        "name": "aspect_ratio",
+        "type": "string",
+        "description": "Aspect ratio of the output video.",
+        "default": "1:1"
+      },
+      "mode": {
+        "enum": [
+          "fun",
+          "normal",
+          "spicy"
+        ],
+        "title": "Mode",
+        "name": "mode",
+        "type": "string",
+        "description": "Generation style: normal = standard output; fun = more creative/expressive; spicy = edgier content (text-to-video only).",
+        "default": "normal"
+      },
+      "duration": {
+        "enum": [
+          6,
+          10,
+          15
+        ],
+        "title": "Duration",
+        "name": "duration",
+        "type": "int",
+        "description": "The duration of the generated video in seconds.",
+        "default": 6
+      }
     }
   },
   {
     "id": "ltx-2-pro-text-to-video",
+    "falSlug": "fal-ai/ltx-2/text-to-video",
+    "inputMap": {
+      "prompt": "prompt",
+      "resolution": "resolution",
+      "duration": "duration"
+    },
+    "outputField": "video.url",
     "name": "LTX 2 Pro",
     "inputs": {
-      "prompt": { "type": "string", "title": "Prompt", "name": "prompt", "description": "Text prompt describing the video." },
-      "duration": { "enum": [6, 8, 10], "title": "Duration", "name": "duration", "type": "int", "description": "The duration of the generated video in seconds", "default": 6 }
+      "prompt": {
+        "type": "string",
+        "title": "Prompt",
+        "name": "prompt",
+        "description": "Text prompt describing the video."
+      },
+      "duration": {
+        "enum": [
+          6,
+          8,
+          10
+        ],
+        "title": "Duration",
+        "name": "duration",
+        "type": "int",
+        "description": "The duration of the generated video in seconds",
+        "default": 6
+      }
     }
   },
   {
     "id": "ltx-2-fast-text-to-video",
+    "falSlug": "fal-ai/ltx-2/text-to-video/fast",
+    "inputMap": {
+      "prompt": "prompt",
+      "resolution": "resolution",
+      "duration": "duration"
+    },
+    "outputField": "video.url",
     "name": "LTX 2 Fast",
     "inputs": {
-      "prompt": { "type": "string", "title": "Prompt", "name": "prompt", "description": "Text prompt describing the video." },
-      "duration": { "enum": [6, 8, 10, 12, 14, 16, 18, 20], "title": "Duration", "name": "duration", "type": "int", "description": "The duration of the generated video in seconds", "default": 6 }
+      "prompt": {
+        "type": "string",
+        "title": "Prompt",
+        "name": "prompt",
+        "description": "Text prompt describing the video."
+      },
+      "duration": {
+        "enum": [
+          6,
+          8,
+          10,
+          12,
+          14,
+          16,
+          18,
+          20
+        ],
+        "title": "Duration",
+        "name": "duration",
+        "type": "int",
+        "description": "The duration of the generated video in seconds",
+        "default": 6
+      }
     }
   },
   {
     "id": "ltx-2-19b-text-to-video",
+    "falSlug": "fal-ai/ltx-2-19b/text-to-video",
+    "inputMap": {
+      "prompt": "prompt",
+      "generate_audio": "generate_audio"
+    },
+    "outputField": "video.url",
     "name": "LTX 2 19B",
     "inputs": {
-      "prompt": { "type": "string", "title": "Prompt", "name": "prompt", "description": "Text prompt describing the video." },
-      "aspect_ratio": { "enum": ["16:9", "9:16"], "title": "Aspect Ratio", "name": "aspect_ratio", "type": "string", "description": "The aspect ratio of the generated video", "default": "16:9" },
-      "duration": { "title": "Duration", "name": "duration", "type": "int", "description": "The duration of the generated video in seconds", "default": 5, "minValue": 5, "maxValue": 20, "step": 1 },
-      "resolution": { "enum": ["480p", "720p", "1080p"], "title": "Resolution", "name": "resolution", "type": "string", "description": "The resolution of the generated video.", "default": "720p" }
+      "prompt": {
+        "type": "string",
+        "title": "Prompt",
+        "name": "prompt",
+        "description": "Text prompt describing the video."
+      },
+      "aspect_ratio": {
+        "enum": [
+          "16:9",
+          "9:16"
+        ],
+        "title": "Aspect Ratio",
+        "name": "aspect_ratio",
+        "type": "string",
+        "description": "The aspect ratio of the generated video",
+        "default": "16:9"
+      },
+      "duration": {
+        "title": "Duration",
+        "name": "duration",
+        "type": "int",
+        "description": "The duration of the generated video in seconds",
+        "default": 5,
+        "minValue": 5,
+        "maxValue": 20,
+        "step": 1
+      },
+      "resolution": {
+        "enum": [
+          "480p",
+          "720p",
+          "1080p"
+        ],
+        "title": "Resolution",
+        "name": "resolution",
+        "type": "string",
+        "description": "The resolution of the generated video.",
+        "default": "720p"
+      }
     }
   }
 ];
@@ -2634,6 +3567,12 @@ export const getResolutionsForVideoModel = (modelId) => {
 export const i2iModels = [
   {
     "id": "ai-image-upscaler",
+    "falSlug": "fal-ai/clarity-upscaler",
+    "inputMap": {
+      "image_url": "image_url",
+      "scale": "upscaling_factor"
+    },
+    "outputField": "images[0].url",
     "name": "AI Image Upscaler",
     "endpoint": "ai-image-upscale",
     "family": "tools",
@@ -2642,36 +3581,12 @@ export const i2iModels = [
     "inputs": {}
   },
   {
-    "id": "ai-image-face-swap",
-    "name": "AI Image Face Swap",
-    "endpoint": "ai-image-face-swap",
-    "family": "tools",
-    "imageField": "image_url",
-    "hasPrompt": false,
-    "inputs": {
-      "target_index": {
-        "type": "int",
-        "title": "Target Index",
-        "name": "target_index",
-        "description": "0 = largest face. To switch to another target face - switch to index 1.",
-        "default": 0,
-        "minValue": 0,
-        "maxValue": 10,
-        "step": 1
-      }
-    }
-  },
-  {
-    "id": "ai-dress-change",
-    "name": "AI Dress Change",
-    "endpoint": "ai-dress-change",
-    "family": "tools",
-    "imageField": "model_image_url",
-    "hasPrompt": false,
-    "inputs": {}
-  },
-  {
     "id": "ai-background-remover",
+    "falSlug": "fal-ai/birefnet",
+    "inputMap": {
+      "image_url": "image_url"
+    },
+    "outputField": "images[0].url",
     "name": "AI Background Remover",
     "endpoint": "ai-background-remover",
     "family": "tools",
@@ -2681,6 +3596,12 @@ export const i2iModels = [
   },
   {
     "id": "ai-product-shot",
+    "falSlug": "fal-ai/bria/product-shot",
+    "inputMap": {
+      "image_url": "image_url",
+      "prompt": "scene_description"
+    },
+    "outputField": "images[0].url",
     "name": "AI Product Shot",
     "endpoint": "ai-product-shot",
     "family": "tools",
@@ -2699,25 +3620,14 @@ export const i2iModels = [
     }
   },
   {
-    "id": "ai-skin-enhancer",
-    "name": "AI Skin Enhancer",
-    "endpoint": "ai-skin-enhancer",
-    "family": "tools",
-    "imageField": "image_url",
-    "hasPrompt": false,
-    "inputs": {}
-  },
-  {
-    "id": "ai-color-photo",
-    "name": "AI Color Photo",
-    "endpoint": "ai-color-photo",
-    "family": "tools",
-    "imageField": "image_url",
-    "hasPrompt": false,
-    "inputs": {}
-  },
-  {
     "id": "flux-kontext-dev-i2i",
+    "falSlug": "fal-ai/flux-kontext/dev",
+    "inputMap": {
+      "image_url": "image_url",
+      "prompt": "prompt",
+      "aspect_ratio": "aspect_ratio"
+    },
+    "outputField": "images[0].url",
     "name": "Flux Kontext Dev I2I",
     "endpoint": "flux-kontext-dev-i2i",
     "family": "kontext",
@@ -2766,6 +3676,12 @@ export const i2iModels = [
   },
   {
     "id": "ai-product-photography",
+    "falSlug": "fal-ai/bria/product-shot",
+    "inputMap": {
+      "image_url": "image_url",
+      "prompt": "scene_description"
+    },
+    "outputField": "images[0].url",
     "name": "AI Product Photography",
     "endpoint": "ai-product-photography",
     "family": "tools",
@@ -2785,6 +3701,11 @@ export const i2iModels = [
   },
   {
     "id": "ai-ghibli-style",
+    "falSlug": "fal-ai/ghiblify",
+    "inputMap": {
+      "image_url": "image_url"
+    },
+    "outputField": "images[0].url",
     "name": "AI Ghibli Style",
     "endpoint": "ai-ghibli-style",
     "family": "tools",
@@ -2793,16 +3714,13 @@ export const i2iModels = [
     "inputs": {}
   },
   {
-    "id": "ai-image-extension",
-    "name": "AI Image Extension",
-    "endpoint": "ai-image-extension",
-    "family": "tools",
-    "imageField": "image_url",
-    "hasPrompt": false,
-    "inputs": {}
-  },
-  {
     "id": "ai-object-eraser",
+    "falSlug": "fal-ai/inpaint",
+    "inputMap": {
+      "image_url": "image_url",
+      "mask_url": "mask_image_url"
+    },
+    "outputField": "images[0].url",
     "name": "AI Object Eraser",
     "endpoint": "ai-object-eraser",
     "family": "tools",
@@ -2812,6 +3730,13 @@ export const i2iModels = [
   },
   {
     "id": "flux-kontext-pro-i2i",
+    "falSlug": "fal-ai/flux-pro/kontext",
+    "inputMap": {
+      "image_url": "image_url",
+      "prompt": "prompt",
+      "aspect_ratio": "aspect_ratio"
+    },
+    "outputField": "images[0].url",
     "name": "Flux Kontext Pro I2I",
     "endpoint": "flux-kontext-pro-i2i",
     "family": "kontext",
@@ -2848,6 +3773,13 @@ export const i2iModels = [
   },
   {
     "id": "flux-kontext-max-i2i",
+    "falSlug": "fal-ai/flux-pro/kontext/max",
+    "inputMap": {
+      "image_url": "image_url",
+      "prompt": "prompt",
+      "aspect_ratio": "aspect_ratio"
+    },
+    "outputField": "images[0].url",
     "name": "Flux Kontext Max I2I",
     "endpoint": "flux-kontext-max-i2i",
     "family": "kontext",
@@ -2883,175 +3815,13 @@ export const i2iModels = [
     }
   },
   {
-    "id": "gpt4o-image-to-image",
-    "name": "GPT-4o Image To Image",
-    "endpoint": "gpt4o-image-to-image",
-    "family": "gpt",
-    "imageField": "images_list",
-    "hasPrompt": true,
-    "maxImages": 5,
-    "inputs": {
-      "prompt": {
-        "type": "string",
-        "title": "Prompt",
-        "name": "prompt",
-        "description": "Text prompt describing the image.",
-        "examples": [
-          "Convert this sunny park photo into a snowy winter scene, with snow-covered trees, cloudy skies, and people in winter coats."
-        ]
-      },
-      "aspect_ratio": {
-        "type": "string",
-        "title": "Aspect Ratio",
-        "name": "aspect_ratio",
-        "description": "Aspect ratio of the output image.",
-        "enum": [
-          "1:1",
-          "2:3",
-          "3:2"
-        ],
-        "default": "1:1"
-      },
-      "num_images": {
-        "type": "int",
-        "title": "Number of images",
-        "name": "num_images",
-        "description": "Number of images generated in single request. Each number will charge separately",
-        "enum": [
-          1,
-          2,
-          4
-        ],
-        "default": 1
-      }
-    }
-  },
-  {
-    "id": "gpt4o-edit",
-    "name": "GPT-4o Edit",
-    "endpoint": "gpt4o-edit",
-    "family": "gpt",
-    "imageField": "image_url",
-    "hasPrompt": true,
-    "inputs": {
-      "prompt": {
-        "type": "string",
-        "title": "Prompt",
-        "name": "prompt",
-        "description": "Text prompt describing the image, what you want the final edited image to look like.",
-        "examples": [
-          "Replace the barista with a humanoid robot in a sleek metallic design."
-        ]
-      },
-      "aspect_ratio": {
-        "type": "string",
-        "title": "Aspect Ratio",
-        "name": "aspect_ratio",
-        "description": "Aspect ratio of the output image.",
-        "enum": [
-          "1:1",
-          "2:3",
-          "3:2"
-        ],
-        "default": "1:1"
-      },
-      "num_images": {
-        "type": "int",
-        "title": "Number of images",
-        "name": "num_images",
-        "description": "Number of images generated in single request. Each number will charge separately",
-        "enum": [
-          1,
-          2,
-          4
-        ],
-        "default": 1
-      }
-    }
-  },
-  {
-    "id": "midjourney-v7-image-to-image",
-    "name": "Midjourney v7 Image To Image",
-    "endpoint": "midjourney-v7-image-to-image",
-    "family": "midjourney",
-    "imageField": "image_url",
-    "hasPrompt": true,
-    "inputs": {
-      "prompt": {
-        "type": "string",
-        "title": "Prompt",
-        "name": "prompt",
-        "description": "The prompt to generate the image",
-        "examples": [
-          "Make the scene sunrise instead of stormy, with soft lighting and a peaceful mood"
-        ]
-      },
-      "speed": {
-        "type": "string",
-        "title": "Speed",
-        "name": "speed",
-        "description": "The speed of which corresponds to different speed of Midjourney",
-        "enum": [
-          "relaxed",
-          "fast",
-          "turbo"
-        ],
-        "default": "relaxed"
-      },
-      "aspect_ratio": {
-        "type": "string",
-        "title": "Aspect Ratio",
-        "name": "aspect_ratio",
-        "description": "Aspect ratio of the output image.",
-        "enum": [
-          "1:1",
-          "16:9",
-          "9:16",
-          "3:4",
-          "4:3",
-          "1:2",
-          "2:1",
-          "2:3",
-          "3:2",
-          "5:6",
-          "6:5"
-        ],
-        "default": "1:1"
-      },
-      "variety": {
-        "type": "int",
-        "title": "Variety",
-        "name": "variety",
-        "description": "Controls the diversity of generated images. Increment by 5 each time. Higher values create more diverse results. Lower values create more consistent results.",
-        "default": 5,
-        "minValue": 0,
-        "maxValue": 100,
-        "step": 5
-      },
-      "stylization": {
-        "type": "int",
-        "title": "Stylization",
-        "name": "stylization",
-        "description": "Controls the artistic style intensity. Higher values create more stylized results. Lower values create more realistic results.",
-        "default": 1,
-        "minValue": 0,
-        "maxValue": 1000,
-        "step": 1
-      },
-      "weirdness": {
-        "type": "int",
-        "title": "Weirdness",
-        "name": "weirdness",
-        "description": "Controls the creativity and uniqueness. Higher values create more unusual results. Lower values create more conventional results.",
-        "default": 1,
-        "minValue": 0,
-        "maxValue": 3000,
-        "step": 1
-      }
-    }
-  },
-  {
     "id": "bytedance-seededit-v3",
+    "falSlug": "fal-ai/bytedance/seededit/v3/edit-image",
+    "inputMap": {
+      "image_url": "image_url",
+      "prompt": "prompt"
+    },
+    "outputField": "images[0].url",
     "name": "Bytedance Seededit v3",
     "endpoint": "bytedance-seededit-image",
     "family": "seedream",
@@ -3070,179 +3840,13 @@ export const i2iModels = [
     }
   },
   {
-    "id": "midjourney-v7-style-reference",
-    "name": "Midjourney v7 Style Reference",
-    "endpoint": "midjourney-v7-style-reference",
-    "family": "midjourney",
-    "imageField": "image_url",
-    "hasPrompt": true,
-    "inputs": {
-      "prompt": {
-        "type": "string",
-        "title": "Prompt",
-        "name": "prompt",
-        "description": "The prompt to generate the image",
-        "examples": [
-          "A futuristic city built on waterfalls, glowing towers in the mist, colorful sky at dusk, cinematic lighting, hyper-detailed architecture."
-        ]
-      },
-      "speed": {
-        "type": "string",
-        "title": "Speed",
-        "name": "speed",
-        "description": "The speed of which corresponds to different speed of Midjourney",
-        "enum": [
-          "relaxed",
-          "fast",
-          "turbo"
-        ],
-        "default": "relaxed"
-      },
-      "aspect_ratio": {
-        "type": "string",
-        "title": "Aspect Ratio",
-        "name": "aspect_ratio",
-        "description": "Aspect ratio of the output image.",
-        "enum": [
-          "1:1",
-          "16:9",
-          "9:16",
-          "3:4",
-          "4:3",
-          "1:2",
-          "2:1",
-          "2:3",
-          "3:2",
-          "5:6",
-          "6:5"
-        ],
-        "default": "1:1"
-      },
-      "variety": {
-        "type": "int",
-        "title": "Variety",
-        "name": "variety",
-        "description": "Controls the diversity of generated images. Increment by 5 each time. Higher values create more diverse results. Lower values create more consistent results.",
-        "default": 5,
-        "minValue": 0,
-        "maxValue": 100,
-        "step": 5
-      },
-      "stylization": {
-        "type": "int",
-        "title": "Stylization",
-        "name": "stylization",
-        "description": "Controls the artistic style intensity. Higher values create more stylized results. Lower values create more realistic results.",
-        "default": 1,
-        "minValue": 0,
-        "maxValue": 1000,
-        "step": 1
-      },
-      "weirdness": {
-        "type": "int",
-        "title": "Weirdness",
-        "name": "weirdness",
-        "description": "Controls the creativity and uniqueness. Higher values create more unusual results. Lower values create more conventional results.",
-        "default": 1,
-        "minValue": 0,
-        "maxValue": 3000,
-        "step": 1
-      }
-    }
-  },
-  {
-    "id": "midjourney-v7-omni-reference",
-    "name": "Midjourney v7 Omni Reference",
-    "endpoint": "midjourney-v7-omni-reference",
-    "family": "midjourney",
-    "imageField": "image_url",
-    "hasPrompt": true,
-    "inputs": {
-      "prompt": {
-        "type": "string",
-        "title": "Prompt",
-        "name": "prompt",
-        "description": "The prompt to generate the image",
-        "examples": [
-          "A futuristic samurai girl exploring an ancient overgrown temple in a neon-lit jungle, glowing plants surrounding her, mist in the air, cinematic composition."
-        ]
-      },
-      "speed": {
-        "type": "string",
-        "title": "Speed",
-        "name": "speed",
-        "description": "The speed of which corresponds to different speed of Midjourney",
-        "enum": [
-          "relaxed",
-          "fast",
-          "turbo"
-        ],
-        "default": "relaxed"
-      },
-      "aspect_ratio": {
-        "type": "string",
-        "title": "Aspect Ratio",
-        "name": "aspect_ratio",
-        "description": "Aspect ratio of the output image.",
-        "enum": [
-          "1:1",
-          "16:9",
-          "9:16",
-          "3:4",
-          "4:3",
-          "1:2",
-          "2:1",
-          "2:3",
-          "3:2",
-          "5:6",
-          "6:5"
-        ],
-        "default": "1:1"
-      },
-      "weight": {
-        "type": "int",
-        "title": "Weight",
-        "name": "weight",
-        "description": "Weight allows you to control how much detail from your reference image appears in your new image.",
-        "default": 100,
-        "minValue": 1,
-        "maxValue": 1000,
-        "step": 1
-      },
-      "variety": {
-        "type": "int",
-        "title": "Variety",
-        "name": "variety",
-        "description": "Controls the diversity of generated images. Increment by 5 each time. Higher values create more diverse results. Lower values create more consistent results.",
-        "default": 5,
-        "minValue": 0,
-        "maxValue": 100,
-        "step": 5
-      },
-      "stylization": {
-        "type": "int",
-        "title": "Stylization",
-        "name": "stylization",
-        "description": "Controls the artistic style intensity. Higher values create more stylized results. Lower values create more realistic results.",
-        "default": 1,
-        "minValue": 0,
-        "maxValue": 1000,
-        "step": 1
-      },
-      "weirdness": {
-        "type": "int",
-        "title": "Weirdness",
-        "name": "weirdness",
-        "description": "Controls the creativity and uniqueness. Higher values create more unusual results. Lower values create more conventional results.",
-        "default": 1,
-        "minValue": 0,
-        "maxValue": 3000,
-        "step": 1
-      }
-    }
-  },
-  {
     "id": "minimax-image-01-subject-reference",
+    "falSlug": "fal-ai/minimax/image-01/subject-reference",
+    "inputMap": {
+      "image_url": "subject_image_url",
+      "prompt": "prompt"
+    },
+    "outputField": "images[0].url",
     "name": "Minimax Image 01 Subject Reference",
     "endpoint": "minimax-01-subject-reference",
     "family": "minimax",
@@ -3289,6 +3893,12 @@ export const i2iModels = [
   },
   {
     "id": "ideogram-character",
+    "falSlug": "fal-ai/ideogram/character",
+    "inputMap": {
+      "image_url": "image_url",
+      "prompt": "prompt"
+    },
+    "outputField": "images[0].url",
     "name": "Ideogram Character",
     "endpoint": "ideogram-character",
     "family": "ideogram",
@@ -3356,6 +3966,13 @@ export const i2iModels = [
   },
   {
     "id": "flux-pulid",
+    "falSlug": "fal-ai/flux-pulid",
+    "inputMap": {
+      "reference_image_url": "reference_image_url",
+      "prompt": "prompt",
+      "num_images": "num_images"
+    },
+    "outputField": "images[0].url",
     "name": "Flux Pulid",
     "endpoint": "flux-pulid",
     "family": "flux",
@@ -3389,6 +4006,12 @@ export const i2iModels = [
   },
   {
     "id": "qwen-image-edit",
+    "falSlug": "fal-ai/qwen-image-edit",
+    "inputMap": {
+      "image_url": "image_url",
+      "prompt": "prompt"
+    },
+    "outputField": "images[0].url",
     "name": "Qwen Image Edit",
     "endpoint": "qwen-image-edit",
     "family": "qwen",
@@ -3425,44 +4048,13 @@ export const i2iModels = [
     }
   },
   {
-    "id": "image-effects",
-    "name": "Image Effects",
-    "endpoint": "image-effects",
-    "family": "effects",
-    "imageField": "image_url",
-    "hasPrompt": false,
-    "inputs": {
-      "name": {
-        "type": "string",
-        "title": "Effect Name",
-        "name": "name",
-        "description": "The type of effect to apply to the image.",
-        "enum": [
-          "Acryclic Ornaments",
-          "Advanced Photography",
-          "American Comic Style",
-          "Angel Figurine",
-          "Blurry Selfie",
-          "Cyberpunk",
-          "Exotic Charm",
-          "Felt 3D Polaroid",
-          "Felt Keychain",
-          "Furry Dream Doll",
-          "Futuristic American Comics",
-          "Glass Ball",
-          "In The Stadium",
-          "Lofi Pixel Character",
-          "Lying On Fluffy Belly",
-          "Landscape Mini World",
-          "My World",
-          "Plastic Bubble Figure"
-        ],
-        "default": "Angel Figurine"
-      }
-    }
-  },
-  {
     "id": "nano-banana-edit",
+    "falSlug": "fal-ai/nano-banana/edit",
+    "inputMap": {
+      "image_url": "image_url",
+      "prompt": "prompt"
+    },
+    "outputField": "images[0].url",
     "name": "Nano Banana Edit",
     "endpoint": "nano-banana-edit",
     "family": "nano",
@@ -3503,6 +4095,12 @@ export const i2iModels = [
   },
   {
     "id": "ideogram-v3-reframe",
+    "falSlug": "fal-ai/ideogram/v3/reframe",
+    "inputMap": {
+      "image_url": "image_url",
+      "aspect_ratio": "resolution"
+    },
+    "outputField": "images[0].url",
     "name": "Ideogram v3 Reframe",
     "endpoint": "ideogram-v3-reframe",
     "family": "ideogram",
@@ -3562,6 +4160,12 @@ export const i2iModels = [
   },
   {
     "id": "bytedance-seedream-edit-v4",
+    "falSlug": "fal-ai/bytedance/seedream/v4/edit",
+    "inputMap": {
+      "image_url": "image_url",
+      "prompt": "prompt"
+    },
+    "outputField": "images[0].url",
     "name": "Bytedance Seedream Edit v4",
     "endpoint": "bytedance-seedream-edit-v4",
     "family": "seedream",
@@ -3620,63 +4224,13 @@ export const i2iModels = [
     }
   },
   {
-    "id": "nano-banana-effects",
-    "name": "Nano Banana Effects",
-    "endpoint": "nano-banana-effects",
-    "family": "nano",
-    "imageField": "image_url",
-    "hasPrompt": false,
-    "inputs": {
-      "name": {
-        "type": "string",
-        "title": "Effect Name",
-        "name": "name",
-        "description": "The type of effect to apply to the image.",
-        "enum": [
-          "3D Figurine",
-          "16bit Game Character",
-          "1920s Decade",
-          "1950s Decade",
-          "1970s Decade",
-          "1980s Decade",
-          "Action Figure",
-          "American Gothic Art",
-          "Egypts Landmark",
-          "Eiffel Tower Landmark",
-          "Famous Art",
-          "Great Wall of China Landmark",
-          "Mona Lisa Art",
-          "Persistent Memory Art",
-          "Statue of Liberty Landmark",
-          "Taj Mahal Landmark",
-          "Vincent Van Gogh Art"
-        ],
-        "default": "3D Figurine"
-      },
-      "aspect_ratio": {
-        "type": "string",
-        "title": "Aspect Ratio",
-        "name": "aspect_ratio",
-        "description": "Aspect ratio of the output image.",
-        "enum": [
-          "Auto",
-          "1:1",
-          "3:4",
-          "4:3",
-          "9:16",
-          "16:9",
-          "3:2",
-          "2:3",
-          "5:4",
-          "4:5",
-          "21:9"
-        ],
-        "default": "Auto"
-      }
-    }
-  },
-  {
     "id": "flux-kontext-effects",
+    "falSlug": "fal-ai/flux-pro/kontext",
+    "inputMap": {
+      "image_url": "image_url",
+      "prompt": "prompt"
+    },
+    "outputField": "images[0].url",
     "name": "Flux Kontext Effects",
     "endpoint": "flux-kontext-effects",
     "family": "kontext",
@@ -3718,6 +4272,12 @@ export const i2iModels = [
   },
   {
     "id": "flux-redux",
+    "falSlug": "fal-ai/flux-pro/redux",
+    "inputMap": {
+      "image_url": "image_url",
+      "prompt": "prompt"
+    },
+    "outputField": "images[0].url",
     "name": "Flux Redux",
     "endpoint": "flux-redux",
     "family": "flux",
@@ -3765,6 +4325,12 @@ export const i2iModels = [
   },
   {
     "id": "qwen-image-edit-plus",
+    "falSlug": "fal-ai/qwen-image-edit-plus",
+    "inputMap": {
+      "image_url": "image_url",
+      "prompt": "prompt"
+    },
+    "outputField": "images[0].url",
     "name": "Qwen Image Edit Plus",
     "endpoint": "qwen-image-edit-plus",
     "family": "qwen",
@@ -3805,6 +4371,13 @@ export const i2iModels = [
   },
   {
     "id": "wan2.5-image-edit",
+    "falSlug": "fal-ai/wan-25-preview/image-to-image",
+    "inputMap": {
+      "image_url": "image_url",
+      "prompt": "prompt",
+      "aspect_ratio": "aspect_ratio"
+    },
+    "outputField": "images[0].url",
     "name": "Wan2.5 Image Edit",
     "endpoint": "wan2.5-image-edit",
     "family": "wan2.5",
@@ -3844,26 +4417,13 @@ export const i2iModels = [
     }
   },
   {
-    "id": "reve-image-edit",
-    "name": "Reve Image Edit",
-    "endpoint": "reve-image-edit",
-    "family": "reve",
-    "imageField": "image_url",
-    "hasPrompt": true,
-    "inputs": {
-      "prompt": {
-        "type": "string",
-        "title": "Prompt",
-        "name": "prompt",
-        "description": "Text prompt describing the image.",
-        "examples": [
-          "A photorealistic fantasy portrait, transforming the woman in the image into an elegant high elf. Give her long, gracefully pointed ears that peek through her hair. Her skin has a subtle, ethereal glow. Replace her white blazer and necklaces with ornate, flowing elven robes made of shimmering silver fabric and intricate leaf patterns. The background is a mystical, twilight forest with glowing magical flora. **CRITICAL:** Maintain her exact original pose, serene smiling expression, and facial structure. Cinematic lighting, masterpiece, hyper-detailed."
-        ]
-      }
-    }
-  },
-  {
     "id": "topaz-image-upscale",
+    "falSlug": "fal-ai/topaz/upscale/image",
+    "inputMap": {
+      "image_url": "image_url",
+      "scale": "scale"
+    },
+    "outputField": "images[0].url",
     "name": "Topaz Image Upscale",
     "endpoint": "topaz-image-upscale",
     "family": "topaz",
@@ -3887,6 +4447,11 @@ export const i2iModels = [
   },
   {
     "id": "seedvr2-image-upscale",
+    "falSlug": "fal-ai/seedvr/upscale/image",
+    "inputMap": {
+      "image_url": "image_url"
+    },
+    "outputField": "images[0].url",
     "name": "Seedvr2 Image Upscale",
     "endpoint": "seedvr2-image-upscale",
     "family": "seedvr2",
@@ -3909,6 +4474,12 @@ export const i2iModels = [
   },
   {
     "id": "qwen-image-edit-plus-lora",
+    "falSlug": "fal-ai/qwen-image-edit-plus",
+    "inputMap": {
+      "image_url": "image_url",
+      "prompt": "prompt"
+    },
+    "outputField": "images[0].url",
     "name": "Qwen Image Edit Plus Lora",
     "endpoint": "qwen-image-edit-plus-lora",
     "family": "qwen",
@@ -3977,6 +4548,12 @@ export const i2iModels = [
   },
   {
     "id": "nano-banana-pro-edit",
+    "falSlug": "fal-ai/nano-banana-pro/edit",
+    "inputMap": {
+      "image_url": "image_url",
+      "prompt": "prompt"
+    },
+    "outputField": "images[0].url",
     "name": "Nano Banana Pro Edit",
     "endpoint": "nano-banana-pro-edit",
     "family": "nano",
@@ -4027,23 +4604,14 @@ export const i2iModels = [
     }
   },
   {
-    "id": "image-passthrough",
-    "name": "Image Passthrough",
-    "endpoint": "image-passthrough",
-    "family": "image",
-    "imageField": "image_url",
-    "hasPrompt": false,
-    "inputs": {
-      "make_input": {
-        "type": "boolean",
-        "title": "Make Input",
-        "name": "make_input",
-        "default": true
-      }
-    }
-  },
-  {
     "id": "kling-o1-edit-image",
+    "falSlug": "fal-ai/kling-image/o1",
+    "inputMap": {
+      "image_url": "image_url",
+      "prompt": "prompt",
+      "aspect_ratio": "aspect_ratio"
+    },
+    "outputField": "images[0].url",
     "name": "Kling O1 Edit Image",
     "endpoint": "kling-o1-edit-image",
     "family": "kling-o1",
@@ -4093,6 +4661,12 @@ export const i2iModels = [
   },
   {
     "id": "flux-2-dev-edit",
+    "falSlug": "fal-ai/flux-2/edit",
+    "inputMap": {
+      "image_url": "image_url",
+      "prompt": "prompt"
+    },
+    "outputField": "images[0].url",
     "name": "Flux 2 Dev Edit",
     "endpoint": "flux-2-dev-edit",
     "family": "flux-2",
@@ -4133,6 +4707,12 @@ export const i2iModels = [
   },
   {
     "id": "flux-2-flex-edit",
+    "falSlug": "fal-ai/flux-2-flex/edit",
+    "inputMap": {
+      "image_url": "image_url",
+      "prompt": "prompt"
+    },
+    "outputField": "images[0].url",
     "name": "Flux 2 Flex Edit",
     "endpoint": "flux-2-flex-edit",
     "family": "flux-2",
@@ -4181,6 +4761,12 @@ export const i2iModels = [
   },
   {
     "id": "flux-2-pro-edit",
+    "falSlug": "fal-ai/flux-2-pro/edit",
+    "inputMap": {
+      "image_url": "image_url",
+      "prompt": "prompt"
+    },
+    "outputField": "images[0].url",
     "name": "Flux 2 Pro Edit",
     "endpoint": "flux-2-pro-edit",
     "family": "flux-2",
@@ -4229,6 +4815,13 @@ export const i2iModels = [
   },
   {
     "id": "vidu-q2-reference-to-image",
+    "falSlug": "fal-ai/vidu/q2/reference-to-image",
+    "inputMap": {
+      "image_url": "image_url",
+      "prompt": "prompt",
+      "aspect_ratio": "aspect_ratio"
+    },
+    "outputField": "images[0].url",
     "name": "Vidu Q2 Reference To Image",
     "endpoint": "vidu-q2-reference-to-image",
     "family": "vidu-q2",
@@ -4279,6 +4872,12 @@ export const i2iModels = [
   },
   {
     "id": "bytedance-seedream-v4.5-edit",
+    "falSlug": "fal-ai/bytedance/seedream/v4.5/edit",
+    "inputMap": {
+      "image_url": "image_url",
+      "prompt": "prompt"
+    },
+    "outputField": "images[0].url",
     "name": "Bytedance Seedream v4.5 Edit",
     "endpoint": "bytedance-seedream-v4.5-edit",
     "family": "seedream-v45",
@@ -4327,6 +4926,12 @@ export const i2iModels = [
   },
   {
     "id": "qwen-image-edit-2511",
+    "falSlug": "fal-ai/qwen-image-edit-2511",
+    "inputMap": {
+      "image_url": "image_url",
+      "prompt": "prompt"
+    },
+    "outputField": "images[0].url",
     "name": "Qwen Image Edit 2511",
     "endpoint": "qwen-image-edit-2511",
     "family": "qwen",
@@ -4367,6 +4972,12 @@ export const i2iModels = [
   },
   {
     "id": "wan2.6-image-edit",
+    "falSlug": "wan/v2.6/image-to-image",
+    "inputMap": {
+      "image_url": "image_url",
+      "prompt": "prompt"
+    },
+    "outputField": "images[0].url",
     "name": "Wan2.6 Image Edit",
     "endpoint": "wan2.6-image-edit",
     "family": "wan2.6",
@@ -4387,6 +4998,13 @@ export const i2iModels = [
   },
   {
     "id": "qwen-text-to-image-2512",
+    "falSlug": "fal-ai/qwen-image-2/text-to-image",
+    "inputMap": {
+      "prompt": "prompt",
+      "width": "width",
+      "height": "height"
+    },
+    "outputField": "images[0].url",
     "name": "Qwen Text To Image 2512",
     "endpoint": "qwen-text-to-image-2512",
     "family": "qwen",
@@ -4425,145 +5043,13 @@ export const i2iModels = [
     }
   },
   {
-    "id": "gpt-image-2-edit",
-    "name": "Gpt Image 2 Edit",
-    "endpoint": "gpt-image-2-image-to-image",
-    "family": "gpt-2",
-    "imageField": "images_list",
-    "hasPrompt": true,
-    "maxImages": 16,
-    "inputs": {
-      "prompt": {
-        "type": "string",
-        "title": "Prompt",
-        "name": "prompt",
-        "description": "Text prompt describing the transformation. Up to 20,000 characters supported.",
-        "examples": [
-          "Transform these product photos into a professional lifestyle scene with warm cinematic lighting, soft natural shadows, and a clean modern background; keep brand details and proportions unchanged."
-        ]
-      },
-      "aspect_ratio": {
-        "type": "string",
-        "title": "Aspect Ratio",
-        "name": "aspect_ratio",
-        "description": "Aspect ratio of the output image.",
-        "enum": [
-          "auto",
-          "1:1",
-          "16:9",
-          "9:16",
-          "4:3",
-          "3:4"
-        ],
-        "default": "auto"
-      },
-      "resolution": {
-        "type": "string",
-        "title": "Resolution",
-        "name": "resolution",
-        "description": "The target resolution of the generated image.",
-        "enum": [
-          "1K",
-          "2K",
-          "4K"
-        ],
-        "default": "2K"
-      }
-    }
-  },
-  {
-    "id": "gpt-image-1.5-edit",
-    "name": "Gpt Image 1.5 Edit",
-    "endpoint": "gpt-image-1.5-edit",
-    "family": "gpt-1.5",
-    "imageField": "images_list",
-    "hasPrompt": true,
-    "maxImages": 10,
-    "inputs": {
-      "prompt": {
-        "type": "string",
-        "title": "Prompt",
-        "name": "prompt",
-        "description": "Text prompt for edit image.",
-        "examples": [
-          "Replace the abandoned car with a sleek autonomous electric vehicle made of brushed metal and soft glowing panels, keep the desert highway, sunset lighting, heat distortion, power lines, and approaching storm unchanged; ensure reflections and shadows match the original environment naturally."
-        ]
-      },
-      "aspect_ratio": {
-        "type": "string",
-        "title": "Aspect Ratio",
-        "name": "aspect_ratio",
-        "description": "Aspect ratio of the output image.",
-        "enum": [
-          "1:1",
-          "2:3",
-          "3:2"
-        ],
-        "default": "1:1"
-      },
-      "quality": {
-        "type": "string",
-        "title": "Quality",
-        "name": "quality",
-        "description": "The quality of the generated image.",
-        "enum": [
-          "low",
-          "medium",
-          "high"
-        ],
-        "default": "medium"
-      }
-    }
-  },
-  {
-    "id": "grok-imagine-image-to-image",
-    "name": "Grok Imagine Image To Image",
-    "endpoint": "grok-imagine-image-to-image",
-    "family": "grok",
-    "imageField": "image_url",
-    "hasPrompt": true,
-    "inputs": {
-      "prompt": {
-        "type": "string",
-        "title": "Prompt",
-        "name": "prompt",
-        "description": "Text prompt describing the image.",
-        "examples": [
-          "Replace the arriving train with a silent magnetic levitation transit pod made of matte white composite and glass, keep the platform, people, lighting, reflections, and urban environment unchanged; ensure the new vehicle fits naturally into the scene with correct scale, shadows, and motion blur."
-        ]
-      }
-    }
-  },
-  {
-    "id": "Api Node",
-    "name": "Api Node",
-    "endpoint": "Api Node",
-    "family": "wavespeed",
-    "imageField": "image_url",
-    "hasPrompt": false,
-    "inputs": {
-      "model_url": {
-        "type": "string",
-        "title": "Model URL",
-        "name": "model_url",
-        "description": "Url of the wavespeed model",
-        "examples": [
-          ""
-        ]
-      },
-      "api_key": {
-        "type": "string",
-        "title": "API Key",
-        "name": "api_key",
-        "description": "API key for authentication",
-        "examples": [
-          ""
-        ]
-      }
-    }
-  },
-  {
     "id": "flux-2-klein-4b-edit",
+    "falSlug": "fal-ai/flux-2/klein/4b/edit",
+    "inputMap": {
+      "image_url": "image_url",
+      "prompt": "prompt"
+    },
+    "outputField": "images[0].url",
     "name": "Flux 2 Klein 4b Edit",
     "endpoint": "flux-2-klein-4b-edit",
     "family": "flux-2",
@@ -4600,6 +5086,12 @@ export const i2iModels = [
   },
   {
     "id": "flux-2-klein-9b-edit",
+    "falSlug": "fal-ai/flux-2/klein/9b/edit",
+    "inputMap": {
+      "image_url": "image_url",
+      "prompt": "prompt"
+    },
+    "outputField": "images[0].url",
     "name": "Flux 2 Klein 9b Edit",
     "endpoint": "flux-2-klein-9b-edit",
     "family": "flux-2",
@@ -4635,45 +5127,13 @@ export const i2iModels = [
     }
   },
   {
-    "id": "add-image-watermark",
-    "name": "Add Image Watermark",
-    "endpoint": "add-image-watermark",
-    "family": "watermark",
-    "imageField": "image_url",
-    "hasPrompt": false,
-    "inputs": {
-      "position": {
-        "type": "string",
-        "title": "Position",
-        "name": "position",
-        "description": "Position of the watermark on the image",
-        "enum": [
-          "top-left",
-          "top-right",
-          "bottom-left",
-          "bottom-right",
-          "center"
-        ],
-        "default": "bottom-right"
-      },
-      "opacity": {
-        "type": "number",
-        "title": "Opacity",
-        "name": "opacity",
-        "description": "Watermark transparency (0 = invisible, 1 = fully opaque)",
-        "default": 0.7
-      },
-      "scale": {
-        "type": "number",
-        "title": "Scale",
-        "name": "scale",
-        "description": "Watermark size relative to image (0.1 = 10%, 1.0 = 100%)",
-        "default": 0.2
-      }
-    }
-  },
-  {
     "id": "nano-banana-2-edit",
+    "falSlug": "fal-ai/nano-banana-2/edit",
+    "inputMap": {
+      "image_url": "image_url",
+      "prompt": "prompt"
+    },
+    "outputField": "images[0].url",
     "name": "Nano Banana 2 Edit",
     "endpoint": "nano-banana-2-edit",
     "family": "nano",
@@ -4692,8 +5152,21 @@ export const i2iModels = [
       },
       "aspect_ratio": {
         "enum": [
-          "1:1", "1:4", "1:8", "2:3", "3:2", "3:4", "4:1", "4:3", "4:5",
-          "5:4", "8:1", "9:16", "16:9", "21:9", "auto"
+          "1:1",
+          "1:4",
+          "1:8",
+          "2:3",
+          "3:2",
+          "3:4",
+          "4:1",
+          "4:3",
+          "4:5",
+          "5:4",
+          "8:1",
+          "9:16",
+          "16:9",
+          "21:9",
+          "auto"
         ],
         "title": "Aspect Ratio",
         "name": "aspect_ratio",
@@ -4702,7 +5175,11 @@ export const i2iModels = [
         "default": "auto"
       },
       "resolution": {
-        "enum": ["1k", "2k", "4k"],
+        "enum": [
+          "1k",
+          "2k",
+          "4k"
+        ],
         "title": "Resolution",
         "name": "resolution",
         "type": "string",
@@ -4717,7 +5194,10 @@ export const i2iModels = [
         "default": false
       },
       "output_format": {
-        "enum": ["jpg", "png"],
+        "enum": [
+          "jpg",
+          "png"
+        ],
         "title": "Output Format",
         "name": "output_format",
         "type": "string",
@@ -4728,6 +5208,12 @@ export const i2iModels = [
   },
   {
     "id": "seedream-5.0-edit",
+    "falSlug": "fal-ai/bytedance/seedream/v5/lite/edit",
+    "inputMap": {
+      "image_url": "image_url",
+      "prompt": "prompt"
+    },
+    "outputField": "images[0].url",
     "name": "Seedream 5.0 Edit",
     "endpoint": "seedream-5.0-edit",
     "family": "seedream",
@@ -4744,7 +5230,16 @@ export const i2iModels = [
         ]
       },
       "aspect_ratio": {
-        "enum": ["1:1", "16:9", "9:16", "4:3", "3:4", "2:3", "3:2", "21:9"],
+        "enum": [
+          "1:1",
+          "16:9",
+          "9:16",
+          "4:3",
+          "3:4",
+          "2:3",
+          "3:2",
+          "21:9"
+        ],
         "title": "Aspect Ratio",
         "name": "aspect_ratio",
         "type": "string",
@@ -4752,7 +5247,10 @@ export const i2iModels = [
         "default": "1:1"
       },
       "quality": {
-        "enum": ["basic", "high"],
+        "enum": [
+          "basic",
+          "high"
+        ],
         "title": "Quality",
         "name": "quality",
         "type": "string",
@@ -4766,343 +5264,16 @@ export const i2iModels = [
 // Auto-generated from schema_data.json — Image to Video models
 export const i2vModels = [
   {
-    "id": "ai-video-effects",
-    "name": "AI Video Effects",
-    "endpoint": "generate_wan_ai_effects",
-    "family": "effects",
-    "imageField": "image_url",
-    "hasPrompt": true,
-    "inputs": {
-      "prompt": {
-        "type": "string",
-        "title": "Prompt",
-        "name": "prompt",
-        "description": "The prompt to insert into the predefined prompt template for the selected effect.",
-        "examples": [
-          "a cute kitten"
-        ]
-      },
-      "name": {
-        "type": "string",
-        "title": "Effect Type",
-        "name": "name",
-        "description": "The type of effect to apply to the video.",
-        "enum": [
-          "360 Rotation",
-          "Abandoned Places",
-          "Angry",
-          "Animal Documentary",
-          "Assassin It",
-          "Baby It",
-          "Boxing",
-          "Bride It",
-          "Cakeify",
-          "Cartoon Jaw Drop",
-          "Cats",
-          "Crush It",
-          "Crying",
-          "Cyberpunk 2077",
-          "Deflate It",
-          "Disney Princess It",
-          "Dogs",
-          "Eye Close-Up",
-          "Fantasy Landscapes",
-          "Film Noir",
-          "Fire",
-          "Glamor",
-          "Goblin",
-          "Gun Reveal",
-          "Hug Jesus",
-          "Hulk Transformation",
-          "Inflate It",
-          "Jungle It",
-          "Jumpscare",
-          "Kamehameha",
-          "Kiss Cam",
-          "Kissing",
-          "Lego",
-          "Laughing",
-          "Little Planet",
-          "Live Wallpaper",
-          "Looping Pixel Art",
-          "Melt It",
-          "Mona Lisa It",
-          "Museum It",
-          "Muscle Show Off",
-          "Orc",
-          "Pixar",
-          "Pirate Captain",
-          "POV Driving",
-          "Princess It",
-          "Puppy it",
-          "Robotic Face Reveal",
-          "Samurai It",
-          "Sharingan Eyes",
-          "Skyrim Fus-Ro-Dah",
-          "Snow White It",
-          "Squish It",
-          "Steamboat Willie",
-          "Super Saiyan Transformation",
-          "Tsunami",
-          "Ultra Wide",
-          "VHS Footage",
-          "VIP It",
-          "Warrior It",
-          "Wind Blast",
-          "Younger Self Selfie",
-          "Zen It",
-          "Zoom Call"
-        ],
-        "default": "Cakeify"
-      },
-      "aspect_ratio": {
-        "type": "string",
-        "title": "Aspect Ratio",
-        "name": "aspect_ratio",
-        "description": "Aspect ratio of the output video.",
-        "enum": [
-          "16:9",
-          "9:16"
-        ],
-        "default": "16:9"
-      },
-      "resolution": {
-        "type": "string",
-        "title": "Resolution",
-        "name": "resolution",
-        "description": "The resolution of the generated video.",
-        "enum": [
-          "480p",
-          "720p"
-        ],
-        "default": "480p"
-      },
-      "quality": {
-        "type": "string",
-        "title": "Quality",
-        "name": "quality",
-        "description": "The quality of the generated video.",
-        "enum": [
-          "medium",
-          "high"
-        ],
-        "default": "medium"
-      },
-      "duration": {
-        "type": "int",
-        "title": "Duration",
-        "name": "duration",
-        "description": "The duration of the generated video in seconds",
-        "enum": [
-          5,
-          10
-        ],
-        "default": 5
-      }
-    }
-  },
-  {
-    "id": "motion-controls",
-    "name": "Motion Controls",
-    "endpoint": "generate_wan_ai_effects",
-    "family": "effects",
-    "imageField": "image_url",
-    "hasPrompt": true,
-    "inputs": {
-      "prompt": {
-        "type": "string",
-        "title": "Prompt",
-        "name": "prompt",
-        "description": "The prompt to insert into the predefined prompt template for the selected effect.",
-        "examples": [
-          "a blueberry person"
-        ]
-      },
-      "name": {
-        "type": "string",
-        "title": "Effect Type",
-        "name": "name",
-        "description": "The type of effect to apply to the video.",
-        "enum": [
-          "360 Orbit",
-          "Arc Shot",
-          "Car Chase",
-          "Car Mount Cam",
-          "Crash Zoom In",
-          "Crash Zoom Out",
-          "Crane Down",
-          "Crane Overhead",
-          "Crane Punch-In",
-          "Crane Up",
-          "Dirty Lens",
-          "Dolly In",
-          "Dolly Left",
-          "Dolly Out",
-          "Dolly Right",
-          "Dolly Zoom In",
-          "Dolly Zoom Out",
-          "Dutch Angle",
-          "Fast Dolly Zoom In",
-          "Fast Dolly Zoom Out",
-          "Fisheye Lens",
-          "Focus Shift",
-          "FPV Drone Cam",
-          "Handheld Cam",
-          "Head Tracking",
-          "Hero Run",
-          "Human Timelapse",
-          "Landscape Timelapse",
-          "Lazy Susan",
-          "Lens Crac",
-          "Lens Flare",
-          "Matrix Shot",
-          "Motion Blur",
-          "Object POV",
-          "Overhead",
-          "Rap Video Cam",
-          "Robotic Cam",
-          "Snorricam",
-          "Tilt Down",
-          "Tilt Up",
-          "Whip Pan",
-          "Wiggle",
-          "Zoom In",
-          "Zoom In Through Object",
-          "Zoom Into Mouth",
-          "Zoom Out",
-          "Zoom Out Through Object"
-        ],
-        "default": "360 Orbit"
-      },
-      "aspect_ratio": {
-        "type": "string",
-        "title": "Aspect Ratio",
-        "name": "aspect_ratio",
-        "description": "Aspect ratio of the output video.",
-        "enum": [
-          "16:9",
-          "9:16"
-        ],
-        "default": "16:9"
-      },
-      "resolution": {
-        "type": "string",
-        "title": "Resolution",
-        "name": "resolution",
-        "description": "The resolution of the generated video.",
-        "enum": [
-          "480p",
-          "720p"
-        ],
-        "default": "480p"
-      },
-      "quality": {
-        "type": "string",
-        "title": "Quality",
-        "name": "quality",
-        "description": "The quality of the generated video.",
-        "enum": [
-          "medium",
-          "high"
-        ],
-        "default": "medium"
-      },
-      "duration": {
-        "type": "int",
-        "title": "Duration",
-        "name": "duration",
-        "description": "The duration of the generated video in seconds",
-        "enum": [
-          5,
-          10
-        ],
-        "default": 5
-      }
-    }
-  },
-  {
-    "id": "vfx",
-    "name": "VFX",
-    "endpoint": "generate_wan_ai_effects",
-    "family": "effects",
-    "imageField": "image_url",
-    "hasPrompt": true,
-    "inputs": {
-      "prompt": {
-        "type": "string",
-        "title": "Prompt",
-        "name": "prompt",
-        "description": "The prompt to insert into the predefined prompt template for the selected effect.",
-        "examples": [
-          "a Mercedes bench car"
-        ]
-      },
-      "name": {
-        "type": "string",
-        "title": "Effect Type",
-        "name": "name",
-        "description": "The type of effect to apply to the video.",
-        "enum": [
-          "Building Explosion",
-          "Car Explosion",
-          "Decay Time-Lapse",
-          "Disintegration",
-          "Electricity",
-          "Flying",
-          "Huge Explosion",
-          "Levitate",
-          "Tornado"
-        ],
-        "default": "Car Explosion"
-      },
-      "aspect_ratio": {
-        "type": "string",
-        "title": "Aspect Ratio",
-        "name": "aspect_ratio",
-        "description": "Aspect ratio of the output video.",
-        "enum": [
-          "16:9",
-          "9:16"
-        ],
-        "default": "16:9"
-      },
-      "resolution": {
-        "type": "string",
-        "title": "Resolution",
-        "name": "resolution",
-        "description": "The resolution of the generated video.",
-        "enum": [
-          "480p",
-          "720p"
-        ],
-        "default": "480p"
-      },
-      "quality": {
-        "type": "string",
-        "title": "Quality",
-        "name": "quality",
-        "description": "The quality of the generated video.",
-        "enum": [
-          "medium",
-          "high"
-        ],
-        "default": "medium"
-      },
-      "duration": {
-        "type": "int",
-        "title": "Duration",
-        "name": "duration",
-        "description": "The duration of the generated video in seconds",
-        "enum": [
-          5,
-          10
-        ],
-        "default": 5
-      }
-    }
-  },
-  {
     "id": "veo3-image-to-video",
+    "falSlug": "fal-ai/veo3/image-to-video",
+    "inputMap": {
+      "image_url": "image_url",
+      "prompt": "prompt",
+      "aspect_ratio": "aspect_ratio",
+      "duration": "duration",
+      "generate_audio": "generate_audio"
+    },
+    "outputField": "video.url",
     "name": "Veo3 Image To Video",
     "endpoint": "veo3-image-to-video",
     "family": "veo",
@@ -5133,6 +5304,14 @@ export const i2vModels = [
   },
   {
     "id": "veo3-fast-image-to-video",
+    "falSlug": "fal-ai/veo3/fast/image-to-video",
+    "inputMap": {
+      "image_url": "image_url",
+      "prompt": "prompt",
+      "aspect_ratio": "aspect_ratio",
+      "generate_audio": "generate_audio"
+    },
+    "outputField": "video.url",
     "name": "Veo3 Fast Image To Video",
     "endpoint": "veo3-fast-image-to-video",
     "family": "veo",
@@ -5163,6 +5342,14 @@ export const i2vModels = [
   },
   {
     "id": "runway-image-to-video",
+    "falSlug": "fal-ai/runway-gen3/turbo/image-to-video",
+    "inputMap": {
+      "image_url": "image_url",
+      "prompt": "prompt",
+      "duration": "duration",
+      "ratio": "ratio"
+    },
+    "outputField": "video.url",
     "name": "Runway Image To Video",
     "endpoint": "runway-image-to-video",
     "family": "runway",
@@ -5217,161 +5404,15 @@ export const i2vModels = [
     }
   },
   {
-    "id": "wan2.1-image-to-video",
-    "name": "Wan2.1 Image To Video",
-    "endpoint": "wan2.1-image-to-video",
-    "family": "wan2.1",
-    "imageField": "image_url",
-    "hasPrompt": true,
-    "inputs": {
-      "prompt": {
-        "type": "string",
-        "title": "Prompt",
-        "name": "prompt",
-        "description": "The prompt to generate the video",
-        "examples": [
-          "Animate the girl in the painting to blink and look around while her hair moves gently in the wind."
-        ]
-      },
-      "aspect_ratio": {
-        "type": "string",
-        "title": "Aspect Ratio",
-        "name": "aspect_ratio",
-        "description": "Aspect ratio of the output video.",
-        "enum": [
-          "16:9",
-          "9:16"
-        ],
-        "default": "16:9"
-      },
-      "resolution": {
-        "type": "string",
-        "title": "Resolution",
-        "name": "resolution",
-        "description": "The resolution of the generated video.",
-        "enum": [
-          "480p",
-          "720p"
-        ],
-        "default": "480p"
-      },
-      "quality": {
-        "type": "string",
-        "title": "Quality",
-        "name": "quality",
-        "description": "The quality of the generated video.",
-        "enum": [
-          "medium",
-          "high"
-        ],
-        "default": "medium"
-      },
-      "duration": {
-        "type": "int",
-        "title": "Duration",
-        "name": "duration",
-        "description": "The duration of the generated video in seconds",
-        "default": 5,
-        "minValue": 5,
-        "maxValue": 10,
-        "step": 5
-      }
-    }
-  },
-  {
-    "id": "midjourney-v7-image-to-video",
-    "name": "Midjourney v7 Image To Video",
-    "endpoint": "midjourney-v7-image-to-video",
-    "family": "midjourney",
-    "imageField": "image_url",
-    "hasPrompt": true,
-    "inputs": {
-      "prompt": {
-        "type": "string",
-        "title": "Prompt",
-        "name": "prompt",
-        "description": "The prompt to generate the video",
-        "examples": [
-          "Add slow drifting fog, glowing mushrooms pulsating softly, and subtle camera zoom"
-        ]
-      },
-      "aspect_ratio": {
-        "type": "string",
-        "title": "Aspect Ratio",
-        "name": "aspect_ratio",
-        "description": "Aspect ratio of the output image.",
-        "enum": [
-          "1:1",
-          "16:9",
-          "9:16",
-          "3:4",
-          "4:3",
-          "1:2",
-          "2:1",
-          "2:3",
-          "3:2",
-          "5:6",
-          "6:5"
-        ],
-        "default": "1:1"
-      },
-      "resolution": {
-        "type": "string",
-        "title": "Resolution",
-        "name": "resolution",
-        "description": "The resolution of the generated video.",
-        "enum": [
-          "480p",
-          "1080p"
-        ],
-        "default": "480p"
-      },
-      "num_videos": {
-        "type": "int",
-        "title": "Number of videos",
-        "name": "num_videos",
-        "description": "Number of videos generated in single request. Each number will charge separately",
-        "enum": [
-          1,
-          2,
-          4
-        ],
-        "default": 1
-      },
-      "variety": {
-        "type": "int",
-        "title": "Variety",
-        "name": "variety",
-        "description": "Controls the diversity of generated images. Increment by 5 each time. Higher values create more diverse results. Lower values create more consistent results.",
-        "default": 5,
-        "minValue": 0,
-        "maxValue": 100,
-        "step": 5
-      },
-      "stylization": {
-        "type": "int",
-        "title": "Stylization",
-        "name": "stylization",
-        "description": "Controls the artistic style intensity. Higher values create more stylized results. Lower values create more realistic results.",
-        "default": 1,
-        "minValue": 0,
-        "maxValue": 1000,
-        "step": 1
-      },
-      "weirdness": {
-        "type": "int",
-        "title": "Weirdness",
-        "name": "weirdness",
-        "description": "Controls the creativity and uniqueness. Higher values create more unusual results. Lower values create more conventional results.",
-        "default": 1,
-        "minValue": 0,
-        "maxValue": 3000,
-        "step": 1
-      }
-    }
-  },
-  {
     "id": "hunyuan-image-to-video",
+    "falSlug": "fal-ai/hunyuan-video/image-to-video",
+    "inputMap": {
+      "image_url": "image_url",
+      "prompt": "prompt",
+      "aspect_ratio": "aspect_ratio",
+      "num_frames": "num_frames"
+    },
+    "outputField": "video.url",
     "name": "Hunyuan Image To Video",
     "endpoint": "hunyuan-image-to-video",
     "family": "hunyuan",
@@ -5403,6 +5444,16 @@ export const i2vModels = [
   },
   {
     "id": "kling-v2.1-master-i2v",
+    "falSlug": "fal-ai/kling-video/v2.1/master/image-to-video",
+    "inputMap": {
+      "image_url": "image_url",
+      "prompt": "prompt",
+      "aspect_ratio": "aspect_ratio",
+      "duration": "duration",
+      "negative_prompt": "negative_prompt",
+      "cfg_scale": "cfg_scale"
+    },
+    "outputField": "video.url",
     "name": "Kling v2.1 Master I2V",
     "endpoint": "kling-v2.1-master-i2v",
     "family": "kling-v2.1",
@@ -5445,6 +5496,14 @@ export const i2vModels = [
   },
   {
     "id": "kling-v2.1-standard-i2v",
+    "falSlug": "fal-ai/kling-video/v2.1/standard/image-to-video",
+    "inputMap": {
+      "image_url": "image_url",
+      "prompt": "prompt",
+      "aspect_ratio": "aspect_ratio",
+      "duration": "duration"
+    },
+    "outputField": "video.url",
     "name": "Kling v2.1 Standard I2V",
     "endpoint": "kling-v2.1-standard-i2v",
     "family": "kling-v2.1",
@@ -5487,6 +5546,14 @@ export const i2vModels = [
   },
   {
     "id": "kling-v2.1-pro-i2v",
+    "falSlug": "fal-ai/kling-video/v2.1/pro/image-to-video",
+    "inputMap": {
+      "image_url": "image_url",
+      "prompt": "prompt",
+      "aspect_ratio": "aspect_ratio",
+      "duration": "duration"
+    },
+    "outputField": "video.url",
     "name": "Kling v2.1 Pro I2V",
     "endpoint": "kling-v2.1-pro-i2v",
     "family": "kling-v2.1",
@@ -5529,6 +5596,15 @@ export const i2vModels = [
   },
   {
     "id": "wan2.2-image-to-video",
+    "falSlug": "fal-ai/wan/v2.2-a14b/image-to-video",
+    "inputMap": {
+      "image_url": "image_url",
+      "prompt": "prompt",
+      "aspect_ratio": "aspect_ratio",
+      "num_frames": "num_frames",
+      "frames_per_second": "frames_per_second"
+    },
+    "outputField": "video.url",
     "name": "Wan2.2 Image To Video",
     "endpoint": "wan2.2-image-to-video",
     "family": "wan2.2",
@@ -5591,32 +5667,15 @@ export const i2vModels = [
     }
   },
   {
-    "id": "runway-act-two-i2v",
-    "name": "Runway Act Two I2V",
-    "endpoint": "runway-act-two-i2v",
-    "family": "runway",
-    "imageField": "image_url",
-    "hasPrompt": false,
-    "inputs": {
-      "aspect_ratio": {
-        "type": "string",
-        "title": "Aspect Ratio",
-        "name": "aspect_ratio",
-        "description": "Aspect ratio of the output video.",
-        "enum": [
-          "16:9",
-          "9:16",
-          "1:1",
-          "4:3",
-          "3:4",
-          "21:9"
-        ],
-        "default": "16:9"
-      }
-    }
-  },
-  {
     "id": "pixverse-v4.5-i2v",
+    "falSlug": "fal-ai/pixverse/v4.5/image-to-video",
+    "inputMap": {
+      "image_url": "image_url",
+      "prompt": "prompt",
+      "aspect_ratio": "aspect_ratio",
+      "duration": "duration"
+    },
+    "outputField": "video.url",
     "name": "Pixverse v4.5 I2V",
     "endpoint": "pixverse-v4.5-i2v",
     "family": "pixverse-v4.5",
@@ -5674,6 +5733,14 @@ export const i2vModels = [
   },
   {
     "id": "vidu-v2.0-i2v",
+    "falSlug": "fal-ai/vidu/q2/image-to-video",
+    "inputMap": {
+      "image_url": "image_url",
+      "prompt": "prompt",
+      "aspect_ratio": "aspect_ratio",
+      "duration": "duration"
+    },
+    "outputField": "video.url",
     "name": "Vidu v2.0 I2V",
     "endpoint": "vidu-v2.0-i2v",
     "family": "vidu-v2",
@@ -5727,6 +5794,14 @@ export const i2vModels = [
   },
   {
     "id": "vidu-q1-reference",
+    "falSlug": "fal-ai/vidu/q1/reference-to-video",
+    "inputMap": {
+      "image_url": "image_url",
+      "prompt": "prompt",
+      "aspect_ratio": "aspect_ratio",
+      "duration": "duration"
+    },
+    "outputField": "video.url",
     "name": "Vidu Q1 Reference",
     "endpoint": "vidu-q1-reference",
     "family": "vidu-q1",
@@ -5759,6 +5834,13 @@ export const i2vModels = [
   },
   {
     "id": "minimax-hailuo-02-standard-i2v",
+    "falSlug": "fal-ai/minimax/hailuo-02/standard/image-to-video",
+    "inputMap": {
+      "image_url": "image_url",
+      "prompt": "prompt",
+      "prompt_optimizer": "prompt_optimizer"
+    },
+    "outputField": "video.url",
     "name": "Minimax Hailuo 02 Standard I2V",
     "endpoint": "minimax-hailuo-02-standard-i2v",
     "family": "minimax-2",
@@ -5801,6 +5883,13 @@ export const i2vModels = [
   },
   {
     "id": "minimax-hailuo-02-pro-i2v",
+    "falSlug": "fal-ai/minimax/hailuo-02/pro/image-to-video",
+    "inputMap": {
+      "image_url": "image_url",
+      "prompt": "prompt",
+      "prompt_optimizer": "prompt_optimizer"
+    },
+    "outputField": "video.url",
     "name": "Minimax Hailuo 02 Pro I2V",
     "endpoint": "minimax-hailuo-02-pro-i2v",
     "family": "minimax-2",
@@ -5840,67 +5929,15 @@ export const i2vModels = [
     }
   },
   {
-    "id": "video-effects",
-    "name": "Video Effects",
-    "endpoint": "video-effects",
-    "family": "effects",
-    "imageField": "image_url",
-    "hasPrompt": false,
-    "inputs": {
-      "name": {
-        "type": "string",
-        "title": "Effect Name",
-        "name": "name",
-        "description": "The type of effect to apply to the video.",
-        "enum": [
-          "Balloon Flyaway",
-          "Blow Kiss",
-          "Body Shake",
-          "Break Glass",
-          "Carry Me",
-          "Cartoon Doll",
-          "Cheek Kiss",
-          "Child Memory",
-          "Couple Arrival",
-          "Fairy Me",
-          "Fashion Stride",
-          "Fisherman",
-          "Flower Receive",
-          "Flying",
-          "French Kiss",
-          "Gender Swap",
-          "Golden Epoch",
-          "Hair Swap",
-          "Hugging",
-          "Jiggle Up",
-          "Kissing Pro",
-          "Live Memory",
-          "Love Drop",
-          "Melt",
-          "Minecraft",
-          "Muscling",
-          "Nap Me 360p",
-          "Paperman",
-          "Pilot",
-          "Pinch",
-          "Pixel Me",
-          "Romantic Lift",
-          "Sexy Me",
-          "Slice Therapy",
-          "Soul Depart",
-          "Split Stance Human",
-          "Squid Game",
-          "Toy Me",
-          "Walk Forward",
-          "Zoom In Fast",
-          "Zoom Out"
-        ],
-        "default": "Balloon Flyaway"
-      }
-    }
-  },
-  {
     "id": "seedance-lite-i2v",
+    "falSlug": "fal-ai/bytedance/seedance/v1/lite/image-to-video",
+    "inputMap": {
+      "image_url": "image_url",
+      "prompt": "prompt",
+      "aspect_ratio": "aspect_ratio",
+      "duration": "duration"
+    },
+    "outputField": "video.url",
     "name": "Seedance Lite I2V",
     "endpoint": "seedance-lite-i2v",
     "family": "bytedance",
@@ -5950,6 +5987,14 @@ export const i2vModels = [
   },
   {
     "id": "seedance-pro-i2v",
+    "falSlug": "fal-ai/bytedance/seedance/v1/pro/image-to-video",
+    "inputMap": {
+      "image_url": "image_url",
+      "prompt": "prompt",
+      "aspect_ratio": "aspect_ratio",
+      "duration": "duration"
+    },
+    "outputField": "video.url",
     "name": "Seedance Pro I2V",
     "endpoint": "seedance-pro-i2v",
     "family": "bytedance",
@@ -5998,6 +6043,14 @@ export const i2vModels = [
   },
   {
     "id": "pixverse-v5-i2v",
+    "falSlug": "fal-ai/pixverse/v5/image-to-video",
+    "inputMap": {
+      "image_url": "image_url",
+      "prompt": "prompt",
+      "aspect_ratio": "aspect_ratio",
+      "duration": "duration"
+    },
+    "outputField": "video.url",
     "name": "Pixverse v5 I2V",
     "endpoint": "pixverse-v5-i2v",
     "family": "pixverse-v5",
@@ -6055,6 +6108,13 @@ export const i2vModels = [
   },
   {
     "id": "seedance-lite-reference-video",
+    "falSlug": "fal-ai/bytedance/seedance/v1/lite/image-to-video/reference",
+    "inputMap": {
+      "image_url": "image_url",
+      "prompt": "prompt",
+      "aspect_ratio": "aspect_ratio"
+    },
+    "outputField": "video.url",
     "name": "Seedance Lite Reference Video",
     "endpoint": "seedance-lite-reference-to-video",
     "family": "bytedance",
@@ -6096,6 +6156,13 @@ export const i2vModels = [
   },
   {
     "id": "wan2.1-reference-video",
+    "falSlug": "fal-ai/wan-flf2v/image-to-video",
+    "inputMap": {
+      "image_url": "image_url",
+      "prompt": "prompt",
+      "end_image_url": "end_frame_url"
+    },
+    "outputField": "video.url",
     "name": "Wan2.1 Reference Video",
     "endpoint": "wan2.1-reference-video",
     "family": "wan2.1",
@@ -6148,6 +6215,14 @@ export const i2vModels = [
   },
   {
     "id": "kling-v2.5-turbo-pro-i2v",
+    "falSlug": "fal-ai/kling-video/v2.5-turbo/pro/image-to-video",
+    "inputMap": {
+      "image_url": "image_url",
+      "prompt": "prompt",
+      "aspect_ratio": "aspect_ratio",
+      "duration": "duration"
+    },
+    "outputField": "video.url",
     "name": "Kling v2.5 Turbo Pro I2V",
     "endpoint": "kling-v2.5-turbo-pro-i2v",
     "family": "kling-v2.5",
@@ -6177,6 +6252,14 @@ export const i2vModels = [
   },
   {
     "id": "wan2.5-image-to-video",
+    "falSlug": "fal-ai/wan-25-preview/image-to-video",
+    "inputMap": {
+      "image_url": "image_url",
+      "prompt": "prompt",
+      "aspect_ratio": "aspect_ratio",
+      "duration": "duration"
+    },
+    "outputField": "video.url",
     "name": "Wan2.5 Image To Video",
     "endpoint": "wan2.5-image-to-video",
     "family": "wan2.5",
@@ -6217,95 +6300,13 @@ export const i2vModels = [
     }
   },
   {
-    "id": "wan2.5-image-to-video-fast",
-    "name": "Wan2.5 Image To Video Fast",
-    "endpoint": "wan2.5-image-to-video-fast",
-    "family": "wan2.5",
-    "imageField": "image_url",
-    "hasPrompt": true,
-    "inputs": {
-      "prompt": {
-        "type": "string",
-        "title": "Prompt",
-        "name": "prompt",
-        "description": "The prompt to generate the video",
-        "examples": [
-          "The camera slowly pulls back from the portrait, revealing the rooftop garden swaying in the breeze, clouds drifting across the orange-pink sky. The city lights begin to flicker on in the distance as the sun sets. She gazes at the horizon and softly says: “Every ending feels like the start of something new.” Natural ambient sounds of wind and faint city life in the background."
-        ]
-      },
-      "resolution": {
-        "type": "string",
-        "title": "Resolution",
-        "name": "resolution",
-        "description": "The resolution of the generated video.",
-        "enum": [
-          "720p",
-          "1080p"
-        ],
-        "default": "720p"
-      },
-      "duration": {
-        "type": "int",
-        "title": "Duration",
-        "name": "duration",
-        "description": "The duration of the generated video in seconds",
-        "default": 5,
-        "minValue": 5,
-        "maxValue": 10,
-        "step": 5
-      }
-    }
-  },
-  {
-    "id": "openai-sora-2-image-to-video",
-    "name": "Openai Sora 2 Image To Video",
-    "endpoint": "openai-sora-2-image-to-video",
-    "family": "sora",
-    "imageField": "images_list",
-    "hasPrompt": true,
-    "inputs": {
-      "prompt": {
-        "type": "string",
-        "title": "Prompt",
-        "name": "prompt",
-        "description": "The prompt to generate the video",
-        "examples": [
-          "Camera pans along the platform as the bullet train doors open, passengers step forward with rolling suitcases. Footsteps and soft chatter fill the air. A female announcer says: ‘Train number 2245 to Tokyo is now departing from platform 3.’ Wheels screech lightly as the train starts moving."
-        ]
-      },
-      "aspect_ratio": {
-        "type": "string",
-        "title": "Aspect Ratio",
-        "name": "aspect_ratio",
-        "description": "Aspect ratio of the output video.",
-        "enum": [
-          "16:9",
-          "9:16"
-        ],
-        "default": "16:9"
-      },
-      "duration": {
-        "type": "int",
-        "title": "Duration",
-        "name": "duration",
-        "description": "The duration of the generated video in seconds",
-        "enum": [
-          10,
-          15
-        ],
-        "default": 10
-      },
-      "remove_watermark": {
-        "type": "boolean",
-        "title": "Remove Watermark",
-        "name": "remove_watermark",
-        "description": "When enabled, removes watermarks from the generated video.",
-        "default": true
-      }
-    }
-  },
-  {
     "id": "ovi-image-to-video",
+    "falSlug": "fal-ai/ovi/image-to-video",
+    "inputMap": {
+      "image_url": "image_url",
+      "prompt": "prompt"
+    },
+    "outputField": "video.url",
     "name": "Ovi Image To Video",
     "endpoint": "ovi-image-to-video",
     "family": "ovi",
@@ -6324,97 +6325,16 @@ export const i2vModels = [
     }
   },
   {
-    "id": "openai-sora-2-pro-image-to-video",
-    "name": "Openai Sora 2 Pro Image To Video",
-    "endpoint": "openai-sora-2-pro-image-to-video",
-    "family": "sora",
-    "imageField": "images_list",
-    "hasPrompt": true,
-    "inputs": {
-      "prompt": {
-        "type": "string",
-        "title": "Prompt",
-        "name": "prompt",
-        "description": "The prompt to generate the video",
-        "examples": [
-          "Scene: Submerged coral clearing, soft light filtering from above.\nCharacters: Tiny jellyfish with monocle and top hat, hosting tea for small seahorses.\nAction: Jellyfish floats and pours tea → bubbles rise slowly; seahorses sip → tiny octopus clumsily serves cake.\nCamera: Wide underwater → tracking floating jellyfish → macro on bubbles.\nLook & Lighting: Aqua-blue palette; subtle caustics on sand; shimmering reflections on water surfaces.\nMotion/Physics: Water currents gently sway characters; bubbles rise naturally; floating cakes wobble lightly.\nAudio: Bubbling water + faint harp melody; line: “Tea, my dear friends, before it drifts away.”"
-        ]
-      },
-      "aspect_ratio": {
-        "type": "string",
-        "title": "Aspect Ratio",
-        "name": "aspect_ratio",
-        "description": "Aspect ratio of the output video.",
-        "enum": [
-          "16:9",
-          "9:16"
-        ],
-        "default": "16:9"
-      },
-      "duration": {
-        "type": "int",
-        "title": "Duration",
-        "name": "duration",
-        "description": "The duration of the generated video in seconds. Currently 25 seconds supports 720p only.",
-        "enum": [
-          10,
-          15,
-          25
-        ],
-        "default": 10
-      },
-      "resolution": {
-        "type": "string",
-        "title": "Resolution",
-        "name": "resolution",
-        "description": "The resolution of the generated video.",
-        "enum": [
-          "720p",
-          "1080p"
-        ],
-        "default": "720p"
-      },
-      "remove_watermark": {
-        "type": "boolean",
-        "title": "Remove Watermark",
-        "name": "remove_watermark",
-        "description": "When enabled, removes watermarks from the generated video.",
-        "default": true
-      }
-    }
-  },
-  {
-    "id": "leonardoai-motion-2.0",
-    "name": "Leonardoai Motion 2.0",
-    "endpoint": "leonardoai-motion-2.0",
-    "family": "leonardoai",
-    "imageField": "image_url",
-    "hasPrompt": true,
-    "inputs": {
-      "prompt": {
-        "type": "string",
-        "title": "Prompt",
-        "name": "prompt",
-        "description": "Text prompt describing the video.",
-        "examples": [
-          "A diver swimming through a coral reef, colorful fish darting around, sunlight filtering through the water, slow-motion effect."
-        ]
-      },
-      "aspect_ratio": {
-        "type": "string",
-        "title": "Aspect Ratio",
-        "name": "aspect_ratio",
-        "description": "Aspect ratio of the output video.",
-        "enum": [
-          "16:9",
-          "9:16"
-        ],
-        "default": "16:9"
-      }
-    }
-  },
-  {
     "id": "veo3.1-image-to-video",
+    "falSlug": "fal-ai/veo3.1/image-to-video",
+    "inputMap": {
+      "image_url": "image_url",
+      "prompt": "prompt",
+      "aspect_ratio": "aspect_ratio",
+      "duration": "duration",
+      "generate_audio": "generate_audio"
+    },
+    "outputField": "video.url",
     "name": "Veo3.1 Image To Video",
     "endpoint": "veo3.1-image-to-video",
     "family": "veo3.1",
@@ -6466,6 +6386,14 @@ export const i2vModels = [
   },
   {
     "id": "veo3.1-fast-image-to-video",
+    "falSlug": "fal-ai/veo3.1/fast/image-to-video",
+    "inputMap": {
+      "image_url": "image_url",
+      "prompt": "prompt",
+      "aspect_ratio": "aspect_ratio",
+      "duration": "duration"
+    },
+    "outputField": "video.url",
     "name": "Veo3.1 Fast Image To Video",
     "endpoint": "veo3.1-fast-image-to-video",
     "family": "veo3.1",
@@ -6517,6 +6445,14 @@ export const i2vModels = [
   },
   {
     "id": "veo3.1-lite-image-to-video",
+    "falSlug": "fal-ai/veo3.1/lite/image-to-video",
+    "inputMap": {
+      "image_url": "image_url",
+      "prompt": "prompt",
+      "aspect_ratio": "aspect_ratio",
+      "duration": "duration"
+    },
+    "outputField": "video.url",
     "name": "Veo3.1 Lite Image To Video",
     "endpoint": "veo3.1-lite-image-to-video",
     "family": "veo3.1",
@@ -6565,6 +6501,14 @@ export const i2vModels = [
   },
   {
     "id": "veo3.1-reference-to-video",
+    "falSlug": "fal-ai/veo3.1/reference-to-video",
+    "inputMap": {
+      "image_url": "image_url",
+      "prompt": "prompt",
+      "aspect_ratio": "aspect_ratio",
+      "duration": "duration"
+    },
+    "outputField": "video.url",
     "name": "Veo3.1 Reference To Video",
     "endpoint": "veo3.1-reference-to-video",
     "family": "veo3.1",
@@ -6613,6 +6557,14 @@ export const i2vModels = [
   },
   {
     "id": "seedance-pro-i2v-fast",
+    "falSlug": "fal-ai/bytedance/seedance/v1/pro/fast/image-to-video",
+    "inputMap": {
+      "image_url": "image_url",
+      "prompt": "prompt",
+      "aspect_ratio": "aspect_ratio",
+      "duration": "duration"
+    },
+    "outputField": "video.url",
     "name": "Seedance Pro I2V Fast",
     "endpoint": "seedance-pro-i2v-fast",
     "family": "bytedance",
@@ -6661,6 +6613,14 @@ export const i2vModels = [
   },
   {
     "id": "ltx-2-pro-image-to-video",
+    "falSlug": "fal-ai/ltx-2/image-to-video",
+    "inputMap": {
+      "image_url": "image_url",
+      "prompt": "prompt",
+      "resolution": "resolution",
+      "duration": "duration"
+    },
+    "outputField": "video.url",
     "name": "Ltx 2 Pro Image To Video",
     "endpoint": "ltx-2-pro-image-to-video",
     "family": "ltx",
@@ -6699,6 +6659,14 @@ export const i2vModels = [
   },
   {
     "id": "ltx-2-fast-image-to-video",
+    "falSlug": "fal-ai/ltx-2/image-to-video/fast",
+    "inputMap": {
+      "image_url": "image_url",
+      "prompt": "prompt",
+      "resolution": "resolution",
+      "duration": "duration"
+    },
+    "outputField": "video.url",
     "name": "Ltx 2 Fast Image To Video",
     "endpoint": "ltx-2-fast-image-to-video",
     "family": "ltx",
@@ -6742,6 +6710,14 @@ export const i2vModels = [
   },
   {
     "id": "vidu-q2-reference",
+    "falSlug": "fal-ai/vidu/q2/reference-to-video",
+    "inputMap": {
+      "image_url": "image_url",
+      "prompt": "prompt",
+      "aspect_ratio": "aspect_ratio",
+      "duration": "duration"
+    },
+    "outputField": "video.url",
     "name": "Vidu Q2 Reference",
     "endpoint": "vidu-q2-reference",
     "family": "vidu-q2",
@@ -6812,6 +6788,13 @@ export const i2vModels = [
   },
   {
     "id": "vidu-q2-turbo-start-end-video",
+    "falSlug": "fal-ai/vidu/q2/start-end-to-video",
+    "inputMap": {
+      "start_image_url": "start_image_url",
+      "end_image_url": "end_image_url",
+      "prompt": "prompt"
+    },
+    "outputField": "video.url",
     "name": "Vidu Q2 Turbo Start End Video",
     "endpoint": "vidu-q2-turbo-start-end-video",
     "family": "vidu-q2",
@@ -6873,6 +6856,13 @@ export const i2vModels = [
   },
   {
     "id": "vidu-q2-pro-start-end-video",
+    "falSlug": "fal-ai/vidu/q2/pro/start-end-to-video",
+    "inputMap": {
+      "start_image_url": "start_image_url",
+      "end_image_url": "end_image_url",
+      "prompt": "prompt"
+    },
+    "outputField": "video.url",
     "name": "Vidu Q2 Pro Start End Video",
     "endpoint": "vidu-q2-pro-start-end-video",
     "family": "vidu-q2",
@@ -6934,6 +6924,13 @@ export const i2vModels = [
   },
   {
     "id": "minimax-hailuo-2.3-pro-i2v",
+    "falSlug": "fal-ai/minimax/hailuo-2.3/pro/image-to-video",
+    "inputMap": {
+      "image_url": "image_url",
+      "prompt": "prompt",
+      "prompt_optimizer": "prompt_optimizer"
+    },
+    "outputField": "video.url",
     "name": "Minimax Hailuo 2.3 Pro I2V",
     "endpoint": "minimax-hailuo-2.3-pro-i2v",
     "family": "minimax-2.3",
@@ -6963,6 +6960,13 @@ export const i2vModels = [
   },
   {
     "id": "minimax-hailuo-2.3-standard-i2v",
+    "falSlug": "fal-ai/minimax/hailuo-2.3/standard/image-to-video",
+    "inputMap": {
+      "image_url": "image_url",
+      "prompt": "prompt",
+      "prompt_optimizer": "prompt_optimizer"
+    },
+    "outputField": "video.url",
     "name": "Minimax Hailuo 2.3 Standard I2V",
     "endpoint": "minimax-hailuo-2.3-standard-i2v",
     "family": "minimax-2.3",
@@ -6993,6 +6997,12 @@ export const i2vModels = [
   },
   {
     "id": "minimax-hailuo-2.3-fast",
+    "falSlug": "fal-ai/minimax/hailuo-2.3/fast/image-to-video",
+    "inputMap": {
+      "image_url": "image_url",
+      "prompt": "prompt"
+    },
+    "outputField": "video.url",
     "name": "Minimax Hailuo 2.3 Fast",
     "endpoint": "minimax-hailuo-2.3-fast",
     "family": "minimax-2.3",
@@ -7030,6 +7040,14 @@ export const i2vModels = [
   },
   {
     "id": "kling-v2.5-turbo-std-i2v",
+    "falSlug": "fal-ai/kling-video/v2.5-turbo/standard/image-to-video",
+    "inputMap": {
+      "image_url": "image_url",
+      "prompt": "prompt",
+      "aspect_ratio": "aspect_ratio",
+      "duration": "duration"
+    },
+    "outputField": "video.url",
     "name": "Kling v2.5 Turbo Std I2V",
     "endpoint": "kling-v2.5-turbo-std-i2v",
     "family": "kling-v2.5",
@@ -7058,51 +7076,15 @@ export const i2vModels = [
     }
   },
   {
-    "id": "grok-imagine-image-to-video",
-    "name": "Grok Imagine Image To Video",
-    "endpoint": "grok-imagine-image-to-video",
-    "family": "grok",
-    "imageField": "images_list",
-    "hasPrompt": true,
-    "maxImages": 7,
-    "inputs": {
-      "prompt": {
-        "type": "string",
-        "title": "Prompt",
-        "name": "prompt",
-        "description": "Text prompt describing the video.",
-        "examples": [
-          "Camera glides through vines toward temple entrance, mist disperses as sunlight pierces canopy, birds fly off, subtle dust motes in the air, adventure-style cinematic score."
-        ]
-      },
-      "mode": {
-        "type": "string",
-        "title": "Mode",
-        "name": "mode",
-        "description": "Note: When generating videos using external image inputs, Spicy mode is not supported and will automatically switch to Normal.",
-        "enum": [
-          "fun",
-          "normal",
-          "spicy"
-        ],
-        "default": "normal"
-      },
-      "duration": {
-        "type": "int",
-        "title": "Duration",
-        "name": "duration",
-        "description": "The duration of the generated video in seconds.",
-        "enum": [
-          6,
-          10,
-          15
-        ],
-        "default": 6
-      }
-    }
-  },
-  {
     "id": "kling-o1-image-to-video",
+    "falSlug": "fal-ai/kling-video/o1/pro/image-to-video",
+    "inputMap": {
+      "image_url": "image_url",
+      "prompt": "prompt",
+      "aspect_ratio": "aspect_ratio",
+      "duration": "duration"
+    },
+    "outputField": "video.url",
     "name": "Kling O1 Image To Video",
     "endpoint": "kling-o1-image-to-video",
     "family": "kling-o1",
@@ -7146,6 +7128,14 @@ export const i2vModels = [
   },
   {
     "id": "kling-o1-reference-to-video",
+    "falSlug": "fal-ai/kling-video/o1/pro/reference-to-video",
+    "inputMap": {
+      "image_url": "image_url",
+      "prompt": "prompt",
+      "aspect_ratio": "aspect_ratio",
+      "duration": "duration"
+    },
+    "outputField": "video.url",
     "name": "Kling O1 Reference To Video",
     "endpoint": "kling-o1-reference-to-video",
     "family": "kling-o1",
@@ -7195,6 +7185,15 @@ export const i2vModels = [
   },
   {
     "id": "kling-v2.6-pro-i2v",
+    "falSlug": "fal-ai/kling-video/v2.6/pro/image-to-video",
+    "inputMap": {
+      "image_url": "image_url",
+      "prompt": "prompt",
+      "aspect_ratio": "aspect_ratio",
+      "duration": "duration",
+      "generate_audio": "generate_audio"
+    },
+    "outputField": "video.url",
     "name": "Kling v2.6 Pro I2V",
     "endpoint": "kling-v2.6-pro-i2v",
     "family": "kling-v2.6",
@@ -7232,6 +7231,15 @@ export const i2vModels = [
   },
   {
     "id": "pixverse-v5.5-i2v",
+    "falSlug": "fal-ai/pixverse/v5.5/image-to-video",
+    "inputMap": {
+      "image_url": "image_url",
+      "prompt": "prompt",
+      "aspect_ratio": "aspect_ratio",
+      "duration": "duration",
+      "style": "style"
+    },
+    "outputField": "video.url",
     "name": "Pixverse v5.5 I2V",
     "endpoint": "pixverse-v5.5-i2v",
     "family": "pixverse-v5.5",
@@ -7331,48 +7339,14 @@ export const i2vModels = [
     }
   },
   {
-    "id": "wan2.2-spicy-image-to-video",
-    "name": "Wan2.2 Spicy Image To Video",
-    "endpoint": "wan2.2-spicy-image-to-video",
-    "family": "wan2.2",
-    "imageField": "image_url",
-    "hasPrompt": true,
-    "inputs": {
-      "prompt": {
-        "type": "string",
-        "title": "Prompt",
-        "name": "prompt",
-        "description": "The prompt to generate the video",
-        "examples": [
-          "Animate the scene with intense fiery motion—lava cracking and flowing down the phoenix wings, embers drifting upward, volcanic smoke swirling dramatically, floating stones shifting with parallax depth; camera performs a slow power-shot push-in toward the phoenix statue while preserving the glowing, high-contrast cinematic atmosphere."
-        ]
-      },
-      "resolution": {
-        "type": "string",
-        "title": "Resolution",
-        "name": "resolution",
-        "description": "The resolution of the generated video.",
-        "enum": [
-          "480p",
-          "720p"
-        ],
-        "default": "480p"
-      },
-      "duration": {
-        "type": "int",
-        "title": "Duration",
-        "name": "duration",
-        "description": "The duration of the generated video in seconds",
-        "enum": [
-          5,
-          8
-        ],
-        "default": 5
-      }
-    }
-  },
-  {
     "id": "wan2.6-image-to-video",
+    "falSlug": "wan/v2.6/image-to-video",
+    "inputMap": {
+      "image_url": "image_url",
+      "prompt": "prompt",
+      "audio_url": "audio_url"
+    },
+    "outputField": "video.url",
     "name": "Wan2.6 Image To Video",
     "endpoint": "wan2.6-image-to-video",
     "family": "wan2.6",
@@ -7426,6 +7400,14 @@ export const i2vModels = [
   },
   {
     "id": "kling-o1-standard-image-to-video",
+    "falSlug": "fal-ai/kling-video/o1/standard/image-to-video",
+    "inputMap": {
+      "image_url": "image_url",
+      "prompt": "prompt",
+      "aspect_ratio": "aspect_ratio",
+      "duration": "duration"
+    },
+    "outputField": "video.url",
     "name": "Kling O1 Standard Image To Video",
     "endpoint": "kling-o1-standard-image-to-video",
     "family": "kling-o1",
@@ -7457,6 +7439,14 @@ export const i2vModels = [
   },
   {
     "id": "kling-o1-standard-reference-to-video",
+    "falSlug": "fal-ai/kling-video/o1/standard/reference-to-video",
+    "inputMap": {
+      "image_url": "image_url",
+      "prompt": "prompt",
+      "aspect_ratio": "aspect_ratio",
+      "duration": "duration"
+    },
+    "outputField": "video.url",
     "name": "Kling O1 Standard Reference To Video",
     "endpoint": "kling-o1-standard-reference-to-video",
     "family": "kling-o1",
@@ -7500,6 +7490,15 @@ export const i2vModels = [
   },
   {
     "id": "seedance-v1.5-pro-i2v",
+    "falSlug": "fal-ai/bytedance/seedance/v1.5/pro/image-to-video",
+    "inputMap": {
+      "image_url": "image_url",
+      "prompt": "prompt",
+      "aspect_ratio": "aspect_ratio",
+      "duration": "duration",
+      "generate_audio": "generate_audio"
+    },
+    "outputField": "video.url",
     "name": "Seedance v1.5 Pro I2V",
     "endpoint": "seedance-v1.5-pro-i2v",
     "family": "seedance-v1.5-pro",
@@ -7570,77 +7569,15 @@ export const i2vModels = [
     }
   },
   {
-    "id": "seedance-v1.5-pro-i2v-fast",
-    "name": "Seedance v1.5 Pro I2V Fast",
-    "endpoint": "seedance-v1.5-pro-i2v-fast",
-    "family": "seedance-v1.5-pro",
-    "imageField": "image_url",
-    "lastImageField": "last_image",
-    "hasPrompt": true,
-    "inputs": {
-      "prompt": {
-        "type": "string",
-        "title": "Prompt",
-        "name": "prompt",
-        "description": "Text prompt describing the video.",
-        "examples": [
-          "Add gentle forward camera movement toward the floating observatory, subtle parallax between clouds and structure, soft cloud drift below, interior window lights glowing steadily, and sunlight rays shifting slightly while keeping motion smooth, minimal, and fast."
-        ]
-      },
-      "aspect_ratio": {
-        "type": "string",
-        "title": "Aspect Ratio",
-        "name": "aspect_ratio",
-        "description": "Aspect ratio of the output video.",
-        "enum": [
-          "16:9",
-          "9:16",
-          "1:1",
-          "3:4",
-          "4:3",
-          "21:9"
-        ],
-        "default": "16:9"
-      },
-      "resolution": {
-        "type": "string",
-        "title": "Resolution",
-        "name": "resolution",
-        "description": "The resolution of the generated video.",
-        "enum": [
-          "720p",
-          "1080p"
-        ],
-        "default": "720p"
-      },
-      "duration": {
-        "type": "int",
-        "title": "Duration",
-        "name": "duration",
-        "description": "The duration of the generated video in seconds",
-        "default": 5,
-        "minValue": 4,
-        "maxValue": 12,
-        "step": 1
-      },
-      "generate_audio": {
-        "type": "boolean",
-        "title": "Generate Audio",
-        "name": "generate_audio",
-        "description": "Whether to generate audio",
-        "default": true
-      },
-      "camera_fixed": {
-        "type": "boolean",
-        "title": "Camera Fixed",
-        "name": "camera_fixed",
-        "description": "Whether to fix the camera position",
-        "default": false
-      }
-    }
-  },
-  {
     "id": "ltx-2-19b-image-to-video",
+    "falSlug": "fal-ai/ltx-2-19b/image-to-video",
+    "inputMap": {
+      "image_url": "image_url",
+      "prompt": "prompt",
+      "resolution": "resolution",
+      "duration": "duration"
+    },
+    "outputField": "video.url",
     "name": "Ltx 2 19b Image To Video",
     "endpoint": "ltx-2-19b-image-to-video",
     "family": "ltx",
@@ -7682,6 +7619,14 @@ export const i2vModels = [
   },
   {
     "id": "kling-v3.0-omni-standard-image-to-video",
+    "falSlug": "fal-ai/kling-video/v3/omni/standard/image-to-video",
+    "inputMap": {
+      "image_url": "image_url",
+      "prompt": "prompt",
+      "aspect_ratio": "aspect_ratio",
+      "duration": "duration"
+    },
+    "outputField": "video.url",
     "name": "Kling v3.0 Omni Standard Image To Video",
     "endpoint": "kling-v3.0-omni-standard-image-to-video",
     "family": "kling-v3.0-omni",
@@ -7715,7 +7660,21 @@ export const i2vModels = [
         "title": "Duration",
         "name": "duration",
         "description": "Duration of the generated video in seconds.",
-        "enum": [3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15],
+        "enum": [
+          3,
+          4,
+          5,
+          6,
+          7,
+          8,
+          9,
+          10,
+          11,
+          12,
+          13,
+          14,
+          15
+        ],
         "default": 5
       },
       "generate_audio": {
@@ -7729,6 +7688,14 @@ export const i2vModels = [
   },
   {
     "id": "kling-v3.0-omni-pro-image-to-video",
+    "falSlug": "fal-ai/kling-video/v3/omni/pro/image-to-video",
+    "inputMap": {
+      "image_url": "image_url",
+      "prompt": "prompt",
+      "aspect_ratio": "aspect_ratio",
+      "duration": "duration"
+    },
+    "outputField": "video.url",
     "name": "Kling v3.0 Omni Pro Image To Video",
     "endpoint": "kling-v3.0-omni-pro-image-to-video",
     "family": "kling-v3.0-omni",
@@ -7762,7 +7729,21 @@ export const i2vModels = [
         "title": "Duration",
         "name": "duration",
         "description": "Duration of the generated video in seconds.",
-        "enum": [3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15],
+        "enum": [
+          3,
+          4,
+          5,
+          6,
+          7,
+          8,
+          9,
+          10,
+          11,
+          12,
+          13,
+          14,
+          15
+        ],
         "default": 5
       },
       "generate_audio": {
@@ -7776,6 +7757,14 @@ export const i2vModels = [
   },
   {
     "id": "kling-v3.0-omni-4k-image-to-video",
+    "falSlug": "fal-ai/kling-video/v3/omni/4k/image-to-video",
+    "inputMap": {
+      "image_url": "image_url",
+      "prompt": "prompt",
+      "aspect_ratio": "aspect_ratio",
+      "duration": "duration"
+    },
+    "outputField": "video.url",
     "name": "Kling v3.0 Omni 4K Image To Video",
     "endpoint": "kling-v3.0-omni-4k-image-to-video",
     "family": "kling-v3.0-omni",
@@ -7809,13 +7798,36 @@ export const i2vModels = [
         "title": "Duration",
         "name": "duration",
         "description": "Duration of the generated video in seconds.",
-        "enum": [3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15],
+        "enum": [
+          3,
+          4,
+          5,
+          6,
+          7,
+          8,
+          9,
+          10,
+          11,
+          12,
+          13,
+          14,
+          15
+        ],
         "default": 5
       }
     }
   },
   {
     "id": "kling-v3.0-pro-image-to-video",
+    "falSlug": "fal-ai/kling-video/v3/pro/image-to-video",
+    "inputMap": {
+      "image_url": "image_url",
+      "prompt": "prompt",
+      "aspect_ratio": "aspect_ratio",
+      "duration": "duration",
+      "generate_audio": "generate_audio"
+    },
+    "outputField": "video.url",
     "name": "Kling v3.0 Pro Image To Video",
     "endpoint": "kling-v3.0-pro-image-to-video",
     "family": "kling-v3.0",
@@ -7853,6 +7865,14 @@ export const i2vModels = [
   },
   {
     "id": "kling-v3.0-standard-image-to-video",
+    "falSlug": "fal-ai/kling-video/v3/standard/image-to-video",
+    "inputMap": {
+      "image_url": "image_url",
+      "prompt": "prompt",
+      "aspect_ratio": "aspect_ratio",
+      "duration": "duration"
+    },
+    "outputField": "video.url",
     "name": "Kling v3.0 Standard Image To Video",
     "endpoint": "kling-v3.0-standard-image-to-video",
     "family": "kling-v3.0",
@@ -7890,6 +7910,15 @@ export const i2vModels = [
   },
   {
     "id": "seedance-v2.0-i2v",
+    "falSlug": "bytedance/seedance-2.0/image-to-video",
+    "inputMap": {
+      "image_url": "image_url",
+      "prompt": "prompt",
+      "aspect_ratio": "aspect_ratio",
+      "duration": "duration",
+      "quality": "quality"
+    },
+    "outputField": "video.url",
     "name": "Seedance 2.0 I2V",
     "endpoint": "seedance-v2.0-i2v",
     "family": "seedance-v2.0",
@@ -7908,7 +7937,12 @@ export const i2vModels = [
         "title": "Aspect Ratio",
         "name": "aspect_ratio",
         "description": "Aspect ratio of the output video.",
-        "enum": ["16:9", "9:16", "4:3", "3:4"],
+        "enum": [
+          "16:9",
+          "9:16",
+          "4:3",
+          "3:4"
+        ],
         "default": "16:9"
       },
       "duration": {
@@ -7916,7 +7950,11 @@ export const i2vModels = [
         "title": "Duration",
         "name": "duration",
         "description": "The duration of the generated video in seconds",
-        "enum": [5, 10, 15],
+        "enum": [
+          5,
+          10,
+          15
+        ],
         "default": 5
       },
       "quality": {
@@ -7924,7 +7962,10 @@ export const i2vModels = [
         "title": "Quality",
         "name": "quality",
         "description": "Quality of the generated video.",
-        "enum": ["high", "basic"],
+        "enum": [
+          "high",
+          "basic"
+        ],
         "default": "basic"
       }
     }
@@ -8052,16 +8093,14 @@ export const getMaxImagesForI2IModel = (modelId) => {
 // ─── Video-to-Video models ────────────────────────────────────────────────────
 export const v2vModels = [
   {
-    "id": "video-watermark-remover",
-    "name": "AI Video Watermark Remover",
-    "endpoint": "video-watermark-remover",
-    "family": "tools",
-    "videoField": "video_url",
-    "hasPrompt": false,
-    "description": "Remove watermarks, logos, captions, and unwanted text from videos."
-  },
-  {
     "id": "kling-v2.6-std-motion-control",
+    "falSlug": "fal-ai/kling-video/v2.6/standard/motion-control",
+    "inputMap": {
+      "video_url": "video_url",
+      "prompt": "prompt",
+      "motion_type": "motion_type"
+    },
+    "outputField": "video.url",
     "name": "Kling 2.6 Std Motion Control",
     "endpoint": "kling-v2.6-std-motion-control",
     "family": "kling",
@@ -8073,6 +8112,13 @@ export const v2vModels = [
   },
   {
     "id": "kling-v3.0-std-motion-control",
+    "falSlug": "fal-ai/kling-video/v3/standard/motion-control",
+    "inputMap": {
+      "video_url": "video_url",
+      "prompt": "prompt",
+      "motion_type": "motion_type"
+    },
+    "outputField": "video.url",
     "name": "Kling 3.0 Std Motion Control",
     "endpoint": "kling-v3.0-std-motion-control",
     "family": "kling",
@@ -8083,6 +8129,13 @@ export const v2vModels = [
   },
   {
     "id": "kling-v3.0-pro-motion-control",
+    "falSlug": "fal-ai/kling-video/v3/pro/motion-control",
+    "inputMap": {
+      "video_url": "video_url",
+      "prompt": "prompt",
+      "motion_type": "motion_type"
+    },
+    "outputField": "video.url",
     "name": "Kling 3.0 Pro Motion Control",
     "endpoint": "kling-v3.0-pro-motion-control",
     "family": "kling",
@@ -8097,27 +8150,15 @@ export const v2vModels = [
 // Image-based: portrait image + audio → talking video
 // Video-based: existing video + audio → lipsync video
 export const lipsyncModels = [
-  // ── Image + Audio → Video ──────────────────────────────────────────────────
-  {
-    "id": "infinitetalk-image-to-video",
-    "name": "Infinite Talk",
-    "endpoint": "infinitetalk-image-to-video",
-    "family": "infinitetalk",
-    "category": "image",
-    "hasPrompt": true,
-    "description": "Animate a portrait image into a talking video driven by audio.",
-    "inputs": {
-      "resolution": {
-        "type": "string",
-        "title": "Resolution",
-        "name": "resolution",
-        "enum": ["480p", "720p"],
-        "default": "480p"
-      }
-    }
-  },
   {
     "id": "wan2.2-speech-to-video",
+    "falSlug": "fal-ai/wan/v2.2-a14b/speech-to-video",
+    "inputMap": {
+      "image_url": "image_url",
+      "audio_url": "audio_url",
+      "prompt": "prompt"
+    },
+    "outputField": "video.url",
     "name": "Wan 2.2 Speech to Video",
     "endpoint": "wan2.2-speech-to-video",
     "family": "wan",
@@ -8129,51 +8170,22 @@ export const lipsyncModels = [
         "type": "string",
         "title": "Resolution",
         "name": "resolution",
-        "enum": ["480p", "720p"],
+        "enum": [
+          "480p",
+          "720p"
+        ],
         "default": "480p"
       }
     }
   },
   {
-    "id": "ltx-2.3-lipsync",
-    "name": "LTX 2.3 Lipsync",
-    "endpoint": "ltx-2.3-lipsync",
-    "family": "ltx",
-    "category": "image",
-    "hasPrompt": true,
-    "hasSeed": true,
-    "description": "High-quality lipsync from portrait image and audio using LTX 2.3.",
-    "inputs": {
-      "resolution": {
-        "type": "string",
-        "title": "Resolution",
-        "name": "resolution",
-        "enum": ["480p", "720p", "1080p"],
-        "default": "720p"
-      }
-    }
-  },
-  {
-    "id": "ltx-2-19b-lipsync",
-    "name": "LTX 2 19B Lipsync",
-    "endpoint": "ltx-2-19b-lipsync",
-    "family": "ltx",
-    "category": "image",
-    "hasPrompt": true,
-    "description": "Lipsync from portrait image and audio using LTX 2 19B model.",
-    "inputs": {
-      "resolution": {
-        "type": "string",
-        "title": "Resolution",
-        "name": "resolution",
-        "enum": ["480p", "720p", "1080p"],
-        "default": "720p"
-      }
-    }
-  },
-  // ── Video + Audio → Video ──────────────────────────────────────────────────
-  {
     "id": "sync-lipsync",
+    "falSlug": "fal-ai/sync-lipsync",
+    "inputMap": {
+      "video_url": "video_url",
+      "audio_url": "audio_url"
+    },
+    "outputField": "video.url",
     "name": "Sync Lipsync",
     "endpoint": "sync-lipsync",
     "family": "lipsync",
@@ -8183,6 +8195,12 @@ export const lipsyncModels = [
   },
   {
     "id": "latent-sync",
+    "falSlug": "fal-ai/latentsync",
+    "inputMap": {
+      "video_url": "video_url",
+      "audio_url": "audio_url"
+    },
+    "outputField": "video.url",
     "name": "LatentSync",
     "endpoint": "latentsync-video",
     "family": "lipsync",
@@ -8192,6 +8210,12 @@ export const lipsyncModels = [
   },
   {
     "id": "creatify-lipsync",
+    "falSlug": "fal-ai/creatify/lipsync",
+    "inputMap": {
+      "video_url": "video_url",
+      "audio_url": "audio_url"
+    },
+    "outputField": "video.url",
     "name": "Creatify Lipsync",
     "endpoint": "creatify-lipsync",
     "family": "lipsync",
@@ -8201,30 +8225,18 @@ export const lipsyncModels = [
   },
   {
     "id": "veed-lipsync",
+    "falSlug": "veed/lipsync",
+    "inputMap": {
+      "video_url": "video_url",
+      "audio_url": "audio_url"
+    },
+    "outputField": "video.url",
     "name": "Veed Lipsync",
     "endpoint": "veed-lipsync",
     "family": "lipsync",
     "category": "video",
     "hasPrompt": false,
     "description": "Generate realistic lipsync from any audio using VEED's latest model."
-  },
-  {
-    "id": "infinitetalk-video-to-video",
-    "name": "Infinite Talk V2V",
-    "endpoint": "infinitetalk-video-to-video",
-    "family": "infinitetalk",
-    "category": "video",
-    "hasPrompt": true,
-    "description": "Apply audio-driven lipsync to an existing video using Infinite Talk.",
-    "inputs": {
-      "resolution": {
-        "type": "string",
-        "title": "Resolution",
-        "name": "resolution",
-        "enum": ["480p", "720p"],
-        "default": "480p"
-      }
-    }
   }
 ];
 
@@ -8244,929 +8256,13 @@ export const getV2VModelById = (id) => v2vModels.find(m => m.id === id);
 // ── Audio Models ──────────────────────────────────────────────────────────
 export const audioModels = [
   {
-    "id": "suno-create-music",
-    "name": "Suno Create Music",
-    "endpoint": "suno-create-music",
-    "family": "suno",
-    "description": "Suno generate music that turns text prompts into full songs ΓÇö complete with vocals, lyrics, and instrumentation. You can describe a mood, genre, or even a specific lyric idea, and Suno creates a realistic, studio-quality track in seconds.",
-    "required": [
-      "style"
-    ],
-    "inputs": {
-      "prompt": {
-        "examples": [
-          "Hard-hitting rap track with aggressive beat and confident male vocals about winning."
-        ],
-        "description": "A description of the desired audio content. The prompt will be strictly used as the lyrics and sung in the generated track",
-        "type": "string",
-        "title": "Prompt",
-        "name": "prompt"
-      },
-      "style": {
-        "examples": [
-          "Classical"
-        ],
-        "description": "Music style specification for the generated audio.",
-        "format": "text",
-        "type": "string",
-        "title": "Style",
-        "name": "style",
-        "placeholder": "Jazz, Classical, Electronic, Pop, Rock, Hip-hop, etc."
-      },
-      "model": {
-        "enum": [
-          "V3_5",
-          "V4",
-          "V4_5",
-          "V4_5PLUS",
-          "V4_5ALL",
-          "V5",
-          "V5_5"
-        ],
-        "title": "Model",
-        "name": "model",
-        "type": "string",
-        "description": "The AI model version to use for generation.",
-        "default": "V5"
-      },
-      "custom_mode": {
-        "type": "boolean",
-        "title": "Custom Mode",
-        "name": "custom_mode",
-        "description": "Enable custom mode for advanced settings.",
-        "default": true
-      },
-      "title": {
-        "type": "string",
-        "title": "Title",
-        "name": "title",
-        "description": "Title for the generated music track (optional).",
-        "placeholder": "Peaceful Piano Meditation"
-      },
-      "persona_id": {
-        "type": "string",
-        "title": "Persona ID",
-        "name": "persona_id",
-        "description": "Persona ID or custom voice ID to apply to the generated music (optional). Pair with persona_model to disambiguate."
-      },
-      "persona_model": {
-        "enum": [
-          "style_persona",
-          "voice_persona"
-        ],
-        "type": "string",
-        "title": "Persona Model",
-        "name": "persona_model",
-        "description": "What kind of persona_id this is. Set to voice_persona when persona_id is a cloned voice ID from suno-voice-clone. Requires model V5 or V5_5."
-      },
-      "instrumental": {
-        "type": "boolean",
-        "title": "Instrumental",
-        "name": "instrumental",
-        "description": "Enable this option to generate music without prompt. If false prompt will used as the exact lyrics.",
-        "default": true
-      },
-      "negative_tags": {
-        "examples": [
-          null
-        ],
-        "title": "Negative Tags",
-        "name": "negative_tags",
-        "type": "string",
-        "format": "text",
-        "description": "Music styles or traits to exclude from the generated audio (optional). Use to avoid specific styles.",
-        "placeholder": "Heavy Metal, Upbeat Drums"
-      },
-      "vocal_gender": {
-        "enum": [
-          "male",
-          "female"
-        ],
-        "title": "Vocal Gender",
-        "name": "vocal_gender",
-        "type": "string",
-        "description": "Vocal gender preference for the singing voice (optional).",
-        "default": "male"
-      },
-      "style_weight": {
-        "title": "Style Weight",
-        "name": "style_weight",
-        "type": "int",
-        "description": "Strength of adherence to the specified style (optional). Range 0ΓÇô1, up to 2 decimal places.",
-        "minValue": 0,
-        "maxValue": 1,
-        "step": 0.05,
-        "default": 0.65
-      },
-      "weirdness_constraint": {
-        "title": "Weirdness Constraint",
-        "name": "weirdness_constraint",
-        "type": "int",
-        "description": "Controls experimental/creative deviation (optional). Range 0ΓÇô1, up to 2 decimal places.",
-        "minValue": 0,
-        "maxValue": 1,
-        "step": 0.05,
-        "default": 0.65
-      },
-      "audio_weight": {
-        "title": "Audio Weight",
-        "name": "audio_weight",
-        "type": "int",
-        "description": "Balance weight for audio features vs. other factors (optional). Range 0ΓÇô1, up to 2 decimal places.",
-        "minValue": 0,
-        "maxValue": 1,
-        "step": 0.05,
-        "default": 0.65
-      }
-    }
-  },
-  {
-    "id": "suno-remix-music",
-    "name": "Suno Remix Music",
-    "endpoint": "suno-remix-music",
-    "family": "suno",
-    "description": "This API covers an audio track by transforming it into a new style while retaining its core melody. It incorporates Suno's upload capability, enabling users to upload an audio file for processing. The expected result is a refreshed audio track with a new style, keeping the original melody intact.",
-    "required": [
-      "audio_url",
-      "style"
-    ],
-    "inputs": {
-      "prompt": {
-        "examples": [
-          "A calm and relaxing piano track with soft melodies"
-        ],
-        "description": "A description of the desired audio content. The prompt will be strictly used as the lyrics and sung in the generated track. Maximum 3000 characters",
-        "type": "string",
-        "title": "Prompt",
-        "name": "prompt"
-      },
-      "audio_url": {
-        "examples": [
-          "https://d3adwkbyhxyrtq.cloudfront.net/ai-music/186/309018126238/c7e634cf-f0f3-4988-8225-4e7d0eb6121b.mp3"
-        ],
-        "description": "The URL for uploading audio files. Ensure the uploaded audio does not exceed 2 minutes in length.",
-        "field": "audio",
-        "type": "string",
-        "title": "Audio URL",
-        "name": "audio_url"
-      },
-      "style": {
-        "examples": [
-          "Classical"
-        ],
-        "description": "Music style specification for the generated audio.",
-        "format": "text",
-        "type": "string",
-        "title": "Style",
-        "name": "style",
-        "placeholder": "Jazz, Classical, Electronic, Pop, Rock, Hip-hop, etc."
-      },
-      "model": {
-        "enum": [
-          "V3_5",
-          "V4",
-          "V4_5",
-          "V4_5PLUS",
-          "V4_5ALL",
-          "V5",
-          "V5_5"
-        ],
-        "title": "Model",
-        "name": "model",
-        "type": "string",
-        "description": "The AI model version to use for generation.",
-        "default": "V5"
-      },
-      "custom_mode": {
-        "type": "boolean",
-        "title": "Custom Mode",
-        "name": "custom_mode",
-        "description": "Enable custom mode for advanced settings.",
-        "default": true
-      },
-      "title": {
-        "type": "string",
-        "title": "Title",
-        "name": "title",
-        "description": "Title for the generated music track (optional).",
-        "placeholder": "Peaceful Piano Meditation"
-      },
-      "persona_id": {
-        "type": "string",
-        "title": "Persona ID",
-        "name": "persona_id",
-        "description": "Persona ID or custom voice ID to apply to the generated music (optional). Pair with persona_model to disambiguate."
-      },
-      "persona_model": {
-        "enum": [
-          "style_persona",
-          "voice_persona"
-        ],
-        "type": "string",
-        "title": "Persona Model",
-        "name": "persona_model",
-        "description": "What kind of persona_id this is. Set to voice_persona when persona_id is a cloned voice ID from suno-voice-clone. Requires model V5 or V5_5."
-      },
-      "instrumental": {
-        "type": "boolean",
-        "title": "Instrumental",
-        "name": "instrumental",
-        "description": "Enable this option to generate music without prompt. If false prompt will used as the exact lyrics.",
-        "default": true
-      },
-      "negative_tags": {
-        "examples": [
-          null
-        ],
-        "title": "Negative Tags",
-        "name": "negative_tags",
-        "type": "string",
-        "format": "text",
-        "description": "Music styles or traits to exclude from the generated audio (optional). Use to avoid specific styles.",
-        "placeholder": "Heavy Metal, Upbeat Drums"
-      },
-      "vocal_gender": {
-        "enum": [
-          "male",
-          "female"
-        ],
-        "title": "Vocal Gender",
-        "name": "vocal_gender",
-        "type": "string",
-        "description": "Vocal gender preference for the singing voice (optional).",
-        "default": "male"
-      },
-      "style_weight": {
-        "title": "Style Weight",
-        "name": "style_weight",
-        "type": "int",
-        "description": "Strength of adherence to the specified style (optional). Range 0ΓÇô1, up to 2 decimal places.",
-        "minValue": 0,
-        "maxValue": 1,
-        "step": 0.05,
-        "default": 0.65
-      },
-      "weirdness_constraint": {
-        "title": "Weirdness Constraint",
-        "name": "weirdness_constraint",
-        "type": "int",
-        "description": "Controls experimental/creative deviation (optional). Range 0ΓÇô1, up to 2 decimal places.",
-        "minValue": 0,
-        "maxValue": 1,
-        "step": 0.05,
-        "default": 0.65
-      },
-      "audio_weight": {
-        "title": "Audio Weight",
-        "name": "audio_weight",
-        "type": "int",
-        "description": "Balance weight for audio features vs. other factors (optional). Range 0ΓÇô1, up to 2 decimal places.",
-        "minValue": 0,
-        "maxValue": 1,
-        "step": 0.05,
-        "default": 0.65
-      }
-    }
-  },
-  {
-    "id": "suno-extend-music",
-    "name": "Suno Extend Music",
-    "endpoint": "suno-extend-music",
-    "family": "suno",
-    "description": "This API extends audio tracks while preserving the original style of the audio track. It includes Suno's upload functionality, allowing users to upload audio files for processing. The expected result is a longer track that seamlessly continues the input style.",
-    "required": [
-      "prompt",
-      "audio_url",
-      "style"
-    ],
-    "inputs": {
-      "prompt": {
-        "examples": [
-          "Extend the music with more relaxing notes"
-        ],
-        "description": "A description of the desired audio content. The prompt will be strictly used as the lyrics and sung in the generated track. Maximum 3000 characters",
-        "type": "string",
-        "title": "Prompt",
-        "name": "prompt"
-      },
-      "audio_url": {
-        "examples": [
-          "https://d3adwkbyhxyrtq.cloudfront.net/audios/186/755853337445/example.mp3"
-        ],
-        "description": "The URL for uploading audio files. Ensure the uploaded audio does not exceed 2 minutes in length.",
-        "field": "audio",
-        "type": "string",
-        "title": "Audio URL",
-        "name": "audio_url"
-      },
-      "style": {
-        "examples": [
-          "Classical"
-        ],
-        "description": "Music style specification for the generated audio.",
-        "format": "text",
-        "type": "string",
-        "title": "Style",
-        "name": "style",
-        "placeholder": "Jazz, Classical, Electronic, Pop, Rock, Hip-hop, etc."
-      },
-      "model": {
-        "enum": [
-          "V3_5",
-          "V4",
-          "V4_5",
-          "V4_5PLUS",
-          "V4_5ALL",
-          "V5",
-          "V5_5"
-        ],
-        "title": "Model",
-        "name": "model",
-        "type": "string",
-        "description": "The AI model version to use for generation.",
-        "default": "V5"
-      },
-      "custom_mode": {
-        "type": "boolean",
-        "title": "Custom Mode",
-        "name": "custom_mode",
-        "description": "Enable custom mode for advanced settings.",
-        "default": true
-      },
-      "title": {
-        "type": "string",
-        "title": "Title",
-        "name": "title",
-        "description": "Title for the generated music track (optional).",
-        "placeholder": "Peaceful Piano Meditation"
-      },
-      "persona_id": {
-        "type": "string",
-        "title": "Persona ID",
-        "name": "persona_id",
-        "description": "Persona ID or custom voice ID to apply to the generated music (optional). Pair with persona_model to disambiguate."
-      },
-      "persona_model": {
-        "enum": [
-          "style_persona",
-          "voice_persona"
-        ],
-        "type": "string",
-        "title": "Persona Model",
-        "name": "persona_model",
-        "description": "What kind of persona_id this is. Set to voice_persona when persona_id is a cloned voice ID from suno-voice-clone. Requires model V5 or V5_5."
-      },
-      "continue_at": {
-        "title": "Continue At",
-        "name": "continue_at",
-        "type": "int",
-        "description": "The time point (in seconds) from which to start extending the music. Value range: greater than 0 and less than the total duration of the uploaded audio. Specifies the position in the original track where the extension should begin.",
-        "default": 1,
-        "minValue": 1,
-        "maxValue": 60,
-        "step": 1
-      },
-      "instrumental": {
-        "type": "boolean",
-        "title": "Instrumental",
-        "name": "instrumental",
-        "description": "Enable this option to generate music without prompt. If false prompt will used as the exact lyrics.",
-        "default": true
-      },
-      "negative_tags": {
-        "examples": [
-          null
-        ],
-        "title": "Negative Tags",
-        "name": "negative_tags",
-        "type": "string",
-        "format": "text",
-        "description": "Music styles or traits to exclude from the generated audio (optional). Use to avoid specific styles.",
-        "placeholder": "Heavy Metal, Upbeat Drums"
-      },
-      "vocal_gender": {
-        "enum": [
-          "male",
-          "female"
-        ],
-        "title": "Vocal Gender",
-        "name": "vocal_gender",
-        "type": "string",
-        "description": "Vocal gender preference for the singing voice (optional).",
-        "default": "male"
-      },
-      "style_weight": {
-        "title": "Style Weight",
-        "name": "style_weight",
-        "type": "int",
-        "description": "Strength of adherence to the specified style (optional). Range 0ΓÇô1, up to 2 decimal places.",
-        "minValue": 0,
-        "maxValue": 1,
-        "step": 0.05,
-        "default": 0.65
-      },
-      "weirdness_constraint": {
-        "title": "Weirdness Constraint",
-        "name": "weirdness_constraint",
-        "type": "int",
-        "description": "Controls experimental/creative deviation (optional). Range 0ΓÇô1, up to 2 decimal places.",
-        "minValue": 0,
-        "maxValue": 1,
-        "step": 0.05,
-        "default": 0.65
-      },
-      "audio_weight": {
-        "title": "Audio Weight",
-        "name": "audio_weight",
-        "type": "int",
-        "description": "Balance weight for audio features vs. other factors (optional). Range 0ΓÇô1, up to 2 decimal places.",
-        "minValue": 0,
-        "maxValue": 1,
-        "step": 0.05,
-        "default": 0.65
-      }
-    }
-  },
-  {
-    "id": "suno-generate-sounds",
-    "name": "Suno Generate Sounds",
-    "endpoint": "suno-generate-sounds",
-    "family": "suno",
-    "description": "Generate sound effects using Suno chirp-crow model.",
-    "required": [
-      "prompt"
-    ],
-    "inputs": {
-      "prompt": {
-        "type": "string",
-        "title": "Prompt",
-        "name": "prompt",
-        "description": "sounds task type supports up to 500 characters.",
-        "examples": [
-          "A car passing by"
-        ]
-      },
-      "model": {
-        "enum": [
-          "V5"
-        ],
-        "type": "string",
-        "title": "Model",
-        "name": "model",
-        "description": "The model to use",
-        "default": "V5"
-      },
-      "sound_loop": {
-        "type": "boolean",
-        "title": "Loop",
-        "name": "sound_loop",
-        "description": "Whether to loop the generated sound.",
-        "default": false
-      },
-      "sound_tempo": {
-        "type": "int",
-        "title": "Sound Tempo",
-        "name": "sound_tempo",
-        "description": "Sound tempo",
-        "minValue": 1,
-        "maxValue": 300,
-        "step": 1,
-        "default": 1
-      },
-      "sound_key": {
-        "enum": [
-          "Any",
-          "Cm",
-          "C#m",
-          "Dm",
-          "D#m",
-          "Em",
-          "Fm",
-          "F#m",
-          "Gm",
-          "G#m",
-          "Am",
-          "A#m",
-          "Bm",
-          "C",
-          "C#",
-          "D",
-          "D#",
-          "E",
-          "F",
-          "F#",
-          "G",
-          "G#",
-          "A",
-          "A#",
-          "B"
-        ],
-        "type": "string",
-        "title": "Sound Key",
-        "name": "sound_key",
-        "description": "Musical key",
-        "default": "Any"
-      },
-      "grab_lyrics": {
-        "type": "boolean",
-        "title": "Grab Lyrics",
-        "name": "grab_lyrics",
-        "description": "Whether to fetch lyric subtitles after generation is completed.",
-        "default": false
-      }
-    }
-  },
-  {
-    "id": "suno-add-vocals",
-    "name": "Suno Add Vocals",
-    "endpoint": "suno-add-vocals",
-    "family": "suno",
-    "description": "Add vocals to an instrumental track.",
-    "required": [
-      "prompt",
-      "title",
-      "style",
-      "audio_url"
-    ],
-    "inputs": {
-      "prompt": {
-        "type": "string",
-        "title": "Prompt (Lyrics)",
-        "name": "prompt",
-        "description": "Lyrics to sing",
-        "examples": [
-          "[Verse 1]\nHello world..."
-        ]
-      },
-      "audio_url": {
-        "type": "string",
-        "title": "Instrumental Audio",
-        "name": "audio_url",
-        "description": "URL of instrumental track",
-        "field": "audio"
-      },
-      "style": {
-        "type": "string",
-        "title": "Style",
-        "name": "style",
-        "description": "Vocal style",
-        "examples": [
-          "Pop"
-        ]
-      },
-      "negative_tags": {
-        "type": "string",
-        "title": "Negative Tags",
-        "name": "negative_tags",
-        "description": "Excluded styles"
-      },
-      "model": {
-        "enum": [
-          "V4",
-          "V4_5",
-          "V4_5PLUS",
-          "V5"
-        ],
-        "title": "Model",
-        "name": "model",
-        "type": "string",
-        "description": "The AI model version to use.",
-        "default": "V5"
-      },
-      "vocal_gender": {
-        "enum": [
-          "male",
-          "female"
-        ],
-        "title": "Vocal Gender",
-        "name": "vocal_gender",
-        "type": "string",
-        "description": "Vocal gender preference.",
-        "default": "male"
-      },
-      "style_weight": {
-        "title": "Style Weight",
-        "name": "style_weight",
-        "type": "int",
-        "description": "Strength of style adherence (0-1).",
-        "minValue": 0,
-        "maxValue": 1,
-        "step": 0.05,
-        "default": 0.65
-      },
-      "weirdness_constraint": {
-        "title": "Weirdness Constraint",
-        "name": "weirdness_constraint",
-        "type": "int",
-        "description": "Experimental deviation (0-1).",
-        "minValue": 0,
-        "maxValue": 1,
-        "step": 0.01,
-        "default": 0.65
-      },
-      "audio_weight": {
-        "title": "Audio Weight",
-        "name": "audio_weight",
-        "type": "int",
-        "description": "Balance weight (0-1).",
-        "minValue": 0,
-        "maxValue": 1,
-        "step": 0.01,
-        "default": 0.65
-      },
-      "title": {
-        "type": "string",
-        "title": "Title",
-        "name": "title",
-        "description": "Track title",
-        "default": "New Vocal Track"
-      }
-    }
-  },
-  {
-    "id": "suno-generate-mashup",
-    "name": "Suno Geneate Mashup",
-    "endpoint": "suno-generate-mashup",
-    "family": "suno",
-    "description": "Create a mashup using 1-5 audio tracks.",
-    "required": [
-      "audios_list"
-    ],
-    "inputs": {
-      "audios_list": {
-        "type": "array",
-        "title": "Mashup Tracks",
-        "name": "audios_list",
-        "description": "Upload up to 2 audio files to mashup music from multiple audio tracks.",
-        "field": "audios_list",
-        "items": {
-          "type": "string"
-        },
-        "maxItems": 2
-      },
-      "prompt": {
-        "type": "string",
-        "title": "Prompt",
-        "name": "prompt",
-        "description": "Creative guidance"
-      },
-      "style": {
-        "type": "string",
-        "title": "Style",
-        "name": "style",
-        "description": "Mashup style"
-      },
-      "instrumental": {
-        "type": "boolean",
-        "title": "Instrumental",
-        "name": "instrumental",
-        "description": "If true: Only style is required else style, and prompt are required (with prompt used as the exact lyrics)",
-        "default": true
-      },
-      "model": {
-        "enum": [
-          "V4",
-          "V4_5",
-          "V4_5PLUS",
-          "V5"
-        ],
-        "title": "Model",
-        "name": "model",
-        "type": "string",
-        "description": "The AI model version to use.",
-        "default": "V5"
-      },
-      "vocal_gender": {
-        "enum": [
-          "male",
-          "female"
-        ],
-        "title": "Vocal Gender",
-        "name": "vocal_gender",
-        "type": "string",
-        "description": "Vocal gender preference.",
-        "default": "male"
-      },
-      "style_weight": {
-        "title": "Style Weight",
-        "name": "style_weight",
-        "type": "int",
-        "description": "Strength of style adherence (0-1).",
-        "minValue": 0,
-        "maxValue": 1,
-        "step": 0.05,
-        "default": 0.65
-      },
-      "weirdness_constraint": {
-        "title": "Weirdness Constraint",
-        "name": "weirdness_constraint",
-        "type": "int",
-        "description": "Experimental deviation (0-1).",
-        "minValue": 0,
-        "maxValue": 1,
-        "step": 0.05,
-        "default": 0.65
-      },
-      "audio_weight": {
-        "title": "Audio Weight",
-        "name": "audio_weight",
-        "type": "int",
-        "description": "Balance weight (0-1).",
-        "minValue": 0,
-        "maxValue": 1,
-        "step": 0.05,
-        "default": 0.65
-      },
-      "title": {
-        "type": "string",
-        "title": "Title",
-        "name": "title",
-        "description": "Mashup title",
-        "default": "New Mashup"
-      }
-    }
-  },
-  {
-    "id": "suno-add-instrumental",
-    "name": "Suno Add Instrumental",
-    "endpoint": "suno-add-instrumental",
-    "family": "suno",
-    "description": "Add instrumental backing to acapella audio.",
-    "required": [
-      "title",
-      "tags",
-      "audio_url"
-    ],
-    "inputs": {
-      "audio_url": {
-        "type": "string",
-        "title": "Vocal Audio",
-        "name": "audio_url",
-        "description": "URL of vocal track",
-        "field": "audio"
-      },
-      "tags": {
-        "type": "string",
-        "title": "Tags",
-        "name": "tags",
-        "description": "Instrumental styles",
-        "examples": [
-          "Orchestral"
-        ]
-      },
-      "negative_tags": {
-        "type": "string",
-        "title": "Negative Tags",
-        "name": "negative_tags",
-        "description": "Excluded styles"
-      },
-      "model": {
-        "enum": [
-          "V4",
-          "V4_5",
-          "V4_5PLUS",
-          "V5"
-        ],
-        "title": "Model",
-        "name": "model",
-        "type": "string",
-        "description": "The AI model version to use.",
-        "default": "V5"
-      },
-      "vocal_gender": {
-        "enum": [
-          "male",
-          "female"
-        ],
-        "title": "Vocal Gender",
-        "name": "vocal_gender",
-        "type": "string",
-        "description": "Vocal gender preference.",
-        "default": "male"
-      },
-      "style_weight": {
-        "title": "Style Weight",
-        "name": "style_weight",
-        "type": "int",
-        "description": "Strength of style adherence (0-1).",
-        "minValue": 0,
-        "maxValue": 1,
-        "step": 0.05,
-        "default": 0.65
-      },
-      "weirdness_constraint": {
-        "title": "Weirdness Constraint",
-        "name": "weirdness_constraint",
-        "type": "int",
-        "description": "Experimental deviation (0-1).",
-        "minValue": 0,
-        "maxValue": 1,
-        "step": 0.05,
-        "default": 0.65
-      },
-      "audio_weight": {
-        "title": "Audio Weight",
-        "name": "audio_weight",
-        "type": "int",
-        "description": "Balance weight (0-1).",
-        "minValue": 0,
-        "maxValue": 1,
-        "step": 0.05,
-        "default": 0.65
-      },
-      "title": {
-        "type": "string",
-        "title": "Title",
-        "name": "title",
-        "description": "Track title",
-        "default": "Instrumental Song"
-      }
-    }
-  },
-  {
-    "id": "suno-voice-clone",
-    "name": "Suno Voice Cloning",
-    "endpoint": "suno-voice-clone",
-    "family": "suno",
-    "description": "Clone your singing voice in two takes for use with Suno music generation. Submit a 10-second sample, then read back a fresh random phrase the system generates (anti-deepfake liveness check), and receive a reusable voice_id you can drop into Suno music creation. Free during preview.",
-    "required": [
-      "audio_url"
-    ],
-    "inputs": {
-      "audio_url": {
-        "examples": [
-          "https://d3adwkbyhxyrtq.cloudfront.net/webassets/videomodels/minimax-voice-clone-in.wav"
-        ],
-        "description": "URL of a clean 10-second recording of the voice to clone. Mono is fine. The provider extracts a vocal segment between vocal_start_s and vocal_end_s.",
-        "field": "audio",
-        "type": "string",
-        "title": "Voice Sample URL",
-        "name": "audio_url"
-      },
-      "voice_name": {
-        "type": "string",
-        "title": "Voice Name",
-        "name": "voice_name",
-        "description": "A short label for your voice, shown in the voice picker (optional).",
-        "placeholder": "My Voice"
-      },
-      "description": {
-        "type": "string",
-        "title": "Description",
-        "name": "description",
-        "description": "Free-form description of this voice (optional).",
-        "placeholder": "Warm female alto, slight rasp."
-      },
-      "style": {
-        "type": "string",
-        "title": "Style Tags",
-        "name": "style",
-        "description": "Comma-separated style hints used at music generation time (optional).",
-        "placeholder": "Pop, Female Vocal"
-      },
-      "language": {
-        "enum": [
-          "en",
-          "zh",
-          "es",
-          "fr",
-          "pt",
-          "de",
-          "ja",
-          "ko",
-          "hi",
-          "ru"
-        ],
-        "title": "Language",
-        "name": "language",
-        "type": "string",
-        "description": "Language the voice sample is spoken in.",
-        "default": "en"
-      },
-      "vocal_start_s": {
-        "type": "int",
-        "title": "Vocal Start (seconds)",
-        "name": "vocal_start_s",
-        "description": "Start time of the vocal segment within the sample.",
-        "default": 0,
-        "minValue": 0,
-        "maxValue": 60,
-        "step": 1
-      },
-      "vocal_end_s": {
-        "type": "int",
-        "title": "Vocal End (seconds)",
-        "name": "vocal_end_s",
-        "description": "End time of the vocal segment within the sample. Must be greater than Vocal Start.",
-        "default": 10,
-        "minValue": 1,
-        "maxValue": 60,
-        "step": 1
-      }
-    }
-  },
-  {
     "id": "minimax-voice-clone",
+    "falSlug": "fal-ai/minimax/voice-clone",
+    "inputMap": {
+      "audio_url": "audio_url",
+      "voice_id": "voice_id"
+    },
+    "outputField": "custom_voice_id",
     "name": "Minimax Voice Clone",
     "endpoint": "minimax-voice-clone",
     "family": "minimax-2.3",
@@ -9249,6 +8345,13 @@ export const audioModels = [
   },
   {
     "id": "minimax-speech-2.6-hd",
+    "falSlug": "fal-ai/minimax/speech-2.6-hd",
+    "inputMap": {
+      "text": "text",
+      "voice_id": "voice_id",
+      "speed": "speed"
+    },
+    "outputField": "audio.url",
     "name": "Minimax Speech HD",
     "endpoint": "minimax-speech-2.6-hd",
     "family": "minimax-2.6",
@@ -9908,6 +9011,13 @@ export const audioModels = [
   },
   {
     "id": "minimax-speech-2.6-turbo",
+    "falSlug": "fal-ai/minimax/speech-2.6-turbo",
+    "inputMap": {
+      "text": "text",
+      "voice_id": "voice_id",
+      "speed": "speed"
+    },
+    "outputField": "audio.url",
     "name": "Minimax Speech Turbo",
     "endpoint": "minimax-speech-2.6-turbo",
     "family": "minimax-2.6",
@@ -10564,8 +9674,15 @@ export const audioModels = [
         "default": "auto"
       }
     }
-  },{
+  },
+  {
     "id": "mmaudio-v2-text-to-audio",
+    "falSlug": "fal-ai/mmaudio-v2/text-to-audio",
+    "inputMap": {
+      "prompt": "prompt",
+      "duration": "duration"
+    },
+    "outputField": "audio.url",
     "name": "MM Audio V2",
     "endpoint": "mmaudio-v2/text-to-audio",
     "family": "mmaudio",

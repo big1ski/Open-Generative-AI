@@ -2,6 +2,12 @@
   "t2i": [
     {
       "id": "nano-banana",
+      "falSlug": "fal-ai/nano-banana",
+      "inputMap": {
+        "prompt": "prompt",
+        "aspect_ratio": "aspect_ratio"
+      },
+      "outputField": "images[0].url",
       "name": "Nano Banana",
       "inputs": {
         "prompt": {
@@ -36,6 +42,14 @@
     },
     {
       "id": "flux-dev",
+      "falSlug": "fal-ai/flux/dev",
+      "inputMap": {
+        "prompt": "prompt",
+        "width": "image_size.width",
+        "height": "image_size.height",
+        "num_images": "num_images"
+      },
+      "outputField": "images[0].url",
       "name": "Flux Dev",
       "inputs": {
         "prompt": {
@@ -81,6 +95,14 @@
     },
     {
       "id": "flux-dev-lora",
+      "falSlug": "fal-ai/flux-lora",
+      "inputMap": {
+        "prompt": "prompt",
+        "model_id": "loras[0].path",
+        "width": "image_size.width",
+        "height": "image_size.height"
+      },
+      "outputField": "images[0].url",
       "name": "Flux Dev Lora",
       "inputs": {
         "prompt": {
@@ -162,6 +184,12 @@
     },
     {
       "id": "flux-kontext-dev-t2i",
+      "falSlug": "fal-ai/flux-pro/kontext/text-to-image",
+      "inputMap": {
+        "prompt": "prompt",
+        "aspect_ratio": "aspect_ratio"
+      },
+      "outputField": "images[0].url",
       "name": "Flux Kontext Dev T2I",
       "inputs": {
         "prompt": {
@@ -206,6 +234,14 @@
     },
     {
       "id": "hidream-i1-fast",
+      "falSlug": "fal-ai/hidream-i1-fast",
+      "inputMap": {
+        "prompt": "prompt",
+        "width": "image_size.width",
+        "height": "image_size.height",
+        "num_images": "num_images"
+      },
+      "outputField": "images[0].url",
       "name": "Hidream I1 Fast",
       "inputs": {
         "prompt": {
@@ -251,6 +287,13 @@
     },
     {
       "id": "hidream-i1-dev",
+      "falSlug": "fal-ai/hidream-i1-dev",
+      "inputMap": {
+        "prompt": "prompt",
+        "width": "image_size.width",
+        "height": "image_size.height"
+      },
+      "outputField": "images[0].url",
       "name": "Hidream I1 Dev",
       "inputs": {
         "prompt": {
@@ -296,6 +339,13 @@
     },
     {
       "id": "hidream-i1-full",
+      "falSlug": "fal-ai/hidream-i1-full",
+      "inputMap": {
+        "prompt": "prompt",
+        "width": "image_size.width",
+        "height": "image_size.height"
+      },
+      "outputField": "images[0].url",
       "name": "Hidream I1 Full",
       "inputs": {
         "prompt": {
@@ -340,79 +390,14 @@
       }
     },
     {
-      "id": "ai-anime-generator",
-      "name": "Ai Anime Generator",
-      "inputs": {
-        "prompt": {
-          "examples": [
-            "A cheerful anime girl with short pink hair and green eyes, wearing a school uniform, standing under cherry blossom trees, soft lighting, anime style."
-          ],
-          "description": "Text prompt describing the image.",
-          "type": "string",
-          "title": "Prompt",
-          "name": "prompt"
-        },
-        "width": {
-          "title": "Width",
-          "name": "width",
-          "type": "int",
-          "description": "Width of the output image.",
-          "default": 1024,
-          "minValue": 256,
-          "maxValue": 1536,
-          "step": 1,
-          "isEdit": true
-        },
-        "height": {
-          "title": "Height",
-          "name": "height",
-          "type": "int",
-          "description": "Height of the output image.",
-          "default": 1024,
-          "minValue": 256,
-          "maxValue": 1536,
-          "step": 1,
-          "isEdit": true
-        }
-      }
-    },
-    {
-      "id": "wan2.1-text-to-image",
-      "name": "Wan2.1 Text To Image",
-      "inputs": {
-        "prompt": {
-          "examples": [
-            "A young woman with freckles and natural makeup, standing in soft sunlight, sharp focus, DSLR photo style, ultra-realistic skin texture."
-          ],
-          "description": "Text prompt describing the image.",
-          "type": "string",
-          "title": "Prompt",
-          "name": "prompt"
-        },
-        "width": {
-          "title": "Width",
-          "name": "width",
-          "type": "int",
-          "description": "Width of the output image.",
-          "default": 1024,
-          "minValue": 256,
-          "maxValue": 1536,
-          "step": 1
-        },
-        "height": {
-          "title": "Height",
-          "name": "height",
-          "type": "int",
-          "description": "Height of the output image.",
-          "default": 1024,
-          "minValue": 256,
-          "maxValue": 1536,
-          "step": 1
-        }
-      }
-    },
-    {
       "id": "flux-kontext-pro-t2i",
+      "falSlug": "fal-ai/flux-pro/kontext/text-to-image",
+      "inputMap": {
+        "prompt": "prompt",
+        "aspect_ratio": "aspect_ratio",
+        "num_images": "num_images"
+      },
+      "outputField": "images[0].url",
       "name": "Flux Kontext Pro T2I",
       "inputs": {
         "prompt": {
@@ -444,6 +429,13 @@
     },
     {
       "id": "flux-kontext-max-t2i",
+      "falSlug": "fal-ai/flux-pro/kontext/max/text-to-image",
+      "inputMap": {
+        "prompt": "prompt",
+        "aspect_ratio": "aspect_ratio",
+        "num_images": "num_images"
+      },
+      "outputField": "images[0].url",
       "name": "Flux Kontext Max T2I",
       "inputs": {
         "prompt": {
@@ -474,123 +466,15 @@
       }
     },
     {
-      "id": "gpt4o-text-to-image",
-      "name": "Gpt4o Text To Image",
-      "inputs": {
-        "prompt": {
-          "examples": [
-            "A diagram of the solar system with labeled planets, cartoon style."
-          ],
-          "description": "Text prompt describing the image.",
-          "type": "string",
-          "title": "Prompt",
-          "name": "prompt"
-        },
-        "aspect_ratio": {
-          "enum": [
-            "1:1",
-            "2:3",
-            "3:2"
-          ],
-          "title": "Aspect Ratio",
-          "name": "aspect_ratio",
-          "type": "string",
-          "description": "Aspect ratio of the output image.",
-          "default": "1:1"
-        },
-        "num_images": {
-          "enum": [
-            1,
-            2,
-            4
-          ],
-          "title": "Number of images",
-          "name": "num_images",
-          "type": "int",
-          "description": "Number of images generated in single request. Each number will charge separately",
-          "default": 1
-        }
-      }
-    },
-    {
-      "id": "midjourney-v7-text-to-image",
-      "name": "Midjourney v7 Text To Image",
-      "inputs": {
-        "prompt": {
-          "examples": [
-            "A sprawling futuristic city at dusk, illuminated with vibrant neon signs, layered skyscrapers, elevated highways with flying cars, warm atmospheric glow, ultra-detailed sci-fi architecture, cinematic composition — digital art, high contrast, 8K"
-          ],
-          "description": "The prompt to generate the image",
-          "type": "string",
-          "title": "Prompt",
-          "name": "prompt"
-        },
-        "speed": {
-          "enum": [
-            "relaxed",
-            "fast",
-            "turbo"
-          ],
-          "title": "Speed",
-          "name": "speed",
-          "type": "string",
-          "description": "The speed of which corresponds to different speed of Midjourney",
-          "default": "relaxed"
-        },
-        "aspect_ratio": {
-          "enum": [
-            "1:1",
-            "16:9",
-            "9:16",
-            "3:4",
-            "4:3",
-            "1:2",
-            "2:1",
-            "2:3",
-            "3:2",
-            "5:6",
-            "6:5"
-          ],
-          "title": "Aspect Ratio",
-          "name": "aspect_ratio",
-          "type": "string",
-          "description": "Aspect ratio of the output image.",
-          "default": "1:1"
-        },
-        "variety": {
-          "title": "Variety",
-          "name": "variety",
-          "type": "int",
-          "description": "Controls the diversity of generated images. Increment by 5 each time. Higher values create more diverse results. Lower values create more consistent results.",
-          "default": 5,
-          "minValue": 0,
-          "maxValue": 100,
-          "step": 5
-        },
-        "stylization": {
-          "title": "Stylization",
-          "name": "stylization",
-          "type": "int",
-          "description": "Controls the artistic style intensity. Higher values create more stylized results. Lower values create more realistic results.",
-          "default": 1,
-          "minValue": 0,
-          "maxValue": 1000,
-          "step": 1
-        },
-        "weirdness": {
-          "title": "Weirdness",
-          "name": "weirdness",
-          "type": "int",
-          "description": "Controls the creativity and uniqueness. Higher values create more unusual results. Lower values create more conventional results.",
-          "default": 1,
-          "minValue": 0,
-          "maxValue": 3000,
-          "step": 1
-        }
-      }
-    },
-    {
       "id": "flux-schnell",
+      "falSlug": "fal-ai/flux/schnell",
+      "inputMap": {
+        "prompt": "prompt",
+        "width": "image_size.width",
+        "height": "image_size.height",
+        "num_images": "num_images"
+      },
+      "outputField": "images[0].url",
       "name": "Flux Schnell",
       "inputs": {
         "prompt": {
@@ -636,6 +520,13 @@
     },
     {
       "id": "bytedance-seedream-v3",
+      "falSlug": "fal-ai/bytedance/seedream/v3/text-to-image",
+      "inputMap": {
+        "prompt": "prompt",
+        "aspect_ratio": "aspect_ratio",
+        "num_images": "num_images"
+      },
+      "outputField": "images[0].url",
       "name": "Bytedance Seedream v3",
       "inputs": {
         "prompt": {
@@ -665,6 +556,13 @@
     },
     {
       "id": "qwen-image",
+      "falSlug": "fal-ai/qwen-image",
+      "inputMap": {
+        "prompt": "prompt",
+        "width": "width",
+        "height": "height"
+      },
+      "outputField": "images[0].url",
       "name": "Qwen Image",
       "inputs": {
         "prompt": {
@@ -708,6 +606,12 @@
     },
     {
       "id": "flux-pulid",
+      "falSlug": "fal-ai/flux-pulid",
+      "inputMap": {
+        "prompt": "prompt",
+        "reference_image": "reference_image_url"
+      },
+      "outputField": "images[0].url",
       "name": "Flux Pulid",
       "inputs": {
         "prompt": {
@@ -747,6 +651,13 @@
     },
     {
       "id": "ideogram-v3-t2i",
+      "falSlug": "fal-ai/ideogram/v3",
+      "inputMap": {
+        "prompt": "prompt",
+        "aspect_ratio": "aspect_ratio",
+        "style_type": "style_type"
+      },
+      "outputField": "images[0].url",
       "name": "Ideogram v3 T2I",
       "inputs": {
         "prompt": {
@@ -811,116 +722,15 @@
       }
     },
     {
-      "id": "google-imagen4",
-      "name": "Google Imagen4",
-      "inputs": {
-        "prompt": {
-          "examples": [
-            "A grand waterfall cascading down glowing crystal cliffs under a twilight sky, bioluminescent plants illuminating the scene, a lone explorer standing on a cliff edge with a futuristic lantern, cinematic ultra-realism."
-          ],
-          "description": "Text prompt describing the image, what you want the final edited image to look like.",
-          "type": "string",
-          "title": "Prompt",
-          "name": "prompt"
-        },
-        "aspect_ratio": {
-          "enum": [
-            "16:9",
-            "9:16",
-            "1:1",
-            "4:3",
-            "3:4"
-          ],
-          "title": "Aspect Ratio",
-          "name": "aspect_ratio",
-          "type": "string",
-          "description": "Aspect ratio of the output image.",
-          "default": "1:1"
-        },
-        "num_images": {
-          "title": "Number of images",
-          "name": "num_images",
-          "type": "int",
-          "description": "Number of images generated in single request. Each number will charge separately",
-          "default": 1,
-          "minValue": 1,
-          "maxValue": 4,
-          "step": 1,
-          "isEdit": true
-        }
-      }
-    },
-    {
-      "id": "google-imagen4-fast",
-      "name": "Google Imagen4 Fast",
-      "inputs": {
-        "prompt": {
-          "examples": [
-            "A playful panda astronaut bouncing on the moon, leaving heart-shaped footprints, with a pastel-colored galaxy in the background."
-          ],
-          "description": "Text prompt describing the image, what you want the final edited image to look like.",
-          "type": "string",
-          "title": "Prompt",
-          "name": "prompt"
-        },
-        "aspect_ratio": {
-          "enum": [
-            "16:9",
-            "9:16",
-            "1:1",
-            "4:3",
-            "3:4"
-          ],
-          "title": "Aspect Ratio",
-          "name": "aspect_ratio",
-          "type": "string",
-          "description": "Aspect ratio of the output image.",
-          "default": "1:1"
-        },
-        "num_images": {
-          "title": "Number of images",
-          "name": "num_images",
-          "type": "int",
-          "description": "Number of images generated in single request. Each number will charge separately",
-          "default": 1,
-          "minValue": 1,
-          "maxValue": 4,
-          "step": 1,
-          "isEdit": true
-        }
-      }
-    },
-    {
-      "id": "google-imagen4-ultra",
-      "name": "Google Imagen4 Ultra",
-      "inputs": {
-        "prompt": {
-          "examples": [
-            "A close-up portrait of an old lighthouse keeper, wrinkled hands holding a brass lantern, stormy sea waves crashing behind, ultra-detailed realism."
-          ],
-          "description": "Text prompt describing the image, what you want the final edited image to look like.",
-          "type": "string",
-          "title": "Prompt",
-          "name": "prompt"
-        },
-        "aspect_ratio": {
-          "enum": [
-            "16:9",
-            "9:16",
-            "1:1",
-            "4:3",
-            "3:4"
-          ],
-          "title": "Aspect Ratio",
-          "name": "aspect_ratio",
-          "type": "string",
-          "description": "Aspect ratio of the output image.",
-          "default": "1:1"
-        }
-      }
-    },
-    {
       "id": "sdxl-image",
+      "falSlug": "fal-ai/fast-sdxl",
+      "inputMap": {
+        "prompt": "prompt",
+        "negative_prompt": "negative_prompt",
+        "width": "image_size.width",
+        "height": "image_size.height"
+      },
+      "outputField": "images[0].url",
       "name": "Sdxl Image",
       "inputs": {
         "prompt": {
@@ -956,6 +766,13 @@
     },
     {
       "id": "bytedance-seedream-v4",
+      "falSlug": "fal-ai/bytedance/seedream/v4/text-to-image",
+      "inputMap": {
+        "prompt": "prompt",
+        "aspect_ratio": "aspect_ratio",
+        "num_images": "num_images"
+      },
+      "outputField": "images[0].url",
       "name": "Bytedance Seedream v4",
       "inputs": {
         "prompt": {
@@ -1010,6 +827,13 @@
     },
     {
       "id": "hunyuan-image-2.1",
+      "falSlug": "fal-ai/hunyuan-image/v2.1/text-to-image",
+      "inputMap": {
+        "prompt": "prompt",
+        "aspect_ratio": "aspect_ratio",
+        "num_images": "num_images"
+      },
+      "outputField": "images[0].url",
       "name": "Hunyuan Image 2.1",
       "inputs": {
         "prompt": {
@@ -1044,42 +868,13 @@
       }
     },
     {
-      "id": "chroma-image",
-      "name": "Chroma Image",
-      "inputs": {
-        "prompt": {
-          "examples": [
-            "A futuristic studio bathed in radiant beams of shifting neon colors — cyan, magenta, amber, and emerald — that blend into surreal gradients across walls and objects. A crystal-like prism floats at the center, splitting light into vibrant chromatic waves that ripple outward, painting the scene in glowing, ever-changing hues."
-          ],
-          "description": "Text prompt describing the image.",
-          "type": "string",
-          "title": "Prompt",
-          "name": "prompt"
-        },
-        "width": {
-          "title": "Width",
-          "name": "width",
-          "type": "int",
-          "description": "Width of the output image.",
-          "default": 1024,
-          "minValue": 256,
-          "maxValue": 1536,
-          "step": 1
-        },
-        "height": {
-          "title": "Height",
-          "name": "height",
-          "type": "int",
-          "description": "Height of the output image.",
-          "default": 1024,
-          "minValue": 256,
-          "maxValue": 1536,
-          "step": 1
-        }
-      }
-    },
-    {
       "id": "flux-redux",
+      "falSlug": "fal-ai/flux-pro/redux",
+      "inputMap": {
+        "prompt": "prompt",
+        "image_url": "image_url"
+      },
+      "outputField": "images[0].url",
       "name": "Flux Redux",
       "inputs": {
         "prompt": {
@@ -1133,6 +928,13 @@
     },
     {
       "id": "flux-krea-dev",
+      "falSlug": "fal-ai/flux/krea",
+      "inputMap": {
+        "prompt": "prompt",
+        "aspect_ratio": "aspect_ratio",
+        "num_images": "num_images"
+      },
+      "outputField": "images[0].url",
       "name": "Flux Krea Dev",
       "inputs": {
         "prompt": {
@@ -1175,77 +977,14 @@
       }
     },
     {
-      "id": "perfect-pony-xl",
-      "name": "Perfect Pony Xl",
-      "inputs": {
-        "prompt": {
-          "examples": [
-            "A warm, photorealistic portrait of a dappled pony standing in a sunlit stable, dust motes floating in golden light, textured mane, high detail on fur and eyes."
-          ],
-          "description": "Text prompt describing the image.",
-          "type": "string",
-          "title": "Prompt",
-          "name": "prompt"
-        },
-        "width": {
-          "title": "Width",
-          "name": "width",
-          "type": "int",
-          "description": "Width of the output image.",
-          "default": 1024,
-          "minValue": 256,
-          "maxValue": 1536,
-          "step": 1
-        },
-        "height": {
-          "title": "Height",
-          "name": "height",
-          "type": "int",
-          "description": "Height of the output image.",
-          "default": 1024,
-          "minValue": 256,
-          "maxValue": 1536,
-          "step": 1
-        }
-      }
-    },
-    {
-      "id": "neta-lumina",
-      "name": "Neta Lumina",
-      "inputs": {
-        "prompt": {
-          "examples": [
-            "A poised young woman with long silver hair and heterochromatic eyes (one blue, one green), wearing a flowing cheongsam with cranes embroidered, standing in a dimly lit grand staircase. Soft ethereal lighting, painterly anime style, rich textures, delicate lace and pearl accessories."
-          ],
-          "description": "Text prompt describing the image.",
-          "type": "string",
-          "title": "Prompt",
-          "name": "prompt"
-        },
-        "width": {
-          "title": "Width",
-          "name": "width",
-          "type": "int",
-          "description": "Width of the output image.",
-          "default": 1024,
-          "minValue": 256,
-          "maxValue": 1536,
-          "step": 1
-        },
-        "height": {
-          "title": "Height",
-          "name": "height",
-          "type": "int",
-          "description": "Height of the output image.",
-          "default": 1024,
-          "minValue": 256,
-          "maxValue": 1536,
-          "step": 1
-        }
-      }
-    },
-    {
       "id": "wan2.5-text-to-image",
+      "falSlug": "fal-ai/wan-25-preview/text-to-image",
+      "inputMap": {
+        "prompt": "prompt",
+        "aspect_ratio": "aspect_ratio",
+        "resolution": "resolution"
+      },
+      "outputField": "images[0].url",
       "name": "Wan2.5 Text To Image",
       "inputs": {
         "prompt": {
@@ -1281,6 +1020,12 @@
     },
     {
       "id": "hunyuan-image-3.0",
+      "falSlug": "fal-ai/hunyuan-image/v3/text-to-image",
+      "inputMap": {
+        "prompt": "prompt",
+        "aspect_ratio": "aspect_ratio"
+      },
+      "outputField": "images[0].url",
       "name": "Hunyuan Image 3.0",
       "inputs": {
         "prompt": {
@@ -1315,104 +1060,13 @@
       }
     },
     {
-      "id": "leonardoai-phoenix-1.0",
-      "name": "Leonardoai Phoenix 1.0",
-      "inputs": {
-        "prompt": {
-          "examples": [
-            "A magical forest at twilight, giant bioluminescent mushrooms illuminating a misty path, a crystal-clear river winding through twisted trees, fireflies dancing, soft ambient glow, ancient stone ruins partially visible, cinematic fantasy lighting, high-detail textures on foliage and moss, ethereal atmosphere, volumetric lighting rays piercing through branches."
-          ],
-          "description": "Text prompt describing the image.",
-          "type": "string",
-          "title": "Prompt",
-          "name": "prompt"
-        },
-        "aspect_ratio": {
-          "enum": [
-            "1:1",
-            "16:9",
-            "9:16",
-            "3:4",
-            "4:3",
-            "4:5",
-            "5:4",
-            "2:3",
-            "3:2"
-          ],
-          "title": "Aspect Ratio",
-          "name": "aspect_ratio",
-          "type": "string",
-          "description": "Aspect ratio of the output image.",
-          "default": "1:1"
-        }
-      }
-    },
-    {
-      "id": "leonardoai-lucid-origin",
-      "name": "Leonardoai Lucid Origin",
-      "inputs": {
-        "prompt": {
-          "examples": [
-            "A towering medieval castle perched on a cliff, waterfalls cascading around it, sunrise casting golden light on the stone walls, mist rising from the valley below, flying dragons circling above, realistic clouds and sky reflections, cinematic wide-angle view, ultra-detailed textures on stone and water, epic fantasy atmosphere."
-          ],
-          "description": "Text prompt describing the image.",
-          "type": "string",
-          "title": "Prompt",
-          "name": "prompt"
-        },
-        "aspect_ratio": {
-          "enum": [
-            "1:1",
-            "16:9",
-            "9:16",
-            "3:4",
-            "4:3",
-            "4:5",
-            "5:4",
-            "2:3",
-            "3:2"
-          ],
-          "title": "Aspect Ratio",
-          "name": "aspect_ratio",
-          "type": "string",
-          "description": "Aspect ratio of the output image.",
-          "default": "1:1"
-        }
-      }
-    },
-    {
-      "id": "reve-text-to-image",
-      "name": "Reve Text To Image",
-      "inputs": {
-        "prompt": {
-          "examples": [
-            "An astronaut stands in a strange, bioluminescent purple jungle on an alien planet. She slowly reaches out her hand as a graceful creature made of translucent energy curiously approaches, gently touching her glove's fingertip with its tendril. The reflection of the planet's two moons is visible on her helmet's visor. Sense of wonder, photorealistic, cinematic."
-          ],
-          "description": "Text prompt describing the image.",
-          "type": "string",
-          "title": "Prompt",
-          "name": "prompt"
-        },
-        "aspect_ratio": {
-          "enum": [
-            "21:9",
-            "16:9",
-            "4:3",
-            "1:1",
-            "3:4",
-            "9:16",
-            "9:21"
-          ],
-          "title": "Aspect Ratio",
-          "name": "aspect_ratio",
-          "type": "string",
-          "description": "Aspect ratio of the output image.",
-          "default": "1:1"
-        }
-      }
-    },
-    {
       "id": "grok-imagine-text-to-image",
+      "falSlug": "xai/grok-imagine-image",
+      "inputMap": {
+        "prompt": "prompt",
+        "aspect_ratio": "aspect_ratio"
+      },
+      "outputField": "images[0].url",
       "name": "Grok Imagine Text To Image",
       "inputs": {
         "prompt": {
@@ -1442,6 +1096,12 @@
     },
     {
       "id": "nano-banana-pro",
+      "falSlug": "fal-ai/nano-banana-pro",
+      "inputMap": {
+        "prompt": "prompt",
+        "aspect_ratio": "aspect_ratio"
+      },
+      "outputField": "images[0].url",
       "name": "Nano Banana Pro",
       "inputs": {
         "prompt": {
@@ -1488,6 +1148,12 @@
     },
     {
       "id": "kling-o1-text-to-image",
+      "falSlug": "fal-ai/kling-image/o1",
+      "inputMap": {
+        "prompt": "prompt",
+        "image_url": "image_url"
+      },
+      "outputField": "images[0].url",
       "name": "Kling O1 Text To Image",
       "inputs": {
         "prompt": {
@@ -1541,6 +1207,13 @@
     },
     {
       "id": "z-image-turbo",
+      "falSlug": "fal-ai/z-image/turbo",
+      "inputMap": {
+        "prompt": "prompt",
+        "aspect_ratio": "aspect_ratio",
+        "num_images": "num_images"
+      },
+      "outputField": "images[0].url",
       "name": "Z Image Turbo",
       "inputs": {
         "prompt": {
@@ -1576,6 +1249,13 @@
     },
     {
       "id": "flux-2-dev",
+      "falSlug": "fal-ai/flux-2",
+      "inputMap": {
+        "prompt": "prompt",
+        "aspect_ratio": "aspect_ratio",
+        "num_images": "num_images"
+      },
+      "outputField": "images[0].url",
       "name": "Flux 2 Dev",
       "inputs": {
         "prompt": {
@@ -1611,6 +1291,13 @@
     },
     {
       "id": "flux-2-flex",
+      "falSlug": "fal-ai/flux-2-flex",
+      "inputMap": {
+        "prompt": "prompt",
+        "aspect_ratio": "aspect_ratio",
+        "num_images": "num_images"
+      },
+      "outputField": "images[0].url",
       "name": "Flux 2 Flex",
       "inputs": {
         "prompt": {
@@ -1653,6 +1340,13 @@
     },
     {
       "id": "flux-2-pro",
+      "falSlug": "fal-ai/flux-2-pro",
+      "inputMap": {
+        "prompt": "prompt",
+        "aspect_ratio": "aspect_ratio",
+        "num_images": "num_images"
+      },
+      "outputField": "images[0].url",
       "name": "Flux 2 Pro",
       "inputs": {
         "prompt": {
@@ -1695,6 +1389,13 @@
     },
     {
       "id": "vidu-q2-text-to-image",
+      "falSlug": "fal-ai/vidu/q2/text-to-image",
+      "inputMap": {
+        "prompt": "prompt",
+        "aspect_ratio": "aspect_ratio",
+        "duration": "duration"
+      },
+      "outputField": "images[0].url",
       "name": "Vidu Q2 Text To Image",
       "inputs": {
         "prompt": {
@@ -1739,6 +1440,13 @@
     },
     {
       "id": "bytedance-seedream-v4.5",
+      "falSlug": "fal-ai/bytedance/seedream/v4.5/text-to-image",
+      "inputMap": {
+        "prompt": "prompt",
+        "aspect_ratio": "aspect_ratio",
+        "num_images": "num_images"
+      },
+      "outputField": "images[0].url",
       "name": "Bytedance Seedream V4.5",
       "inputs": {
         "prompt": {
@@ -1781,46 +1489,14 @@
       }
     },
     {
-      "id": "gpt-image-1.5",
-      "name": "Gpt Image 1.5",
-      "inputs": {
-        "prompt": {
-          "examples": [
-            "A colossal hourglass floating in a silent cosmic void, its upper chamber filled with swirling golden sand that transforms into glowing constellations as it falls. The lower chamber contains a miniature ocean suspended in zero gravity, with waves frozen mid-motion and bioluminescent creatures glowing beneath the surface. Cracks in the glass emit thin beams of white light that bend and refract through drifting stardust. In the background, fragmented planets orbit slowly, partially illuminated by a distant supernova. Ultra-cinematic surreal concept, dramatic contrast between warm gold and deep blue, hyper-detailed textures, volumetric light rays, 8k clarity, dreamlike atmosphere."
-          ],
-          "description": "Text prompt describing the image.",
-          "type": "string",
-          "title": "Prompt",
-          "name": "prompt"
-        },
-        "aspect_ratio": {
-          "enum": [
-            "1:1",
-            "2:3",
-            "3:2"
-          ],
-          "title": "Aspect Ratio",
-          "name": "aspect_ratio",
-          "type": "string",
-          "description": "Aspect ratio of the output image.",
-          "default": "1:1"
-        },
-        "quality": {
-          "enum": [
-            "low",
-            "medium",
-            "high"
-          ],
-          "title": "Quality",
-          "name": "quality",
-          "type": "string",
-          "description": "The quality of the generated image.",
-          "default": "medium"
-        }
-      }
-    },
-    {
       "id": "gpt-image-2",
+      "falSlug": "openai/gpt-image-2",
+      "inputMap": {
+        "prompt": "prompt",
+        "aspect_ratio": "aspect_ratio",
+        "num_images": "num_images"
+      },
+      "outputField": "images[0].url",
       "name": "Gpt Image 2",
       "endpoint": "gpt-image-2-text-to-image",
       "family": "gpt-2",
@@ -1865,6 +1541,12 @@
     },
     {
       "id": "wan2.6-text-to-image",
+      "falSlug": "wan/v2.6/text-to-image",
+      "inputMap": {
+        "prompt": "prompt",
+        "aspect_ratio": "aspect_ratio"
+      },
+      "outputField": "images[0].url",
       "name": "Wan2.6 Text To Image",
       "inputs": {
         "prompt": {
@@ -1900,6 +1582,13 @@
     },
     {
       "id": "qwen-text-to-image-2512",
+      "falSlug": "fal-ai/qwen-image-2/text-to-image",
+      "inputMap": {
+        "prompt": "prompt",
+        "width": "width",
+        "height": "height"
+      },
+      "outputField": "images[0].url",
       "name": "Qwen Text To Image 2512",
       "inputs": {
         "prompt": {
@@ -1935,6 +1624,13 @@
     },
     {
       "id": "flux-2-klein-4b",
+      "falSlug": "fal-ai/flux-2/klein/4b",
+      "inputMap": {
+        "prompt": "prompt",
+        "aspect_ratio": "aspect_ratio",
+        "num_images": "num_images"
+      },
+      "outputField": "images[0].url",
       "name": "Flux 2 Klein 4b",
       "inputs": {
         "prompt": {
@@ -1966,6 +1662,13 @@
     },
     {
       "id": "flux-2-klein-9b",
+      "falSlug": "fal-ai/flux-2/klein/9b",
+      "inputMap": {
+        "prompt": "prompt",
+        "aspect_ratio": "aspect_ratio",
+        "num_images": "num_images"
+      },
+      "outputField": "images[0].url",
       "name": "Flux 2 Klein 9b",
       "inputs": {
         "prompt": {
@@ -1996,58 +1699,14 @@
       }
     },
     {
-      "id": "z-image-base",
-      "name": "Z Image Base",
-      "inputs": {
-        "prompt": {
-          "examples": [
-            "A cozy late-night diner interior with warm yellow lighting, rain tapping against large glass windows, and a lone barista cleaning the counter. A slice of pie sits under a glass dome, steam rises from a fresh cup of coffee, and neon signs outside softly glow and reflect across the wet street. Cinematic realism, shallow depth of field, calm mood, high detail, modern photography style."
-          ],
-          "description": "Text prompt describing the image.",
-          "type": "string",
-          "title": "Prompt",
-          "name": "prompt"
-        },
-        "image_url": {
-          "examples": [
-            null
-          ],
-          "description": "URL of the input image.",
-          "field": "image",
-          "type": "string",
-          "title": "Image URL",
-          "name": "image_url"
-        },
-        "aspect_ratio": {
-          "enum": [
-            "16:9",
-            "9:16",
-            "1:1",
-            "3:4",
-            "4:3",
-            "21:9",
-            "9:21"
-          ],
-          "title": "Aspect Ratio",
-          "name": "aspect_ratio",
-          "type": "string",
-          "description": "The aspect ratio of the generated image",
-          "default": "1:1"
-        },
-        "strength": {
-          "title": "Strength",
-          "name": "strength",
-          "type": "int",
-          "description": "Controls the strength of the transformation. Higher values produce outputs more different from the input image.",
-          "default": 0.6,
-          "minValue": 0,
-          "maxValue": 1,
-          "step": 0.01
-        }
-      }
-    },
-    {
       "id": "minimax-image-01",
+      "falSlug": "fal-ai/minimax/image-01",
+      "inputMap": {
+        "prompt": "prompt",
+        "aspect_ratio": "aspect_ratio",
+        "num_images": "num_images"
+      },
+      "outputField": "images[0].url",
       "name": "MiniMax Image 01",
       "inputs": {
         "prompt": {

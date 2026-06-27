@@ -2,6 +2,7 @@
 
 import { useState, useEffect, useRef, useCallback } from "react";
 import { generateAudio, uploadFile } from "../muapi.js";
+import { estimateCost, formatCost } from "../pricing.js";
 import { audioModels, getAudioModelById } from "../models.js";
 
 // ---------------------------------------------------------------------------
@@ -910,6 +911,17 @@ export default function AudioStudio({
 
         {/* Dynamic Cost & Generate Section */}
         <div className="p-4 border-t border-zinc-900 bg-zinc-950/80 backdrop-blur-xl absolute bottom-0 left-0 w-full lg:w-[400px] z-40">
+          {(() => {
+            const costLabel = formatCost(estimateCost(selectedModel, params));
+            return costLabel ? (
+              <div
+                className="text-[11px] font-medium text-white/40 text-right mb-2"
+                title="Estimated fal.ai cost for this generation — actual charge may differ"
+              >
+                {costLabel}
+              </div>
+            ) : null;
+          })()}
           <button
             type="button"
             onClick={handleGenerate}

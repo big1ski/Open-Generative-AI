@@ -2,6 +2,7 @@
 
 import { useState, useEffect, useRef, useCallback } from "react";
 import { generateImage, generateI2I, uploadFile } from "../muapi.js";
+import { estimateCost, formatCost } from "../pricing.js";
 import {
   t2iModels,
   i2iModels,
@@ -927,6 +928,12 @@ export default function ImageStudio({
   const currentEffects = imageMode ? getEffectsForI2IModel(selectedModelId) : [];
   const showEffectBtn = currentEffects.length > 0;
 
+  // ── Derived: estimated fal cost (null when the model has no price data) ──────
+  const currentModelObj = currentModels.find((m) => m.id === selectedModelId);
+  const costLabel = formatCost(
+    estimateCost(currentModelObj, { batchSize, aspect_ratio: selectedAr })
+  );
+
   // ── Textarea auto-resize ─────────────────────────────────────────────────
   const handleTextareaInput = () => {
     const el = textareaRef.current;
@@ -1415,26 +1422,36 @@ export default function ImageStudio({
               </div>
             </div>
 
-            {/* Generate button */}
-            <button
-              type="button"
-              onClick={handleGenerate}
-              disabled={generating}
-              className="bg-[#22d3ee] text-black px-4 py-2 rounded-md font-medium text-sm hover:bg-[#e5ff33] hover:scale-[1.02] active:scale-[0.98] transition-all flex items-center justify-center gap-2 w-full sm:w-auto shadow-lg shadow-[#22d3ee]/10 disabled:opacity-50 disabled:cursor-not-allowed z-10"
-            >
-              {generating ? (
-                <>
-                  <span className="animate-spin inline-block text-black">◌</span>
-                  Generating...
-                </>
-              ) : generateError ? (
-                `Error: ${generateError}`
-              ) : (
-                <>
-                  <span>Generate</span>
-                </>
+            {/* Cost estimate + Generate button */}
+            <div className="flex items-center gap-3 w-full sm:w-auto">
+              {costLabel && (
+                <span
+                  className="text-[11px] font-medium text-white/40 whitespace-nowrap hidden sm:inline"
+                  title="Estimated fal.ai cost for this generation — actual charge may differ"
+                >
+                  {costLabel}
+                </span>
               )}
-            </button>
+              <button
+                type="button"
+                onClick={handleGenerate}
+                disabled={generating}
+                className="bg-[#22d3ee] text-black px-4 py-2 rounded-md font-medium text-sm hover:bg-[#e5ff33] hover:scale-[1.02] active:scale-[0.98] transition-all flex items-center justify-center gap-2 w-full sm:w-auto shadow-lg shadow-[#22d3ee]/10 disabled:opacity-50 disabled:cursor-not-allowed z-10"
+              >
+                {generating ? (
+                  <>
+                    <span className="animate-spin inline-block text-black">◌</span>
+                    Generating...
+                  </>
+                ) : generateError ? (
+                  `Error: ${generateError}`
+                ) : (
+                  <>
+                    <span>Generate</span>
+                  </>
+                )}
+              </button>
+            </div>
           </div>
         </div>
       </div>

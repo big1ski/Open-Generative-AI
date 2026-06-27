@@ -61,24 +61,21 @@ export default function StandaloneShell() {
 
   useEffect(() => {
     setHasMounted(true);
+    // Purge any legacy fal_key cookie (the key now lives only in localStorage and
+    // is sent per-request via the Authorization header — the proxy never reads a cookie).
+    document.cookie = "fal_key=; path=/; expires=Thu, 01 Jan 1970 00:00:00 GMT";
     const stored = localStorage.getItem(STORAGE_KEY);
-    if (stored) {
-      setApiKey(stored);
-      // Sync cookie immediately on mount to establish identity for background requests
-      document.cookie = `fal_key=${stored}; path=/; max-age=31536000; SameSite=Lax`;
-    }
+    if (stored) setApiKey(stored);
   }, []);
 
   const handleKeySave = useCallback((key) => {
     localStorage.setItem(STORAGE_KEY, key);
     setApiKey(key);
-    document.cookie = `fal_key=${key}; path=/; max-age=31536000; SameSite=Lax`;
   }, []);
 
   const handleKeyChange = useCallback(() => {
     localStorage.removeItem(STORAGE_KEY);
     setApiKey(null);
-    document.cookie = "fal_key=; path=/; expires=Thu, 01 Jan 1970 00:00:00 GMT";
   }, []);
 
   // Inject the fal key into outgoing Axios requests bound for our own /api/fal* proxy.

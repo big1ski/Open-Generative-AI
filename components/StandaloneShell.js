@@ -2,7 +2,7 @@
 
 import { useState, useEffect, useCallback } from 'react';
 import { useParams, useRouter } from 'next/navigation';
-import { ImageStudio, VideoStudio, LipSyncStudio, CinemaStudio, AudioStudio, AppsStudio } from 'studio';
+import { ImageStudio, VideoStudio, LipSyncStudio, CinemaStudio, AudioStudio } from 'studio';
 import axios from 'axios';
 import ApiKeyModal from './ApiKeyModal';
 
@@ -15,7 +15,6 @@ const TABS = [
   { id: 'audio',   label: 'Audio Studio' },
   { id: 'lipsync', label: 'Lip Sync' },
   { id: 'cinema',  label: 'Cinema Studio' },
-  { id: 'apps', label: 'Explore Apps' },
 ];
 
 const STORAGE_KEY = 'fal_key';
@@ -235,7 +234,6 @@ export default function StandaloneShell() {
         {activeTab === 'lipsync' && <LipSyncStudio apiKey={apiKey} droppedFiles={droppedFiles} onFilesHandled={handleFilesHandled} />}
         {activeTab === 'cinema'  && <CinemaStudio  apiKey={apiKey} />}
         {activeTab === 'audio'   && <AudioStudio   apiKey={apiKey} droppedFiles={droppedFiles} onFilesHandled={handleFilesHandled} />}
-        {activeTab === 'apps' && <AppsStudio apiKey={apiKey} />}
       </div>
 
       {/* Settings Modal */}
